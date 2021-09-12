@@ -26,6 +26,24 @@
   width: 100%;
   background-image: image-url('top.jpeg');
   background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-left: auto;
 }
 
 
+ul, ol {
+  padding: 0;
+  position: relative;
+}
+
+.sidebar {
+  color: black;
+  border-left: solid 8px orange;/*左側の線*/
+  background: whitesmoke;/*背景色*/
+  margin-bottom: 5px;/*下のバーとの余白*/
+  line-height: 2;
+  border-radius: 0 15px 15px 0;/*右側の角だけ丸く*/
+  padding: 0.5em;
+  list-style-type: none!important;
+}
