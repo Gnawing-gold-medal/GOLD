@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root :to => "items#top"
   get "items/about" => "items#about"
 
-  
+  resources :dmins
+  resources :customers
   resources :items
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
