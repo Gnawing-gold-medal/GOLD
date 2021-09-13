@@ -1,0 +1,22 @@
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <%= render 'sidebar' %>
+    </div>
+    <div class='col-md-9'>
+      <div class="item-detail">
+        <img src="PPO_1000maicake.jpg">
+        <p>写真１の説明</p>
+        <select name="cnt">
+          <option value="個数選択" selected>個数選択</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <%= link_to "カートに入れる", root_path, class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+</div>
