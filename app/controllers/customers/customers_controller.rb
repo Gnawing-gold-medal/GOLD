@@ -18,10 +18,14 @@ class Customers::CustomersController < ApplicationController
     redirect_to customers_customer_path(@customer)
   end
 
+  def leave_page
+    @customer = Customer.find(params[:id])
+  end
+
   def leave
     customer = Customer.find(params[:id])
     customer.update(is_deleted: true)
-    redirect_to root_path
+    redirect_to root_path       #............フラッシュメッセージ作成予定
   end
 
   private
