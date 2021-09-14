@@ -7,7 +7,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
-        <% if customer_signed_in? %>
+        <% if customer_signed_in? && current_customer.is_deleted == false %>
           <li><%= link_to ' MYページ', customers_customer_path(current_customer.id),class: 'fas fa-home nav-link text-light' %></li>
           <li><%= link_to ' Item',root_path,class: 'fas fa-users nav-link text-light' %></li>
           <li><%= link_to ' カート', root_path,class: 'fas fa-book-open nav-link text-light'%></li>
