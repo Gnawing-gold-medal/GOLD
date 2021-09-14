@@ -16,7 +16,7 @@
       <tr>
         <td><%= customers.last_name %> <%= customers.first_name %></td>
         <td>co</td>
-        <td><%= link_to 'Show', customers_customers_path(@customers), class: "user_#{customers.id}" %></td>
+        <td><%= link_to 'Show', admins_customer_path(@customers), class: "user_#{customers.id}" %></td>
       </tr>
     <% end %>
   </tbody>
