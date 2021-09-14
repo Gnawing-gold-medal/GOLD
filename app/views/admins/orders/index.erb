@@ -12,11 +12,11 @@
     </tr>
   </thead>
   <tbody>
-    <% @customers.each do |customers| %>
+    <% @orders.each do |orders| %>
       <tr>
-        <td><%= customers.last_name %> <%= customers.first_name %></td>
-        <td>co</td>
-        <td><%= link_to 'Show', customers_customers_path(@customers), class: "user_#{customers.id}" %></td>
+        <td><%= orders.created_at %></td>
+        <td><%= orders.status %></td>
+        <td><%= link_to 'Show', admins_orders_path(@orders), class: "user_#{orders.id}" %></td>
       </tr>
     <% end %>
   </tbody>
