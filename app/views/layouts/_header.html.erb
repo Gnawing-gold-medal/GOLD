@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
         <% if customer_signed_in? %>
-          <li><%= link_to ' MYページ',root_path,class: 'fas fa-home nav-link text-light' %></li>
+          <li><%= link_to ' MYページ', customers_customer_path(current_customer.id),class: 'fas fa-home nav-link text-light' %></li>
           <li><%= link_to ' Item',root_path,class: 'fas fa-users nav-link text-light' %></li>
           <li><%= link_to ' カート', root_path,class: 'fas fa-book-open nav-link text-light'%></li>
           <li><%= link_to ' logout', destroy_customer_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %></li>
