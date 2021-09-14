@@ -1,3 +1,3 @@
 class Addresse < ApplicationRecord
-  belongs_to :addresse
+  belongs_to :customaer
 end
