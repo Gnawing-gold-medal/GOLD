@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   root :to => "items#top"
   get "items/about" => "items#about"
 
-  resources :dmins
+  resources :admins
   resources :customers
   resources :items
   resources :addresses
