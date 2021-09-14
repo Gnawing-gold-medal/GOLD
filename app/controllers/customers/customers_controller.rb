@@ -9,12 +9,13 @@ class Customers::CustomersController < ApplicationController
   end
 
   def edit
-    @cutomer = Customer.find(params[:id])
+    @customer = Customer.find(params[:id])
   end
 
   def update
-    customer.update(customer_params)
-    redirect_to customers_customer_path(customer)
+    @customer = Customer.find(params[:id])
+    @customer.update(customer_params)
+    redirect_to customers_customer_path(@customer)
   end
 
   def leave
