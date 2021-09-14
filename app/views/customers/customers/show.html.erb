@@ -26,6 +26,6 @@
     <td><%= @customer.email %></td>
   </tr>
 </table>
-<%= link_to "編集する", edit_customers_customer_path %>
-<%= link_to "配送先一覧を見る", address_path(@customer) %>
-<%= link_to "注文履歴一覧を見る", order_item_path(@customer) %> <%# のちにパス変更%>
+<%= link_to "編集する", edit_customers_customer_path(@customer.id), class: "btn btn-info" %>
+<%= link_to "配送先一覧を見る", address_path(@customer), class: "btn btn-info"  %>
+<%= link_to "注文履歴一覧を見る", order_item_path(@customer), class: "btn btn-info" %> <%# のちにパス変更%>
