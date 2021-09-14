@@ -1,3 +1,4 @@
+<%= render 'admins/admin_sidebar' %>
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
@@ -13,13 +14,15 @@
           </tr>
         </thead>
         <tbody>
+        <% @items.each do |item| %>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><%= item.id %></td>
+            <td><%= item.item_name %></td>
+            <td><%= item.price.to_s(:delimited) %></td>
+            <td><%= item.genre %></td>
+            <td><%= item.sale_status %></td>
           </tr>
+        <% end %>
         </tbody>
       </table>
     </div>
