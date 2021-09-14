@@ -28,9 +28,14 @@ Rails.application.routes.draw do
   namespace :customers do
     resources :items
     resources :orders
-    resources :customers
+    resources :customers do
+      member do
+        get :leave_page
+        patch :leave
+      end
+    end
+
+
   end
-
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

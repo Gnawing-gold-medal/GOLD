@@ -1,0 +1,34 @@
+<h1>会員情報編集</h1>
+<%= form_with model: @customer,url: customers_customer_path(@customer), local: true do |f| %>
+  <table>
+    <tr>
+      <td><%= f.label :last_name, "名前"%></td>
+      <td><%= f.text_field :last_name %><%= f.text_field :first_name %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :last_name_kana, "フリガナ" %></td>
+      <td><%= f.text_field :last_name_kana %><%= f.text_field :first_name_kana %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :email, "メールアドレス" %></td>
+      <td><%= f.email_field :email %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :postal_code, "郵便番号（ハイフンなし）"  %></td>
+      <td><%= f.text_field :postal_code %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :address, "住所" %></td>
+      <td><%= f.text_field :address %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :telephone_number, "電話番号（ハイフンなし）"  %></td>
+      <td><%= f.text_field :telephone_number%></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= f.submit "更新する",class: "btn btn-success" %></td>
+      <td><%= link_to "メダルをかじる",leave_page_customers_customer_path(@customer), class: "btn btn-danger" %></td>
+    </tr>
+  </table>
+<% end %>

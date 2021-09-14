@@ -1,8 +1,8 @@
 <div>
-  <h1>本当に退会しますか？</h2>
-  <p>退会する場合は、『退会する』をクリックしてください。</p>
+  <h1>本当に辞職しますか？</h2>
+  <p>辞職する場合は、『辞職する』をクリックしてください。</p>
   <div>
-    <%= link_to '退会しない', customers_customer_path(@customer) %>
-    <%= link_to "退会する", _pat(@customer), method: :patch %>
+    <%= link_to '辞職しない', edit_customers_customer_path(@customer), class: "btn btn-success" %>
+    <%= link_to "辞職する", leave_customers_customer_path(@customer),method: :patch, class: "btn btn-danger" %>
   </div>
 </div>
