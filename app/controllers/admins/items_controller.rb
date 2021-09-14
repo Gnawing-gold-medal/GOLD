@@ -9,8 +9,12 @@ class Admins::ItemsController < ApplicationController
     @item.save
     redirect_to admins_items_path
   end
-  
+
   def index
+    @item = Item.all
+  end
+
+  def show
   end
 
   private
