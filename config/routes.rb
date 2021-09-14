@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   root :to => "customers/items#top"
   get "items/about" => "customers/items#about"
 
-  resources :addresses
   resources :cart_items
   resources :genres
   resources :order_items
@@ -33,6 +32,7 @@ Rails.application.routes.draw do
         get :leave_page
         patch :leave
       end
+      resources :addresses
     end
 
 
