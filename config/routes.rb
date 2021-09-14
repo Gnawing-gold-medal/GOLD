@@ -10,23 +10,23 @@ Rails.application.routes.draw do
     registrations: 'customers/registrations'
 }
 
-  root :to => "items#top"
-  get "items/about" => "items#about"
+  root :to => "customers/items#top"
+  get "items/about" => "customers/items#about"
 
   resources :admins
   resources :addresses
   resources :cart_items
   resources :genres
   resources :order_items
-  
 
-  namespace :admin do
+
+  namespace :admins do
     resources :items
     resources :orders
     resources :customers
   end
 
-  namespace :customer do
+  namespace :customers do
     resources :items
     resources :orders
     resources :customers
