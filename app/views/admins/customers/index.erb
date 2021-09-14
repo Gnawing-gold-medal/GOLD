@@ -1,0 +1,27 @@
+<%= render 'admins/admin_sidebar' %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>最終ステータス</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers .each do |customers| %>
+      <tr>
+        <td><%= customers.last_name %> <%= customers.first_name %></td>
+        <td>co</td>
+        <td><%= link_to 'Show', customers_customers_path(@customers), class: "user_#{customers.id}" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+    </div>
+  </div>
+</div>
