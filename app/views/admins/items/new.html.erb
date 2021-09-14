@@ -2,34 +2,35 @@
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <h3>商品新規登録</h3>
-      <%= form_with model: , local:true do |f| %>
+      <%= form_with model: @item, local:true do |f| %>
         <div class="form-item">
           <%= f.label :商品画像 %>
-          <%= f.attachment_field :, class: 'form-control' %>
+          <%= f.attachment_field :item_image, class: 'form-control' %>
         </div>
 
         <div class="form-item">
           <%= f.label :商品名 %>
-          <%= f.text_field :, class: 'form-control' %>
+          <%= f.text_field :item_name, class: 'form-control' %>
         </div>
 
         <div class="form-item">
           <%= f.label :商品説明 %>
-          <%= f.text_area :, class: "form-control-file" %>
+          <%= f.text_area :expanation, class: "form-control-file" %>
         </div>
 
         <div class="form-item">
           <%= f.label :ジャンル %>
-          <%= f.text_field :, class: "form-control-file" %>
+          <%= f.text_field :genre, class: "form-control-file" %>
         </div>
 
         <div class="form-item">
           <%= f.label :税抜価格 %>
-          <%= f.number_field :, class: "form-control-file" %>
+          <%= f.number_field :price, class: "form-control-file" %>
         </div>
 
         <div class="form-item">
           <%= f.label :販売ステータス %>
+          <%= f.text_field :sale_status, class: "form-control-file" %>
         </div>
 
         <div class="form-item">

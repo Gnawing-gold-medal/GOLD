@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   root :to => "customers/items#top"
   get "items/about" => "customers/items#about"
 
-  resources :admins
   resources :addresses
   resources :cart_items
   resources :genres
