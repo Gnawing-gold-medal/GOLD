@@ -1,0 +1,10 @@
+ja:
+  enums:
+    address:
+      payment_method:
+        card: 'クレジットカード'
+        transfer: '銀行振込'
+      address:
+        myself: 'ご自身の住所'
+        register: '登録済み住所から選択'
+        new: '新しいお届け先'
