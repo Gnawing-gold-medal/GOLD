@@ -1,13 +1,13 @@
 class Customers::AddressesController < ApplicationController
 
   def index
-    @addresse = Addresse.new
-    @addresse = Addresse.where(customer_id: current_customer.id)
+    @address = Address.new
+    @addresses = Address.where(customer_id: current_customer.id)
   end
 
   def create
     address = Address.new(address_params)
-    address.customer_id = current_customer
+    address.customer_id = current_customer.id
     address.save
     redirect_to request.referer
   end
@@ -19,7 +19,13 @@ class Customers::AddressesController < ApplicationController
   def update
     address = Address.find(params[:id])
     address.update(address_params)
-    redirect_to new_address
+    redirect_to customers_customer_addresses_path(current_customer.id)
+  end
+
+  def destroy
+    address = Address.find(params[:id])
+    address.destroy
+    redirect_to request.referer
   end
 
   private
