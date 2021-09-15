@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   root :to => "customers/items#top"
   get "items/about" => "customers/items#about"
 
-  resources :cart_items
   resources :genres
   resources :order_items do
     resources :items
@@ -28,6 +27,11 @@ Rails.application.routes.draw do
 
   namespace :customers do
     resources :items
+    resources :cart_items do
+      collection do
+        delete :cart_destroy
+      end
+    end
     resources :customers do
       member do
         get :leave_page
