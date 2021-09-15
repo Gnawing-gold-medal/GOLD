@@ -14,7 +14,7 @@
   <tbody>
     <% @orders.each do |orders| %>
       <tr>
-        <td><%= orders.created_at %></td>
+        <td><%= orders.created_at.strftime('%Y/%m/%d') %></td>
         <td><%= orders.status %></td>
         <td><%= link_to 'Show', admins_order_path(orders) %></td>
       </tr>
