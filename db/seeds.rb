@@ -12,3 +12,6 @@ Customer.create(telephone_number: '11122223333',password: '000000', email: 'cust
 Customer.create(telephone_number: '11122223333',password: '000000', email: 'customer2@example.jp', address: '千葉', postal_code: '0001111', last_name: '今村', first_name: 'たかし', last_name_kana: 'イマムラ', first_name_kana: 'タカシ',)
 Customer.create(telephone_number: '11122223333',password: '000000', email: 'customer3@example.jp', address: '東京', postal_code: '0001111', last_name: '高木', first_name: '小松菜', last_name_kana: 'タカギ', first_name_kana: 'コマツナ',)
 Customer.create(telephone_number: '11122223333',password: '000000', email: 'customer4@example.jp', address: '神奈川', postal_code: '0001111', last_name: '杉野', first_name: '星都', last_name_kana: 'スギノ', first_name_kana: 'セイト',)
+
+Address.create(customer_id: "1", name: "大村秀章",postal_code: "1234567",address: "愛知")
+Address.create(customer_id: "1", name: "高須克弥",postal_code: "1111111",address: "愛知")

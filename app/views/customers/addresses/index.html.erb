@@ -1,5 +1,5 @@
 <h1>配送先登録/一覧</h1>
-<%= form_with model: @addresse do |f| %>
+<%= form_with model: @address,url: customers_customer_addresses_path(current_customer.id),method: :post,local: true do |f| %>
   <table>
     <tr>
       <td><%= f.label :postal_code, "郵便番号（ハイフンなし）" %></td>
@@ -13,7 +13,12 @@
       <td><%= f.label :name, "宛名" %></td>
       <td><%= f.text_field :name %></td>
     </tr>
+    <tr>
+      <td></td>
+      <td><%= f.submit "新規登録" ,class: "btn btn-success" %></td>
+    </tr>
   </table>
+
 <% end %>
   <table>
     <tr>
