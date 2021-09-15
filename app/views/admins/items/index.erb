@@ -3,6 +3,7 @@
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <h3>商品一覧</h3>
+      <%= link_to "新規登録", new_admins_item_path %>
       <table class="table">
         <thead>
           <tr>
@@ -17,10 +18,16 @@
         <% @items.each do |item| %>
           <tr>
             <td><%= item.id %></td>
-            <td><%= item.item_name %></td>
+            <td><%= link_to "#{item.name}", admins_item_path(item) %></td>
             <td><%= item.price.to_s(:delimited) %></td>
-            <td><%= item.genre %></td>
-            <td><%= item.sale_status %></td>
+            <td><%= item.genre.name %></td>
+            <td>
+              <% if item.is_active == true %>
+      					<p>販売中</p>
+      				<% elsif item.is_active == false %>
+      					<p>販売停止中</p>
+      				<% end %>
+      			</td>
           </tr>
         <% end %>
         </tbody>

@@ -3,25 +3,22 @@
     <div class='col-md-3'>
       <%= render 'sidebar' %>
     </div>
-    <div class='col-md-9'>
+    <div class='col-md-9 d-flex'>
       <div class="item-image">
-        <%= attachment_image_tag @item, :image, size:"80x80" %>
+        <%= attachment_image_tag @item, :image, size:"350x250" %>
       </div>
-      <div class="item-detail">
-        <%= @item.name %>
-        <%= @item.introduction %>
-        ￥<%= @item.price.to_s(:delimited) %>（税込）
-        <select name="cnt">
-          <option value="個数選択" selected>個数選択</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-        <%= f.select :is_active ,[['販売中',true],['販売停止中',false]] %>
+      <div class="item-detail mt-3 mx-3">
+        <%= @item.name %><br><br>
+        <%= @item.introduction %><br><br><br>
+        ￥<%= @item.price.to_s(:delimited) %>（税込）<br><br>
         <%= link_to "カートに入れる", root_path, class: "btn btn-success" %>
       </div>
+      <!--<div class="item-cart">-->
+        <!--<%= form_with model: @cart_item do |f| %>-->
+        <!--  <%= f.select :amount, options_for_select((1..10).to_a), include_blank: "個数選択" %>-->
+        <!--  <%= f.submit "カートに入れる", class: "btn btn-success" %>-->
+        <!--<% end %>-->
+      <!--</div>-->
     </div>
   </div>
 </div>
