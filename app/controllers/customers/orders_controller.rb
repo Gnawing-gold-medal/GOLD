@@ -10,9 +10,20 @@ class Customers::OrdersController < ApplicationController
     @order= Order.find_by(customer_id: params[:customer_id])
   end
 
+  def index
+    @orders= Order.where(customer_id: params[:customer_id])
+    @order= Order.find_by(customer_id: params[:customer_id])
+    @order_items= OrderItem.where(order_id: @order.id)
+
+
+
+  end
+
+
+
   private
   def prder_params
-    params.require(:order).permit()
+    params.require(:order).permit(:postal_code, :address, :name, :shipping_cost, :total_payment, :payment_method, :status)
   end
 
 end
