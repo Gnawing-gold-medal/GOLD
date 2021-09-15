@@ -3,12 +3,12 @@
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <h3>商品詳細</h3>
-      <%= attachment_image_tag @item, :item_image, size:"50x50" %>
+      <%= attachment_image_tag @item, :image, size:"80x80" %>
       <div class="item-detail">
         <table class="table">
           <tbody>
             <tr><th>商品名</th><td><%= @item.item_name %></td></tr>
-            <tr><th>商品説明</th><td><%= @item.explanation %></td></tr>
+            <tr><th>商品説明</th><td><%= @item.introduction %></td></tr>
             <tr><th>ジャンル</th><td><%= @item.genre_id %></td></tr>
             <tr><th>税込価格(税抜価格)</th><td><%= @item.price.to_s(:delimited) %></td></tr>
             <tr><th>販売ステータス</th><td><%= @item.sale_status %></td></tr>

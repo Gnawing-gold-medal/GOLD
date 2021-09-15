@@ -4,18 +4,14 @@
       <%= render 'sidebar' %>
     </div>
     <div class='col-md-9'>
-      <h3>商品一覧（全x件）</h3>
-      <div class="item-index">
+      <h3>商品一覧（全 <%= @items.count %> 件）</h3>
+      <% @items.each do |item| %>
         <div class="item-box">
-          <p>写真１の説明</p>
+          <%= attachment_image_tag item, :image, size:"50x50" %>
+          <%= item.name %>
+          ￥<%= item.price.to_s(:delimited) %>
         </div>
-        <div class="item-box">
-          <p>写真2の説明</p>
-        </div>
-        <div class="item-box">
-          <p>写真3の説明</p>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

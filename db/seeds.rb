@@ -15,3 +15,19 @@ Customer.create(telephone_number: '11122223333',password: '000000', email: 'cust
 
 Address.create(customer_id: "1", name: "大村秀章",postal_code: "1234567",address: "愛知")
 Address.create(customer_id: "1", name: "高須克弥",postal_code: "1111111",address: "愛知")
+
+Genre.create!(name: "ケーキ")
+Genre.create!(name: "プリン")
+Genre.create!(name: "焼き菓子")
+Genre.create!(name: "キャンディ")
+
+Item.create!(genre_id: "1", name: "ショートケーキ", introduction: "栃木県産のとちおとめを使用しています。", price: "400", is_active: "true", image: open("./app/assets/images/shortcake.jpg"))
+Item.create!(genre_id: "1", name: "ショートケーキ", introduction: "栃木県産のとちおとめを使用しています。", price: "400", is_active: "true", image: open("./app/assets/images/shortcake.jpg"))
+Item.create!(genre_id: "1", name: "ショートケーキ", introduction: "栃木県産のとちおとめを使用しています。", price: "400", is_active: "true", image: open("./app/assets/images/shortcake.jpg"))
+Item.create!(genre_id: "1", name: "ショートケーキ", introduction: "栃木県産のとちおとめを使用しています。", price: "400", is_active: "true", image: open("./app/assets/images/shortcake.jpg"))
+Item.create!(genre_id: "1", name: "ショートケーキ", introduction: "栃木県産のとちおとめを使用しています。", price: "400", is_active: "true", image: open("./app/assets/images/shortcake.jpg"))
+Item.create!(genre_id: "1", name: "ショートケーキ", introduction: "栃木県産のとちおとめを使用しています。", price: "400", is_active: "true", image: open("./app/assets/images/shortcake.jpg"))
+Item.create!(genre_id: "1", name: "ショートケーキ", introduction: "栃木県産のとちおとめを使用しています。", price: "400", is_active: "true", image: open("./app/assets/images/shortcake.jpg"))
+Item.create!(genre_id: "1", name: "ショートケーキ", introduction: "栃木県産のとちおとめを使用しています。", price: "400", is_active: "true", image: open("./app/assets/images/shortcake.jpg"))
+Item.create!(genre_id: "1", name: "ショートケーキ", introduction: "栃木県産のとちおとめを使用しています。", price: "400", is_active: "true", image: open("./app/assets/images/shortcake.jpg"))
+Item.create!(genre_id: "1", name: "ショートケーキ", introduction: "栃木県産のとちおとめを使用しています。", price: "400", is_active: "true", image: open("./app/assets/images/shortcake.jpg"))
