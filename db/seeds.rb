@@ -31,3 +31,9 @@ Item.create!(genre_id: "1", name: "ショートケーキ", introduction: "栃木
 Item.create!(genre_id: "1", name: "ショートケーキ", introduction: "栃木県産のとちおとめを使用しています。", price: "400", is_active: "true", image: open("./app/assets/images/shortcake.jpg"))
 Item.create!(genre_id: "1", name: "ショートケーキ", introduction: "栃木県産のとちおとめを使用しています。", price: "400", is_active: "true", image: open("./app/assets/images/shortcake.jpg"))
 Item.create!(genre_id: "1", name: "ショートケーキ", introduction: "栃木県産のとちおとめを使用しています。", price: "400", is_active: "true", image: open("./app/assets/images/shortcake.jpg"))
+
+Order.create!(customer_id: "1", name: "大村秀章",postal_code: "1234567",address: "愛知",shipping_cost: "800",total_payment: "1200",payment_method: "0",status: "0",)
+Order.create!(customer_id: "2", name: "今村たかし",postal_code: "1234567",address: "愛知",shipping_cost: "800",total_payment: "1200",payment_method: "1",status: "1",)
+
+OrderItem.create!(order_id: "1", item_id: "1",price: "1980",amount: "1",making_status: "1",)
+OrderItem.create!(order_id: "2", item_id: "1",price: "1980",amount: "1",making_status: "1",)
