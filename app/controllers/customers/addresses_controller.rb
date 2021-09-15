@@ -17,8 +17,8 @@ class Customers::AddressesController < ApplicationController
   end
 
   def update
-    address = Address.find(params[:id])
-    address.update(address_params)
+    @address = Address.find(params[:id])
+    @address.update(address_params)
     redirect_to customers_customer_addresses_path(current_customer.id)
   end
 
