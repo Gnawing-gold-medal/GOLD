@@ -26,13 +26,17 @@ Rails.application.routes.draw do
 
   namespace :customers do
     resources :items
-    resources :orders
     resources :customers do
       member do
         get :leave_page
         patch :leave
       end
       resources :addresses
+      resources :orders do
+        collection do
+          post :log
+        end
+      end
     end
 
 
