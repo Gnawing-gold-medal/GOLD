@@ -1,1 +1,47 @@
 <%= render 'admins/admin_sidebar' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+
+
+      <table style="border:none;">
+        <thead>
+          <tr>
+            <th>注文履歴</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>購入者</td>
+          　<td><%= @order.name %></td>
+          </tr>
+          
+          <tr>
+            <td>注文日</td>
+            <td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
+          </tr>
+          
+          <tr>
+            <td>配送先</td>
+            <td><%= @order.address %> <%= @order.name %></td>
+          </tr>
+          
+          <tr>
+            <td>支払い方法</td>
+            <td><%= @order.payment_method %></td>
+          </tr>
+          
+          <tr>
+            <td>注文</td>
+            <td></td>
+          </tr>
+          
+        </tbody>
+      </table>
+      
+    
+    </div>
+  </div>
+</div>
