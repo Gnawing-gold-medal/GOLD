@@ -4,9 +4,13 @@
       <%= render 'sidebar' %>
     </div>
     <div class='col-md-9'>
+      <div class="item-image">
+        <%= attachment_image_tag @item, :image, size:"80x80" %>
+      </div>
       <div class="item-detail">
-        <img src="PPO_1000maicake.jpg">
-        <p>写真１の説明</p>
+        <%= @item.name %>
+        <%= @item.introduction %>
+        ￥<%= @item.price.to_s(:delimited) %>（税込）
         <select name="cnt">
           <option value="個数選択" selected>個数選択</option>
           <option value="1">1</option>
@@ -15,6 +19,7 @@
           <option value="4">4</option>
           <option value="5">5</option>
         </select>
+        <%= f.select :is_active ,[['販売中',true],['販売停止中',false]] %>
         <%= link_to "カートに入れる", root_path, class: "btn btn-success" %>
       </div>
     </div>

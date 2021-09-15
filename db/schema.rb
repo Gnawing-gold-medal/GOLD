@@ -69,11 +69,11 @@ ActiveRecord::Schema.define(version: 2021_09_13_122314) do
 
   create_table "items", force: :cascade do |t|
     t.integer "genre_id", null: false
-    t.string "item_name", null: false
-    t.text "explanation", null: false
-    t.float "price", null: false
-    t.string "sale_status", null: false
-    t.string "item_image_id", null: false
+    t.string "name", null: false
+    t.text "introduction", null: false
+    t.integer "price", null: false
+    t.boolean "is_active", default: true, null: false
+    t.string "image_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,12 +1,12 @@
-<%= form_with model: @item, url: "admis_items_new", local:true do |f| %>
+<%= form_with model: @item, url: new_admins_item_path, local:true do |f| %>
   <div class="form-group">
     <%= f.label :"商品画像" %>
-    <%= f.attachment_field :item_image, class: 'form-control-file' %>
+    <%= f.attachment_field :image, class: 'form-control-file' %>
   </div>
 
   <div class="form-group">
     <%= f.label :"商品名" %>
-    <%= f.text_field :item_name, class: 'form-control', placeholder: "商品名" %>
+    <%= f.text_field :name, class: 'form-control', placeholder: "商品名" %>
   </div>
 
   <div class="form-group">
@@ -16,7 +16,7 @@
 
   <div class="form-group">
     <%= f.label :"ジャンル" %>
-    <%= f.select :genre, {'ケーキ': 1, 'プリン': 2, '焼き菓子': 3, 'キャンディ': 4}, { include_blank: '--選択してください--'}, { class: 'form-control' , required: true } %>
+    <%= f.select :genre_id, {'ケーキ': 1, 'プリン': 2, '焼き菓子': 3, 'キャンディ': 4}, { include_blank: '--選択してください--'}, { class: 'form-control' , required: true } %>
   </div>
 
   <div class="form-group">
