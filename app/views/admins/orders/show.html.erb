@@ -56,7 +56,7 @@
           
           <% @order_items.each do |order_items| %>
             <tr>
-              <td><%=  %></td>
+              <td><%= order_items.item.name %></td>
               <td><%= order_items.price %></td>
               <td><%= order_items.amount %></td>
               <td><%= order_items.price*order_items.amount %></td>
