@@ -5,13 +5,15 @@
     </div>
     <div class='col-md-9'>
       <h3>商品一覧（全 <%= @items.count %> 件）</h3>
-      <% @items.each do |item| %>
-        <div class="item-box">
-          <%= attachment_image_tag item, :image, size:"50x50" %>
-          <%= item.name %>
-          ￥<%= item.price.to_s(:delimited) %>
-        </div>
-      <% end %>
+      <div class="item-index d-flex flex-wrap">
+        <% @items.each do |item| %>
+          <div class="item-box mx-2">
+            <%= attachment_image_tag item, :image, size:"200x150" %><br>
+            <%= link_to "#{item.name}", customers_item_path(item) %><br>
+            ￥<%= item.price.to_s(:delimited) %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

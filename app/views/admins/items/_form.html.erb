@@ -1,42 +1,33 @@
-<%= form_with model: @item, url: new_admins_item_path, local:true do |f| %>
   <div class="form-group">
-    <%= f.label :"商品画像" %>
+    <%= f.label :image, "商品画像" %>
     <%= f.attachment_field :image, class: 'form-control-file' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :"商品名" %>
+    <%= f.label :name, "商品名" %>
     <%= f.text_field :name, class: 'form-control', placeholder: "商品名" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :"商品説明" %>
-    <%= f.text_area :explanation, class: "form-control", placeholder: "ここに説明文を記述します" %>
+    <%= f.label :introduction, "商品説明" %>
+    <%= f.text_area :introduction, class: "form-control", placeholder: "ここに説明文を記述します" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :"ジャンル" %>
-    <%= f.select :genre_id, {'ケーキ': 1, 'プリン': 2, '焼き菓子': 3, 'キャンディ': 4}, { include_blank: '--選択してください--'}, { class: 'form-control' , required: true } %>
+    <%= f.label :genre_id, "ジャンル" %><br>
+    <%= f.collection_select :genre_id, Genre.all, :id, :name, prompt: "-- 選択してください --" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :"税抜価格" %>
+    <%= f.label :proce, "税抜価格" %>
     <%= f.text_field :price, class: "form-control", placeholder: "1000" %><span>円</span>
   </div>
 
   <div class="form-group">
-    <%= f.label :"販売ステータス" %>
-    <div>
-      <%= f.radio_button :sale_status, :"販売中", checked: true %>
-      <%= f.label :sale_status, "販売中", value: :"販売中" %>
-    </div>
-    <div>
-      <%= f.radio_button :sale_status, :"販売停止中" %>
-      <%= f.label :sale_status, "販売停止中", value: :"販売停止中" %>
-    </div>
+    <%= f.label :is_active, "販売ステータス" %><br>
+    <%= f.select :is_active, {
+      "販売中": true,
+      "販売停止中": false
+    } %>
   </div>
 
-  <div class="form-group">
-    <%= f.submit "新規登録", class: 'btn btn-success' %>
-  </div>
-<% end %>
