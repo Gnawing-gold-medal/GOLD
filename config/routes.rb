@@ -15,7 +15,9 @@ Rails.application.routes.draw do
 
   resources :cart_items
   resources :genres
-  resources :order_items
+  resources :order_items do
+    resources :items
+  end
 
 
   namespace :admins do
