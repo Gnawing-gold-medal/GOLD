@@ -8,7 +8,7 @@ class Admins::CustomersController < ApplicationController
     if @customer.user_status == false
       @status = "有効"
     else
-      v = "無効"
+      @status = "無効"
     end
  
   end
