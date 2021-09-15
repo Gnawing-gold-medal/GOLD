@@ -41,6 +41,33 @@
         </tbody>
       </table>
       
+      <table border="1">
+        <thead>
+          <tr>
+            <th>商品名</th>
+            <th>単価（税込）</th>
+            <th>数量</th>
+            <th>小計</th>
+            <th>製作ステータス</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <% @order_items.each do |order_items| %>
+            <tr>
+              <td><%=  %></td>
+              <td><%= order_items.price %></td>
+              <td><%= order_items.amount %></td>
+              <td><%= order_items.price*order_items.amount %></td>
+              <td></td>
+             <td></td>
+            </tr>
+          <% end %>
+          
+        </tbody>
+      </table>
+      
     
     </div>
   </div>
