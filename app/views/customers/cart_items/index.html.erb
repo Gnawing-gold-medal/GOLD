@@ -13,17 +13,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><%= link_to "削除する", root_path, class: "btn btn-destroy" %></td>
-          </tr>
+          <%= @cart_items.each do |cart_item| %>
+            <tr>
+              <td><%= attachment_image_tag cart_item.item, :image, size:"80x50" %><%= cart_item.item.name %></td>
+              <td><%= cart_item.item.taxin_price.to_s(:delimited) %></td>
+              <td><%= cart_item.amount %></td>
+              <td><%= (cart_item.item.taxin_price*cart_item.amount).to_s(:delimited) %></td>
+              <td><%= link_to "削除する", customers_cart_item_path(cart_item), method: :delete, class: "btn btn-danger" %></td>
+            </tr>
+          <% end %>
         </tbody>
       </table>
       <table>
-        <tr><th>合計金額</th><td>1,000</td></tr>
+        <tr><th>合計金額</th><td><%= @total.round.to_s(:delimited) %>円</td></tr>
       </table>
       <%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
       <%= link_to "情報入力に進む", root_path, class: "btn btn-success" %>
