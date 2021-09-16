@@ -11,6 +11,9 @@
             <%= attachment_image_tag item, :image, size:"180x130" %><br>
             <%= link_to "#{item.name}", customers_item_path(item) %><br>
             ￥<%= item.taxin_price.to_s(:delimited) %>
+            <% if item.is_active == false %>
+              <p>sold out</p>
+            <% end %>
           </div>
         <% end %>
       </div>
