@@ -4,7 +4,7 @@
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       
       <h2>会員情報編集</h2>
-      <%= form_with model:@customer, local: true do |f| %>
+      <%= form_with model:@customer, url:'/cu',local: true do |f| %>
         <table>
           <tr>
             <td><%= f.label :last_name, "名前"%></td>
