@@ -35,7 +35,10 @@
           
           <tr>
             <td>注文</td>
-            <td></td>
+            <td><%= form_with model:@orders, local: true  do |f| %>
+                  <%= f.select :status, [["入金待ち", 0], ["入金確認", 1], ["製作中", 2], ["発送準備中", 3], ["発送済み", 4]], include_blank: @order.status %></br>
+                  <%= f.submit '更新'%>
+                <% end %></td>
           </tr>
           
         </tbody>
@@ -49,7 +52,6 @@
             <th>数量</th>
             <th>小計</th>
             <th>製作ステータス</th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -60,8 +62,10 @@
               <td><%= order_items.price %></td>
               <td><%= order_items.amount %></td>
               <td><%= order_items.price*order_items.amount %></td>
-              <td></td>
-             <td></td>
+              <td><%= form_with model:order_items, local: true  do |f| %>
+                    <%= f.select :making_status, [["製作不可", 0], ["製作待ち", 1], ["製作中", 2], ["製作完了", 3]], include_blank: order_items.making_status %>
+                    <%= f.submit '更新'%>
+                  <% end %></td>
             </tr>
           <% end %>
           
