@@ -73,6 +73,34 @@
         </tbody>
       </table>
       
+      <table style= "border:none;">
+        <thead>
+          <tr>
+            <th>商品合計</th>
+            <th>
+              <% @sum = 0 %>
+              <% @order_items.each do |order_items| %>
+                <% order_items.price*order_items.amount %>
+                <% @sum += order_items.price*order_items.amount %>
+              <% end %>
+              <%= @sum %>円
+            </th>
+          </tr>
+          <tr>
+            <th>送料</th>
+            <th><%= @order.shipping_cost %>円</th>
+          </tr>
+          <tr>
+            <th>合計金額</th>
+            <th><%= @sum += @order.shipping_cost %>円</th>
+          </tr>
+          
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+      
     
     </div>
   </div>
