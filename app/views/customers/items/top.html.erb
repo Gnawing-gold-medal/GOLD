@@ -18,7 +18,7 @@
             <div class="item-box mx-2">
               <%= attachment_image_tag item, :image, size:"180x130" %><br>
               <%= link_to "#{item.name}", customers_item_path(item) %><br>
-              ￥<%= item.price.to_s(:delimited) %>
+              ￥<%= item.taxin_price.to_s(:delimited) %>
             </div>
           <% end %>
         </div>

@@ -10,7 +10,7 @@
             <tr><th>商品名</th><td><%= @item.name %></td></tr>
             <tr><th>商品説明</th><td><%= @item.introduction %></td></tr>
             <tr><th>ジャンル</th><td><%= @item.genre.name %></td></tr>
-            <tr><th>税込価格(税抜価格)</th><td><%= @item.price.to_s(:delimited) %></td></tr>
+            <tr><th>税込価格(税抜価格)</th><td><%= @item.taxin_price.to_s(:delimited) %> (<%= @item.price.to_s(:delimited) %>) 円</td></tr>
             <tr><th>販売ステータス</th>
             <td>
               <% if @item.is_active == true %>

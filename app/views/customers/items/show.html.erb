@@ -10,7 +10,7 @@
       <div class="item-detail mt-3 mx-3">
         <%= @item.name %><br><br>
         <%= @item.introduction %><br><br><br>
-        ￥<%= @item.price.to_s(:delimited) %>（税込）<br><br>
+        ￥<%= @item.taxin_price.to_s(:delimited) %>（税込）<br><br>
         <%= form_with model: @cart_item, url: customers_cart_items_path do |f| %>
           <%= f.hidden_field :item_id, value: @item.id %>
           <%= f.select :amount, options_for_select((1..10).to_a), include_blank: "個数選択" %>
