@@ -2,16 +2,16 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-      
+
       <h2>会員情報編集</h2>
-      <%= form_with model:@customer, url:'/cu',local: true do |f| %>
+      <%= form_with model:@customer, url: admins_customer_path(@customer), local: true do |f| %>
         <table>
           <tr>
             <td><%= f.label :last_name, "名前"%></td>
             <td><%= f.text_field :last_name %></td>
             <td><%= f.text_field :first_name %></td>
           </tr>
-          
+
           <tr>
             <td><%= f.label :last_name_kana, "フリガナ" %></td>
             <td><%= f.text_field :last_name_kana %></td>
@@ -21,7 +21,7 @@
             <td><%= f.label :email, "メールアドレス" %></td>
             <td><%= f.email_field :email %></td>
           </tr>
-          
+
           <tr>
             <td><%= f.label :postal_code, "郵便番号（ハイフンなし）"  %></td>
             <td><%= f.text_field :postal_code %></td>
@@ -37,13 +37,13 @@
           <tr>
             <td></td>
             <td><%= f.submit "更新する",class: "btn btn-success" %></td>
-            
+
           </tr>
         </table>
       <% end %>
-      
-      
-      
+
+
+
     </div>
   </div>
 </div>
