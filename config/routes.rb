@@ -41,6 +41,7 @@ Rails.application.routes.draw do
       resources :orders do
         collection do
           post :log
+          get :thanks
         end
       end
     end
