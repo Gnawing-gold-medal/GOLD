@@ -10,7 +10,7 @@
   </tr>
   <% @orders.each do |order| %>
   <tr>
-    <td><%= order.created_at.strftime("%Y/%m/%d/").to_s %></td>
+    <td><%= order.created_at.strftime("%Y/%m/%d").to_s %></td>
     <td>
       <ul>
         <li>〒<%= order.postal_code %></li>

@@ -14,9 +14,16 @@ class Customers::OrdersController < ApplicationController
     @orders= Order.where(customer_id: params[:customer_id])
     @order= Order.find_by(customer_id: params[:customer_id])
     @order_items= OrderItem.where(order_id: @order.id)
+  end
 
-
-
+  def show
+    @order= Order.find_by(id: params[:id],customer_id: params[:customer_id])
+    @order_items= OrderItem.where(order_id: @order.id)
+    total_price = []
+    @order_items.each do |order_item|
+      total_price << order_item.price * order_item.amount
+    end
+    @total_price= total_price.sum
   end
 
 
