@@ -1,30 +1,30 @@
 <h3>注文情報</h3>
 <h5>注文情報入力</h5>
-<%= form_with(model:[@customer, @order, @address],url: log_customers_customer_orders_path(@customer.id),method: :post, local: true) do |f| %>
+<%= form_with(model: @order,url: log_customers_customer_orders_path(@customer.id),method: :post, local: true) do |f| %>
   <h6>支払方法</h6>
   <div>
-    <%= f.label "クレジットカード" %>
-    <%= f.radio_button :payment_method, :card %>
+    <%= f.label :payment_method_card,  "クレジットカード" %>
+    <%= f.radio_button :payment_method, :card, checked: true%>
   </div>
   <div>
-    <%= f.label "銀行振込" %>
+    <%= f.label :payment_method_transfer, "銀行振込" %>
     <%= f.radio_button :payment_method, :transfer %>
   </div>
   <h6>お届け先</h6>
   <table>
     <tr>
-      <td><%= f.radio_button :address, @customer.address %>ご自身の住所</td>
+      <td><%= f.radio_button :address_select,0 ,checked: true %><%= f.label :address_select, "ご自身の住所", value: 0 %></td>
       <td><%= @customer.postal_code %></td>
       <td><%= @customer.address %></td>
-      <td><%= @customer.full_address %></td>
+      <td><%= @customer.full_name %></td>
     </tr>
     <tr>
-      <td><%= f.radio_button :address, @customer.address %>登録済み住所から選択</td>
-      <td><%= f.collection_select :customer_id, @addresses,:id, :full_address %></td>
+      <td><%= f.radio_button :address_select,1 %><%= f.label :address_select,"登録済み住所から選択", value: 1 %></td>
+      <td><%= f.collection_select :oter_address, @addresses, :id, :full_address, prompt: "選択してください" %></td>
     <tr>
   </table>
   <div>
-    <%= f.radio_button :order, @order %>新しいお届け先
+    <%= f.radio_button :address_select,2 %><%= f.label :address_select,"新しいお届け先", value: 2 %>
     <table>
       <tr>
         <th><%= f.label "郵便番号（ハイフンなし）" %></th>

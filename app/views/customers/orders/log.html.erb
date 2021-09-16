@@ -20,7 +20,7 @@
     <table>
       <tr>
         <th>送料</th>
-        <td>800</td>
+        <td><%= 800 %></td>
       </tr>
       <tr>
         <th>商品合計</th>
@@ -39,9 +39,29 @@
 <div>
   <h4>お届け先</h4>
   <ul>
-    <li>〒<%= %></li>
-    <li></li>
-    <li></li>
+    <li>〒<%= @order_postal_code %></li>
+    <li><%= @order_address %></li>
+    <li><%= @order_name %></li>
   </ul>
 </div>
-<%= link_to "注文を確定する",
+<div>
+  <%= form_with model: @order,url: customers_customer_orders_path(@customer.id), method: :post, local: true do |f| %>
+    <%= f.hidden_field :customer_id, value: current_customer.id %>
+    <%= f.hidden_field :shipping_cost, value: 800 %>
+    <%= f.hidden_field :total_payment, value: @total_payment %>
+    <% if params[:order][:address_select] == "0" %>
+      <%= f.hidden_field :postal_code, value: @order_postal_code %>
+      <%= f.hidden_field :address,value: @order_address %>
+      <%= f.hidden_field :name,value: @order_name %>
+    <% elsif params[:order][:address_select] == "1" %>
+      <%= f.hidden_field :postal_code, value: @order_postal_code %>
+      <%= f.hidden_field :address,value: @order_address %>
+      <%= f.hidden_field :name,value: @order_name %>
+    <% elsif params[:order][:address_select] == "2" %>
+      <%= f.hidden_field :postal_code, value: @order_postal_code %>
+      <%= f.hidden_field :address,value: @order_address%>
+      <%= f.hidden_field :name,value: @order_name %>
+    <% end %>
+    <%=f.submit '注文を確定する',class: "btn btn-primary" %>
+  <% end %>
+</div>
