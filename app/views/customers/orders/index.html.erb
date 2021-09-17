@@ -20,12 +20,12 @@
     </td>
     <td>
       <ul>
-        <% @order_items.each do |order_item| %>
-        <li><%= order_item.item.name %></li>
+        <% order.order_items.each do |order| %>
+        <li><%= order.item.name %></li>
         <% end %>
       </ul>
     </td>
-    <td><%= order.total_payment %></td>
+    <td><%= order.total_payment  %></td>
     <td><%= order.status_i18n %></td>
     <td><%= link_to "表示する", customers_customer_order_path(current_customer.id,order.id), class: "btn btn-primary" %></td>
   </tr>
