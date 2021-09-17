@@ -1,31 +1,19 @@
-  <h4 class="text-center m-5">ログイン</h4>
-  <div class="text-center pl-xl-5	">
-    <p>会員の方はこちらからログイン</p>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="container">
-        <div class="form-group row">
-          <%= f.label :email, "メールアドレス", class: "col-4 text-right" %>
-            <div class="col-8 text-left">
-              <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "kajiruno_daisuki@gmail.com", size: 43 %>
-            </div>
-        </div>
-        <div class="form-group row">
-          <%= f.label :password, "パスワード", class: "col-4 text-right" %>
-            <div class="col-8 text-left">
-              <%= f.password_field :password, autocomplete: "current-password", size: 43 %>
-            </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-2  text-center">
-            <%= f.submit "ログイン", class: "btn btn-sm btn-success" %>
-          </div>
-        </div>
-      </div>
+<div class="form-wrapper">
+  <h1>Sign In</h1>
+   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-item">
+      <%= f.email_field :email, :placeholder => "メールアドレス" %>
     </div>
-  </div>
-  <% end %>
-    <div class=" pl-xl-5 pt-xl-5 text-center ">
-      <h4>会員登録がお済みでない方</h4>
-      <p>
-        <%= link_to "こちら",new_customer_registration_path %> から新規登録してください。</p>
+    <div class="form-item">
+      <%= f.password_field :password, :placeholder => "パスワード"  %>
     </div>
+    <div class="button-panel">
+     <%= f.submit "ログイン", class: "btn btn-sm btn-success" %>
+    </div>
+ 　<% end %>
+  <div class="form-footer"></div>
+</div>
+<div class="text-center">
+  <h4>会員登録がお済みでない方</h4>
+  <p><%= link_to "こちら",new_customer_registration_path %> から新規登録してください。</p>
+</div>
