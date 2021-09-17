@@ -5,11 +5,12 @@
       
       <h2>ジャンル一覧・追加</h2>
       
-      <%= form_with model:@genre, url: admins_genres_path,local:true do |f| %>
+      <%= form_with model:@genre, url: admins_genres_path,remoto:true do |f| %>
         <%= f.label :ジャンル名 %>
         <%= f.text_field :name, class: 'form-control' %>
         <%= f.submit class: 'btn btn-success' %>
       <% end %>
+      
 
 <table class='table'>
   <thead>
@@ -19,17 +20,11 @@
       <th></th>
     </tr>
   </thead>
-  <tbody>
-    <% @genres .each do |genres| %>
-      <tr>
-        <td><%= genres.id %></td>
-        <td><%= genres.name %></td>
-        <td><%= link_to '編集する', edit_admins_genre_path(genres) %></td>
-      </tr>
-    <% end %>
+  <tbody id="genre">
+    <%= render 'index', genres: @genres %>
   </tbody>
 </table>
-
+ 
     </div>
   </div>
 </div>
