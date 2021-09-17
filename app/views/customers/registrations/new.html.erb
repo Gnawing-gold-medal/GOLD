@@ -30,19 +30,19 @@
         <div class="row">
           <div class="col">
             <%= f.label :postal_code, "郵便番号(ハイフンなし)" %>
-            <%= f.email_field :postal_code, autofocus: true, placeholder: "1234567", class: "form-control rounded-pill" %>
+            <%= f.text_field :postal_code, autofocus: true, placeholder: "1234567", class: "form-control rounded-pill" %>
           </div>
           <div class="col-md-6 mb-3">
           </div>
         </div>
         <div class="mb-3">
           <%= f.label :addres, "住所" %>
-          <%= f.email_field :address, autofocus: true, placeholder: "愛知県名古屋市東区古出来2-5-11", class: "form-control rounded-pill" %>
+          <%= f.text_field :address, autofocus: true, placeholder: "愛知県名古屋市東区古出来2-5-11", class: "form-control rounded-pill" %>
         </div>
         <div class="row">
           <div class="col">
             <%= f.label :telephone_number, "電話番号(ハイフンなし)" %>
-            <%= f.email_field :telephone_number, autofocus: true, placeholder: "09011112222", class: "form-control rounded-pill" %>
+            <%= f.text_field :telephone_number, autofocus: true, placeholder: "09011112222", class: "form-control rounded-pill" %>
           </div>
           <div class="col-md-6 mb-3">
           </div>
