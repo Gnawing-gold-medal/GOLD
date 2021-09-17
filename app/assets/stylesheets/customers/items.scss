@@ -1,3 +1,53 @@
 // Place all the styles related to the customers/items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#photo {
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+}
+
+#photo img {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.about-image {
+  height: 500px;
+  padding-top: 130px;
+  text-align: center;
+  text-shadow: white 0 0 5px;
+  background-image: image-url('top-meringue.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.link-style {
+  color: #45381F;
+}
+
+.link-style:hover {
+  text-decoration: none;
+  color: #BE9B65;
+}
+
+.item-name {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.item-show {
+  display: flex;
+  justify-content: center;
+  margin: 130px auto 150px;
+}
+
+.item-detail {
+  margin: 0 50px;
+}
