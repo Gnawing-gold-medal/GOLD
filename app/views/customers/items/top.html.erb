@@ -1,7 +1,6 @@
 <div class='container'>
   <div class='row'>
-    <div class='col-md-1'></div>
-    <div class='col-md-10'>
+    <div class='col-md-10 mx-auto mt-4'>
       <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
       <script type="text/javascript"></script>
       <div id="photo">
@@ -9,27 +8,30 @@
         <img src="assets/top_mountain.jpg" height="500" alt="">
         <img src="assets/top_strawberrycake.jpg" height="500" alt="">
         <img src="assets/top.jpeg" height="500" alt="">
+        <img src="assets/top_cupcake.jpeg" height="500" alt="">
       </div>
-      <div class="text-center mt-3">
-        ようこそ、ながのCAKEへ！<br>
-        このサイトは、ケーキ販売のECサイトになります。<br>
-        会員でない方も商品の閲覧はできますが、<br>
+      <div class="text-center my-5">
+        ようこそ、ながのCAKEへ！<br><br>
+        このサイトは、ケーキ販売のECサイトになります。<br><br>
+        会員でない方も商品の閲覧はできますが、<br><br>
         購入には会員登録が必要になります。
       </div>
       <div>
         <h3 class="mt-5">新着商品</h3>
-        <div class="item-index d-flex flex-wrap">
+        <div class="item-index d-flex flex-wrap mt-3">
           <% @items.last(4).reverse_each do |item| %>
             <div class="item-box mx-2">
-              <%= attachment_image_tag item, :image, size:"200x160" %><br>
-              <%= link_to "#{item.name}", customers_item_path(item) %><br>
+              <%= link_to customers_item_path(item), class: "link-style" do %>
+                <%= attachment_image_tag item, :image, size:"200x160" %><br>
+                <%= item.name %>
+              <% end %>
+              <br>
               ￥<%= item.taxin_price.to_s(:delimited) %>
             </div>
           <% end %>
         </div>
-        <p class="text-right"><%= link_to "全ての商品を見る", customers_items_path %></p>
+        <p class="text-right"><%= link_to "全ての商品を見る", customers_items_path, class: "link-style" %></p>
       </div>
     </div>
-    <div class='col-md-1'></div>
   </div>
 </div>

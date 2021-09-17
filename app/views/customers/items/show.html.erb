@@ -1,25 +1,23 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
-    <div class='col-md-2'>
-      <%= render 'sidebar' %>
-    </div>
-    <div class='col-md-10 d-flex'>
+    <div class='col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 item-show'>
       <div class="item-image">
-        <%= attachment_image_tag @item, :image, size:"350x250" %>
+        <%= attachment_image_tag @item, :image, size:"400x270" %>
       </div>
-      <div class="item-detail mt-3 mx-3">
-        <%= @item.name %><br><br>
-        <%= @item.introduction %><br><br><br>
+      <div class="item-detail">
+        <p class="item-name"><%= @item.name %></p><br>
+        <%= @item.introduction %><br><br>
         ￥<%= @item.taxin_price.to_s(:delimited) %>（税込）<br><br>
         <% if @item.is_active == true %>
           <%= form_with model: @cart_item, url: customers_cart_items_path do |f| %>
             <%= f.hidden_field :item_id, value: @item.id %>
-            <%= f.select :amount, options_for_select((1..10).to_a), include_blank: "個数選択" %>
+            <%= f.select :amount, options_for_select((1..10).to_a), include_blank: "個数選択" %><br>
             <%= f.submit "カートに入れる", class: "btn btn-success" %>
           <% end %>
         <% else %>
           <p>sold out</p>
         <% end %>
+        <%= link_to "一覧に戻る", customers_items_path %>
       </div>
     </div>
   </div>
