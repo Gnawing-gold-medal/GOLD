@@ -13,7 +13,7 @@ class Customers::OrdersController < ApplicationController
     @cart_items= CartItem.where(customer_id: @customer.id)
     total_price= []
     @cart_items.each do |cart_item|
-      total_price << (cart_item.item.price * 1.1).round * cart_item.amount
+      total_price << cart_item.item.taxin_price * cart_item.amount
     end
     @total_price= total_price.sum
     @total_payment= @total_price + 800
@@ -36,10 +36,25 @@ class Customers::OrdersController < ApplicationController
   end
 
   def create
+
     order= Order.new(order_params)
     order.customer_id = current_customer.id
-    order.save
-    redirect_to thanks_customers_customer_orders_path(current_customer.id)
+    @cart_items = current_customer.cart_items
+
+    if order.save
+      @cart_items.each do |cart_item|
+      @order_item = OrderItem.new
+      @order_item.order_id = order.id
+      @order_item.item_id = cart_item.item.id
+      @order_item.amount = cart_item.amount
+      @order_item.price = cart_item.amount * cart_item.item.taxin_price
+      @order_item.save
+       end
+     @cart_items.destroy_all
+     redirect_to thanks_customers_customer_orders_path(current_customer.id)
+    else
+
+    end
   end
 
   def thanks
@@ -47,19 +62,19 @@ class Customers::OrdersController < ApplicationController
 
 
   def index
-    @orders= Order.where(customer_id: params[:customer_id])
-    @order= Order.find_by(customer_id: params[:customer_id])
-    @order_items= OrderItem.where(order_id: @order.id)
+    @orders= Order.where(customer_id: current_customer.id)
   end
 
   def show
-    @order= Order.find_by(customer_id: params[:customer_id])
+    @order= Order.find(params[:id])
+    @orders= Order.where(customer_id: params[:customer_id])
     @order_items= OrderItem.where(order_id: @order.id)
     total_price= []
     @order_items.each do |order_item|
-      total_price << order_item.price * order_item.amount
+      total_price << order_item.item.taxin_price * order_item.amount
     end
     @total_price= total_price.sum
+    @total_payment= @total_price + 800
   end
 
   private

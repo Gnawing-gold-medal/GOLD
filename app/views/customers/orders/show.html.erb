@@ -40,7 +40,7 @@
     </tr>
     <tr>
       <th>ご請求額</th>
-      <td><%= @total_price + @order.shipping_cost %></td>
+      <td><%= @total_payment %></td>
     </tr>
   </table>
 </div>
@@ -53,12 +53,12 @@
       <th>個数</th>
       <th>小計</th>
     </tr>
-    <% @order_items.each do |order_item| %>
+    <% @order.order_items.each do |order| %>
     <tr>
-      <td><%= order_item.item.name %></td>
-      <td><%= order_item.price %></td>
-      <td><%= order_item.amount %></td>
-      <td><%= order_item.price * order_item.amount %></td>
+      <td><%= order.item.name %></td>
+      <td><%= order.item.taxin_price %></td>
+      <td><%= order.amount %></td>
+      <td><%= order.item.taxin_price * order.amount %></td>
     </tr>
     <% end %>
   </table>

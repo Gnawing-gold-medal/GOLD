@@ -10,9 +10,9 @@
     <% @cart_items.each do |cart_item| %>
       <tr>
         <td><%= attachment_image_tag cart_item.item, :image, size: "50x50" %><%= cart_item.item.name %></td>
-        <td><%= (cart_item.item.price * 1.1).round %></td>
+        <td><%= cart_item.item.taxin_price %></td>
         <td><%= cart_item.amount %></td>
-        <td><%= (cart_item.item.price * 1.1).round * cart_item.amount %></td>
+        <td><%= cart_item.item.taxin_price  * cart_item.amount %></td>
       </tr>
     <% end %>
   </table>
