@@ -7,5 +7,13 @@ class Item < ApplicationRecord
   def taxin_price
     (price*1.08).round
   end
+  
+  def self.search(search)
+    if search
+      Item.where(['name LIKE ?', '%'+search+'%'])
+    else
+      Item.all
+    end
+  end
 
 end

@@ -8,12 +8,18 @@ class Customers::ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.all
+    @items = Item.search(params[:search])
   end
 
   def show
     @item = Item.find(params[:id])
     @cart_item = CartItem.new
+  end
+  
+  def search
+    @items = Item.search(params[:search])
+    @keyword = params[:search]
+    render "index"
   end
 
 end
