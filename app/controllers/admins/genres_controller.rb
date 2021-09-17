@@ -5,10 +5,10 @@ class Admins::GenresController < ApplicationController
   end
   
   def create
+    @genres = Genre.all
     @genre = Genre.new(genre_params)
     if @genre.save
       @genres = Genre.all
-      render 'index', notice: "You have created genre successfully."
     else
       @genres = Genre.all
       render 'index'
