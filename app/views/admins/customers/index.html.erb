@@ -2,12 +2,13 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-
+<%= link_to "登録が新しい順", admins_customers_path(sort: 'created_at DESC') %> | <%= link_to "登録が古い順", admins_customers_path(sort: 'created_at ASC') %>
 <table class='table'>
   <thead>
     <tr>
       <th>名前</th>
-      <th>最終ステータス</th>
+      <th>ステータス</th>
+      <th>購入回数</th>
       <th></th>
     </tr>
   </thead>
@@ -15,8 +16,9 @@
     <% @customers.each do |customers| %>
       <tr>
         <td><%= customers.last_name %> <%= customers.first_name %></td>
-        <td>co</td>
-        <td><%= link_to 'Show', admins_customer_path(customers) %> </td>
+        <td><%= customers.is_deleted %></td>
+        <td><%= customers.orders.count %></td>
+        <td><%= link_to '詳細', admins_customer_path(customers) %> </td>
       </tr>
     <% end %>
   </tbody>
