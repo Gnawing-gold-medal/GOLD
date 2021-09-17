@@ -22,8 +22,7 @@ li {
   font-family: 'FontAwesome', sans-serif;
 }
 
-/* Simple Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+
 
 /* body */
 body {
@@ -39,6 +38,7 @@ body {
   padding: 0 1em;
   max-width: 370px;
   height: 380px;
+  border-radius: 30px;
 }
 
 h1 {
@@ -73,7 +73,6 @@ form {
 }
 
 .button-panel {
-  margin: 2em 0 0;
   width: 100%;
 }
 
@@ -110,4 +109,12 @@ form {
 
 .form-footer a:hover {
   border-bottom: 1px dotted #8c8c8c;
+}
+
+.login {
+  margin-left: 40px;
+}
+
+.btn-log {
+  margin-top: 30px;
 }
