@@ -5,7 +5,7 @@
       
       <h2>ジャンル編集</h2>
       
-      <%= form_with model:@genre,local:true do |f| %>
+      <%= form_with model:@genre, url: admins_genre_path(@genre),local:true do |f| %>
         <%= f.label :ジャンル名 %>
         <%= f.text_field :name, class: 'form-control' %>
         <%= f.submit class: 'btn btn-success' %>
