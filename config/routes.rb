@@ -13,13 +13,14 @@ Rails.application.routes.draw do
   root :to => "customers/items#top"
   get "items/about" => "customers/items#about"
 
-  resources :genres
+  
   resources :order_items do
     resources :items
   end
 
 
   namespace :admins do
+    resources :genres
     resources :items
     resources :orders
     resources :customers
