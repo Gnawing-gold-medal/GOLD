@@ -45,14 +45,14 @@
           
           <tr>
             <td>会員ステータス</td>
-            <td><%= @status %></td>
+            <td><%= @customer.is_deleted %></td>
           </tr>
           
         </tbody>
       </table>
       
       <%= link_to '編集する', edit_admins_customer_path(@customer) %>
-      <%= link_to '注文一覧を見る', admins_customers_path(@customer) %>
+      <%= link_to '注文一覧を見る', admins_orders_path %>
     
     </div>
   </div>
