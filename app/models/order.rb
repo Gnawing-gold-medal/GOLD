@@ -7,7 +7,7 @@ class Order < ApplicationRecord
   def self.search(method)
     if method == '入金待ち'
       Order.where(status: 0)
-    elsif method == 1
+    elsif method == "入金確認"
       Order.where(status: 1)
     elsif method == '製作中'
       Order.where(status: 2)
