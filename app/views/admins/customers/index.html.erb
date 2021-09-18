@@ -1,8 +1,8 @@
 <%= render 'admins/admin_sidebar' %>
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-<%= link_to "登録が新しい順", admins_customers_path(sort: 'created_at DESC') %> | <%= link_to "登録が古い順", admins_customers_path(sort: 'created_at ASC') %>
+    <div class="col-sm-12 col-md-10 col-lg-8 px-5 px-sm-0 mx-auto">
+<%= link_to "登録が新しい順", admins_customers_path(sort: 'created_at DESC'), class: "btn btn-outline-secondary btn-sm" %> | <%= link_to "登録が古い順", admins_customers_path(sort: 'created_at ASC'), class: "btn btn-outline-secondary btn-sm" %>
 <table class='table'>
   <thead>
     <tr>
@@ -18,7 +18,7 @@
         <td><%= customers.last_name %> <%= customers.first_name %></td>
         <td><%= customers.is_deleted %></td>
         <td><%= customers.orders.count %></td>
-        <td><%= link_to '詳細', admins_customer_path(customers) %> </td>
+        <td><%= link_to '詳細', admins_customer_path(customers), class: "btn btn-outline-success" %> </td>
       </tr>
     <% end %>
   </tbody>
