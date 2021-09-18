@@ -1,7 +1,7 @@
 <%= render 'admins/admin_sidebar' %>
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <div class="col-sm-12 col-md-10 col-lg-8 col-lg-5 px-5 px-sm-0 mx-auto">
       
 <%= render 'search' %>
 
@@ -29,7 +29,7 @@
             <%= @sum %>
         </td>
         <td><%= orders.status %></td>
-        <td><%= link_to '詳細', admins_order_path(orders) %></td>
+        <td><%= link_to '詳細', admins_order_path(orders), class: "btn btn-outline-success" %></td>
       </tr>
     <% end %>
   </tbody>
