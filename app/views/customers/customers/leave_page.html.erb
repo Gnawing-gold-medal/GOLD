@@ -1,8 +1,12 @@
-<div>
-  <h1>本当に辞職しますか？</h2>
-  <p>辞職する場合は、『辞職する』をクリックしてください。</p>
-  <div>
-    <%= link_to '辞職しない', edit_customers_customer_path(@customer), class: "btn btn-success" %>
-    <%= link_to "辞職する", leave_customers_customer_path(@customer),method: :patch, class: "btn btn-danger" %>
+<div class="leave-area">
+  <h2>本当に退会しますか？</h2>
+  <div class="leave-comment">
+    <p>退会すると会員情報や<br>
+      これまでの購入履歴が閲覧できなくなります。<br>
+      退会する場合は、「退会する」をクリックしてください。</p>
+  </div>
+  <div class="leave-btn">
+    <div class="mypage"><%= link_to 'マイページへ戻る', customers_customer_path(@customer), class: "btn btn-secondary" %></div>
+    <div class="leave"><%= link_to "退会する", leave_customers_customer_path(@customer),method: :patch, class: "btn btn-secondary" %></div>
   </div>
 </div>
