@@ -1,3 +1,12 @@
+<div id="cart_box__flow_state" class="flowline step4">
+  <ul id="cart_box__flow_state_list" class="clearfix">
+    <li class="active"><span class="flow_number">1</span><br>カートの商品</li>
+    <li><span class="flow_number">2</span><br>お客様情報</li>
+    <li><span class="flow_number">3</span><br>ご注文内容確認</li>
+    <li><span class="flow_number">4</span><br>完了</li>
+  </ul>
+</div>
+
 <h3>注文情報</h3>
 <h5>注文情報入力</h5>
 <%= form_with(model: @order,url: log_customers_customer_orders_path(@customer.id),method: :post, local: true) do |f| %>

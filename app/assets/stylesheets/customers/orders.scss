@@ -1,3 +1,61 @@
 // Place all the styles related to the customers/orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.index-box h3 {
+  text-align: center;
+}
+
+.order-index {
+  width: 100%;
+  font-weight: 600;
+}
+
+.index-box table{
+  margin: 0 auto;
+  padding: 20px;
+  width: 900px;
+}
+
+
+.index-box table {
+  background-color: white;
+  border-radius: 20px;
+}
+
+.index-border  {
+  border-top: 1px solid black;
+}
+
+.order-contents {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.order-contents h5 {
+  font-weight: 900;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.left-side,
+.right-side{
+  margin: 50px;
+}
+
+.info {
+  margin-top: 30px;
+}
+
+.cost-table  {
+  width: 280px;
+}
+
+.info-table li {
+  margin: 10px 0 ;
+}
