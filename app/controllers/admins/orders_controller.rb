@@ -1,6 +1,6 @@
 class Admins::OrdersController < ApplicationController
   def index
-    @orders = Order.page(params[:page]).per(20)
+    @orders = Order.search(params[:method]).page(params[:page]).per(20)
   end
 
   def show

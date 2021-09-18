@@ -16,10 +16,6 @@ class Customers::ItemsController < ApplicationController
     @cart_item = CartItem.new
   end
   
-  def search
-    @items = Item.search(params[:search])
-    @keyword = params[:search]
-    render "index"
-  end
+
 
 end
