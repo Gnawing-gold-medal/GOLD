@@ -1,14 +1,13 @@
 <div class='container'>
   <div class='row'>
-    <div class='col-md-10 mx-auto mt-4'>
-      <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-      <script type="text/javascript"></script>
-      <div id="photo">
-        <img src="assets/top_cheesecake.jpg" height="500" alt="">
-        <img src="assets/top_mountain.jpg" height="500" alt="">
-        <img src="assets/top_strawberrycake.jpg" height="500" alt="">
-        <img src="assets/top.jpeg" height="500" alt="">
-        <img src="assets/top_cupcake.jpeg" height="500" alt="">
+    <div class='col-md-10 mx-auto mt-2'>
+      <div class="main_imgBox">
+        <div class="main_img" style="background-image: url(assets/top/cheesecake.jpg)"></div>
+        <div class="main_img" style="background-image: url(assets/top/mountain.jpg)"></div>
+        <div class="main_img" style="background-image: url(assets/top/strawberrycake.jpg)"></div>
+        <div class="main_img" style="background-image: url(assets/top/cupcake.jpeg)"></div>
+        <div class="main_img" style="background-image: url(assets/top/loghouse.jpeg)"></div>
+        <div class="main_img" style="background-image: url(assets/top/meringue.jpeg)"></div>
       </div>
       <div class="text-center my-5">
         ようこそ、ながのCAKEへ！<br><br>
@@ -20,12 +19,11 @@
         <h3 class="mt-5">新着商品</h3>
         <div class="item-index d-flex flex-wrap mt-3">
           <% @items.last(4).reverse_each do |item| %>
-            <div class="item-box mx-2">
+            <div class="item-box mx-2 text-center">
               <%= link_to customers_item_path(item), class: "link-style" do %>
-                <%= attachment_image_tag item, :image, size:"200x160" %><br>
+                <%= attachment_image_tag item, :image, size:"200x160", style:"border-radius:5%" %><br>
                 <%= item.name %>
-              <% end %>
-              <br>
+              <% end %><br>
               ￥<%= item.taxin_price.to_s(:delimited) %>
             </div>
           <% end %>

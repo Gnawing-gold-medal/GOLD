@@ -17,16 +17,36 @@ Address.create(customer_id: 1, name: "大村秀章",postal_code: "1234567",addre
 Address.create(customer_id: 1, name: "高須克弥",postal_code: "1111111",address: "愛知")
 
 Genre.create!(name: "ケーキ")
+Genre.create!(name: "ホールケーキ")
 Genre.create!(name: "プリン")
 Genre.create!(name: "焼き菓子")
 Genre.create!(name: "キャンディ")
 
-Item.create!(genre_id: 1, name: "ショートケーキ", introduction: "栃木県産のとちおとめを使用しています。", price: 400, is_active: true, image: open("./app/assets/images/shortcake.jpg"))
-Item.create!(genre_id: 1, name: "チーズケーキ", introduction: "美味しい", price: 1000, is_active: true, image: open("./app/assets/images/cheesecake.jpg"))
-Item.create!(genre_id: 1, name: "チョコケーキ", introduction: "甘い", price: 600, is_active: true, image: open("./app/assets/images/chocolatecake.jpg"))
-Item.create!(genre_id: 1, name: "モンブランケーキ", introduction: "和栗を使用", price: 800, is_active: true, image: open("./app/assets/images/montblanccake.jpg"))
-Item.create!(genre_id: 3, name: "マカロン", introduction: "かわいい", price: 400, is_active: true, image: open("./app/assets/images/makaroons.jpg"))
-Item.create!(genre_id: 4, name: "キャンディ", introduction: "キャンディの詰め合わせ", price: 400, is_active: false, image: open("./app/assets/images/candy.jpg"))
+Item.create!(genre_id: 1, name: "ショートケーキ", introduction: "長野県産の「章姫(あきひめ)」を使用しています。", price: 500, is_active: true, image: open("./app/assets/images/cake/shortcake.jpg"))
+Item.create!(genre_id: 1, name: "チョコレートケーキ", introduction: "ココアスポンジにチョコレートクリームとビターな味わいのガナッシュを重ねた、ワンランク上のチョコレートケーキです。", price: 550, is_active: true, image: open("./app/assets/images/cake/chocolatecake.jpg"))
+Item.create!(genre_id: 1, name: "モンブラン", introduction: "香り豊かな和栗の味わいが楽しめるモンブランです。", price: 500, is_active: true, image: open("./app/assets/images/cake/montblanccake.jpg"))
+Item.create!(genre_id: 1, name: "ロールケーキ", introduction: "国産フルーツが彩りあざやかなロールケーキです。", price: 450, is_active: true, image: open("./app/assets/images/cake/rollcake.jpg"))
+Item.create!(genre_id: 1, name: "アプリコットタルト", introduction: "蜜漬けのあんずを贅沢に使用したタルトです。", price: 700, is_active: true, image: open("./app/assets/images/cake/apricottart.jpg"))
+Item.create!(genre_id: 1, name: "苺のチーズケーキ", introduction: "濃厚なストロベリーソースを贅沢に使用したチーズケーキです。", price: 600, is_active: true, image: open("./app/assets/images/cake/strawberrycheesecake.jpg"))
+Item.create!(genre_id: 1, name: "苺のタルト", introduction: "サクサクのタルト生地にフレッシュな苺をたっぷり飾り、ストロベリーソースで仕上げました。", price: 550, is_active: true, image: open("./app/assets/images/cake/strawberrytart.jpg"))
+
+Item.create!(genre_id: 2, name: "ブルーベリータルト(ホール)", introduction: "サクサクのタルト生地にフレッシュなブルーベリーをたっぷり飾りました。", price: 1000, is_active: true, image: open("./app/assets/images/wholecake/blueberrytart.jpg"))
+Item.create!(genre_id: 2, name: "チーズケーキ(ホール)", introduction: "クリームチーズをメインにマスカルポーネ、カマンベールをアクセントに加えたこだわりのチーズケーキです。", price: 1200, is_active: true, image: open("./app/assets/images/wholecake/cheesecake.jpg"))
+Item.create!(genre_id: 2, name: "チョコレートケーキ(ホール)", introduction: "濃厚なチョコレートケーキです。", price: 1100, is_active: false, image: open("./app/assets/images/wholecake/chocolatecake.jpg"))
+Item.create!(genre_id: 2, name: "フルーツタルト(ホール)", introduction: "サクサクのタルト生地にフレッシュなフルーツをたっぷり飾りました。", price: 1000, is_active: true, image: open("./app/assets/images/wholecake/fruitstart.jpg"))
+Item.create!(genre_id: 2, name: "苺のタルト(ホール)", introduction: "サクサクのタルト生地にフレッシュな苺をたっぷり飾り、ストロベリーソースで仕上げました。", price: 1100, is_active: true, image: open("./app/assets/images/wholecake/strawberrytart.jpg"))
+
+Item.create!(genre_id: 3, name: "フルーツプリン", introduction: "フルーツをたっぷり乗せたミルクプリンです。", price: 400, is_active: true, image: open("./app/assets/images/pudding/pudding.jpg"))
+
+Item.create!(genre_id: 4, name: "チョコレートマフィン", introduction: "濃厚なチョコレートの味わいを楽しめるマフィンです。", price: 400, is_active: true, image: open("./app/assets/images/baked/chocolatemuffins.jpg"))
+Item.create!(genre_id: 4, name: "クリスマスクッキー", introduction: "クリスマスにぴったりなかわいいクッキーです。", price: 450, is_active: false, image: open("./app/assets/images/baked/cristmascookie.jpg"))
+
+Item.create!(genre_id: 4, name: "マカロン", introduction: "ショコラ、アールグレイ、バニラの3種類がセットになっています。", price: 700, is_active: true, image: open("./app/assets/images/baked/makaron.jpg"))
+Item.create!(genre_id: 4, name: "オレンジケーキ", introduction: "オレンジピールを贅沢に使用し、ビターなチョコレートでコーティングしました。", price: 500, is_active: true, image: open("./app/assets/images/baked/orangecake.jpg"))
+Item.create!(genre_id: 4, name: "スコーン", introduction: "サクサクのスコーンに、別添えのフルーツジャムをかけてお召し上がりください。", price: 450, is_active: true, image: open("./app/assets/images/baked/scones.jpg"))
+
+Item.create!(genre_id: 5, name: "キャンディ", introduction: "カラフルなキャンディの瓶詰めです。", price: 500, is_active: true, image: open("./app/assets/images/candy/candy.jpg"))
+
 
 CartItem.create!(item_id: 1, customer_id: 1, amount: 2)
 CartItem.create!(item_id: 2, customer_id: 1, amount: 3)

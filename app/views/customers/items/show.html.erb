@@ -2,10 +2,10 @@
   <div class='row'>
     <div class='col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 item-show'>
       <div class="item-image">
-        <%= attachment_image_tag @item, :image, size:"400x270" %>
+        <%= attachment_image_tag @item, :image, size:"400x270", style:"border-radius:5%" %>
       </div>
       <div class="item-detail">
-        <p class="item-name"><%= @item.name %></p><br>
+        <p class="item-show-name"><%= @item.name %></p><br>
         <%= @item.introduction %><br><br>
         ￥<%= @item.taxin_price.to_s(:delimited) %>（税込）<br><br>
         <% if @item.is_active == true %>
@@ -15,8 +15,9 @@
             <%= f.submit "カートに入れる", class: "btn btn-success" %>
           <% end %>
         <% else %>
-          <p>sold out</p>
+          <p class="sold-out">sold out</p>
         <% end %>
+        <br><br><br>
         <%= link_to "一覧に戻る", customers_items_path %>
       </div>
     </div>
