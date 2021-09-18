@@ -1,33 +1,51 @@
-<h1>マイページ</h1>
-<table>
-  <tr>
-    <td><h4>登録情報</h4></td>
-    <td><%= link_to "編集する", edit_customers_customer_path(@customer.id), class: "btn btn-success" %></td>
-  </tr>
-  <tr>
-    <td>氏名</td>
-    <td><%= @customer.last_name %><%= @customer.first_name %></td>
-  </tr>
-  <tr>
-    <td>カナ</td>
-    <td><%= @customer.last_name_kana %><%= @customer.first_name_kana %></td>
-  </tr>
-  <tr>
-    <td>郵便番号</td>
-    <td><%= @customer.postal_code %></td>
-  </tr>
-  <tr>
-    <td>住所</td>
-    <td><%= @customer.address %></td>
-  </tr>
-  <tr>
-    <td>電話番号</td>
-    <td><%= @customer.telephone_number %></td>
-  </tr>
-  <tr>
-    <td>メールアドレス</td>
-    <td><%= @customer.email %></td>
-  </tr>
-</table>
-<%= link_to "配送先一覧を見る", customers_customer_addresses_path(@customer), class: "btn btn-info"  %>
-<%= link_to "注文履歴一覧を見る", customers_customer_orders_path(@customer), class: "btn btn-info" %>
+
+<h1 class= "profile-title">my page</h1>
+<div class= "profile-body">
+    <header class="leftNavigation">
+      <div class= "leftNavigation-list" >
+        <div class="profile-content">
+          <%= link_to customers_customer_orders_path(@customer),class: "a-tag" do %>
+            <div class="order-list"><i class="fas fa-shopping-cart"></i>注文履歴</div>
+          <% end %>
+        </div>
+        <div class="profile-content">
+          <%= link_to edit_customers_customer_path(@customer.id),class: "a-tag" do %>
+            <div class="order-list"><i class="fas fa-user-edit"></i>会員情報編集</div>
+          <% end %></div>
+        <div class="profile-content"> <%= link_to customers_customer_addresses_path(@customer),class: "a-tag" do %>
+              <div class="order-list"><i class="fas fa-truck tarck-i"></i>登録配達先</div>
+            <% end %>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <table>
+        <tr>
+          <th><p class= "profile-th">氏名</p></th>
+          <td><p class= "profile-td"><%= @customer.last_name %><%= @customer.first_name %></p></td>
+        </tr>
+        <tr>
+          <th><p class= "profile-th">カナ</p></th>
+          <td><p class= "profile-td"><%= @customer.last_name_kana %><%= @customer.first_name_kana %></p></td>
+        </tr>
+         <tr>
+          <th><p class= "profile-th">メールアドレス</p></th>
+          <td><p class= "profile-td"><%= @customer.email %></p></td>
+        </tr>
+        <tr>
+          <th><p class= "profile-th">郵便番号</p></th>
+          <td><p class= "profile-td"><%= @customer.postal_code %></p></td>
+        </tr>
+        <tr>
+          <th><p class= "profile-th">住所</p></th>
+          <td><p class= "profile-td"><%= @customer.address %></p></td>
+        </tr>
+        <tr>
+          <th><p class= "profile-th">電話番号</p></th>
+          <td><p class= "profile-td"><%= @customer.telephone_number %></p></td>
+        </tr>
+      </table>
+    </div>
+</div>
+
+

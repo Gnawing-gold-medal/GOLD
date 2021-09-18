@@ -3,14 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 * {
   padding: 0;
-  marge: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
 li {
   list-style: none;
 }
-
 
 
 /* Fonts */
@@ -136,3 +135,80 @@ h2 {
   padding: 20px;
   border-top: 1px solid #D2B48C;
 }
+
+
+
+
+
+.profile-body{
+    display: flex;
+    width: 800px;
+    margin: 0 auto;
+}
+
+
+
+.leftNavigation{
+    width: 250px;
+    text-align: center;
+    color: #fff;
+}
+.content{
+    background-color: #eee;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+th,td {
+  padding: 15px;
+}
+
+.profile-th,.profile-td {
+  text-align: left;
+}
+
+.profile-td {
+  font-size: 20px;
+}
+
+.profile-title {
+  padding-top: 0;
+}
+
+.order-list {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  color: white;
+  transition: 0.5s ;
+  border-radius: 10px;
+}
+
+.order-list:hover {
+  text-decoration: none!important;
+  background-color: #BBBBBB;
+}
+
+
+.leftNavigation ul {
+  display: flex;
+  flex-flow: column;
+  justify-content: center-between;
+}
+
+.leftNavigation-list {
+  display:flex;
+  flex-flow: column;
+}
+.profile-content {
+  background-color:#888;
+  margin: 15px auto;
+  width: 70%;
+   border-radius: 10px;
+}
+
+.a-tag:hover {
+  text-decoration: none!important;
+}
+
