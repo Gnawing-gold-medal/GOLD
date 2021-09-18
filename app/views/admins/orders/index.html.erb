@@ -37,6 +37,85 @@
 
 <%= paginate @orders %>
 
+<h3>オーダー数の前日比・前週比</h3>
+  <div class="table_width">
+    <table class='table table-bordered'>
+      <thead>
+        <tr>
+          <th>今日のオーダー数</th>
+          <th>前日のオーダー数</th>
+          <th>前日比</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%=  @orders.created_today.count %></td>
+          <td><%= @orders.created_yesterday.count %></td>
+          <td>
+            <% if @orders.created_yesterday.count == 0 %>
+              前日のオーダーが0のため計算できません
+            <% else %>
+              <% @the_day_before =   @orders.created_today.count / @orders.created_yesterday.count.to_f  %>
+              <%= (@the_day_before * 100).round %>%
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table_width">
+    <table class='table table-bordered'>
+      <thead>
+        <tr>
+          <th>今週のオーダー数</th>
+          <th>前週のオーダー数</th>
+          <th>前週比</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @orders.created_this_week.count %></td>
+          <td><%= @orders.created_last_week.count %></td>
+          <td>
+            <% if @orders.created_last_week.count == 0 %>
+              前週のオーダーが0のため計算できません
+            <% else %>
+              <% @the_week_before = @orders.created_this_week.count / @orders.created_last_week.count.to_f  %>
+              <%= (@the_week_before * 100).round %>%
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+<h4>7日間分のオーダー数</h4>
+  <table class='table table-bordered'>
+    <thead>
+      <tr> 
+        <th>６日前</th>
+        <th>５日前</th>
+        <th>４日前</th>
+        <th>３日前</th>
+        <th>２日前</th>
+        <th>１日前</th>
+        <th>今日</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @orders.created_6day_ago.count %></td>
+        <td><%= @orders.created_5day_ago.count %></td>
+        <td><%= @orders.created_4day_ago.count %></td>
+        <td><%= @orders.created_3day_ago.count %></td>
+        <td><%= @orders.created_2day_ago.count %></td>
+        <td><%= @orders.created_yesterday.count %></td>
+        <td><%= @orders.created_today.count %></td>
+      </tr>
+    </tbody>
+  </table>
+
     </div>
   </div>
 </div>
+
