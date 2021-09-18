@@ -12,7 +12,6 @@ Rails.application.routes.draw do
 
   root :to => "customers/items#top"
   get "items/about" => "customers/items#about"
-  get 'search' => 'customers/items#search'
   
   resources :order_items do
     resources :items
