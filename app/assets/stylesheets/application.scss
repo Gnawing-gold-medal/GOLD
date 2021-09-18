@@ -67,7 +67,7 @@ body {
     margin-top: 0px;
     transform: translateX(-250px);
     transition: transform 250ms ease-in-out;
-    background: linear-gradient(180deg, #006400 0%, #F0FFF0	 100%);
+    background: linear-gradient(180deg, #8B4513 0%, #FFFACD 100%);
 }
 .sidebarMenuInner{
     margin:0;
@@ -193,10 +193,3 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   background: darken(#f9f9f9, 10%);
   color: darken(#f9f9f9, 50%);
  }
-
-
-.login_body{
-    background: radial-gradient(#CD853F, #FAEBD7);
-    height: auto;
-    padding: 10rem 0;
-}
