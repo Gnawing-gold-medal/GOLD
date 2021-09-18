@@ -16,7 +16,12 @@
     <% @customers.each do |customers| %>
       <tr>
         <td><%= customers.last_name %> <%= customers.first_name %></td>
-        <td><%= customers.is_deleted %></td>
+        <td><% if customers.is_deleted == false %>
+              有効
+            <% else %>
+              退会
+            <% end %>
+        </td>
         <td><%= customers.orders.count %></td>
         <td><%= link_to '詳細', admins_customer_path(customers), class: "btn btn-outline-success" %> </td>
       </tr>
@@ -25,6 +30,84 @@
 </table>
 
 <%= paginate @customers %>
+
+    <h3>登録数の前日比・前週比</h3>
+  <div class="table_width">
+    <table class='table table-bordered'>
+      <thead>
+        <tr>
+          <th>今日の登録数</th>
+          <th>前日の登録数</th>
+          <th>前日比</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%=  @customers.created_today.count %></td>
+          <td><%= @customers.created_yesterday.count %></td>
+          <td>
+            <% if @customers.created_yesterday.count == 0 %>
+              前日の投稿が0のため計算できません
+            <% else %>
+              <% @the_day_before =   @customers.created_today.count / @customers.created_yesterday.count.to_f  %>
+              <%= (@the_day_before * 100).round %>%
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table_width">
+    <table class='table table-bordered'>
+      <thead>
+        <tr>
+          <th>今週の登録数</th>
+          <th>前週の登録数</th>
+          <th>前週比</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @customers.created_this_week.count %></td>
+          <td><%= @customers.created_last_week.count %></td>
+          <td>
+            <% if @customers.created_last_week.count == 0 %>
+              前週の登録が0のため計算できません
+            <% else %>
+              <% @the_week_before = @customers.created_this_week.count / @customers.created_last_week.count.to_f  %>
+              <%= (@the_week_before * 100).round %>%
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+<h4>7日間分の登録者</h4>
+  <table class='table table-bordered'>
+    <thead>
+      <tr>
+        <th>６日前</th>
+        <th>５日前</th>
+        <th>４日前</th>
+        <th>３日前</th>
+        <th>２日前</th>
+        <th>１日前</th>
+        <th>今日</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @customers.created_6day_ago.count %></td>
+        <td><%= @customers.created_5day_ago.count %></td>
+        <td><%= @customers.created_4day_ago.count %></td>
+        <td><%= @customers.created_3day_ago.count %></td>
+        <td><%= @customers.created_2day_ago.count %></td>
+        <td><%= @customers.created_yesterday.count %></td>
+        <td><%= @customers.created_today.count %></td>
+      </tr>
+    </tbody>
+  </table>
 
     </div>
   </div>
