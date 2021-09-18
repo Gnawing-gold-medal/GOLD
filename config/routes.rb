@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'search/search'
   devise_for :admins, controllers: {
    sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -11,8 +12,9 @@ Rails.application.routes.draw do
 }
 
   root :to => "customers/items#top"
-  get "items/about" => "customers/items#about"
-  
+  get "about" => "customers/items#about"
+  get "search" => "search#search"
+
   resources :order_items do
     resources :items
   end

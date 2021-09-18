@@ -89,7 +89,7 @@
 }
 
 .item-show-name {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   width: 400px;
 }
@@ -111,4 +111,19 @@
 
 .sold-out {
   width: 400px;
+}
+
+.pagination {
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.genre-search {
+  margin: 0 20px;
+  color: #BE9B65;
+}
+
+.genre-search:hover {
+  text-decoration: none;
+  color: #BE9B65;
 }
