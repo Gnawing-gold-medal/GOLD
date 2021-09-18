@@ -3,12 +3,12 @@
 <%= form_with(model: @order,url: log_customers_customer_orders_path(@customer.id),method: :post, local: true) do |f| %>
   <h6>支払方法</h6>
   <div>
-    <%= f.label :payment_method_card,  "クレジットカード" %>
-    <%= f.radio_button :payment_method, :card, checked: true%>
+    <%= f.label :payment_method,  "クレジットカード"  %>
+    <%= f.radio_button :payment_method, :クレジットカード, checked: true%>
   </div>
   <div>
-    <%= f.label :payment_method_transfer, "銀行振込" %>
-    <%= f.radio_button :payment_method, :transfer %>
+    <%= f.label :payment_method, "銀行振込" %>
+    <%= f.radio_button :payment_method, :銀行振込 %>
   </div>
   <h6>お届け先</h6>
   <table>
