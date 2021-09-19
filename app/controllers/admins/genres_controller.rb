@@ -4,6 +4,13 @@ class Admins::GenresController < ApplicationController
     @genre = Genre.new
   end
   
+  def show
+    @genres = Genre.all
+    @genre = Genre.find(params[:id])
+    @items = @genre.items.page(params[:page]).per(8)
+    @amount = @genre.items.count
+  end
+  
   def create
     @genres = Genre.all
     @genre = Genre.new(genre_params)
