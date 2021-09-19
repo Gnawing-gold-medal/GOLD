@@ -1,6 +1,13 @@
 class Admins::OrdersController < ApplicationController
   def index
     @orders = Order.search(params[:method]).page(params[:page]).per(20)
+    @data = [[Date.today.ago(6.days), @orders.created_6day_ago.count], 
+    [Date.today.ago(5.days), @orders.created_5day_ago.count], 
+    [Date.today.ago(4.days), @orders.created_4day_ago.count], 
+    [Date.today.ago(3.days), @orders.created_3day_ago.count], 
+    [Date.today.ago(2.days), @orders.created_2day_ago.count], 
+    [Date.yesterday, @orders.created_yesterday.count], 
+    [Date.today, @orders.created_today.count]]
   end
 
   def show
