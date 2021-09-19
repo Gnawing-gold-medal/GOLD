@@ -1,11 +1,11 @@
 <%= render 'admins/admin_sidebar' %>
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-      <h3>商品新規登録</h3>
+    <div class="col-sm-12 col-md-9 col-lg-6 px-5 px-sm-0 mx-auto">
+      <h3 class="text-center">商品新規登録</h3>
       <%= form_with model: @item, url: admins_items_path, local:true do |f| %>
         <%= render 'form', f: f %>
-        <div class="form-group">
+        <div class="form-group row justify-content-center mt-3">
           <%= f.submit "新規登録", class: 'btn btn-success' %>
         </div>
       <% end %>
