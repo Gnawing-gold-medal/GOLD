@@ -8,15 +8,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
-    
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
-    <main>
-      <%= yield %>
-    </main>
-    <%= render 'layouts/footer' %>
+    <div id="wrapper">
+      <%= render 'layouts/header' %>
+      <main>
+        <%= yield %>
+      </main>
+      <%= render 'layouts/footer' %>
+    </div
   </body>
 </html>

@@ -65,7 +65,7 @@
 
 .about-image {
   height: 500px;
-  padding-top: 130px;
+  padding-top: 80px;
   text-align: center;
   text-shadow: white 0 0 5px;
   background-image: image-url('top/meringue.jpg');
@@ -100,17 +100,21 @@
   margin: 100px auto 100px;
 }
 
-.item-detail{
-  margin: 0 50px;
-  width: 400px;
+.item-image, .item-detail {
+  margin: 0 20px;
 }
 
 .item-detail form {
   padding: 0;
 }
 
-.sold-out {
+.sold-out-show {
   width: 400px;
+  color: #E82C31;
+}
+
+.sold-out {
+  color: #E82C31;
 }
 
 .pagination {
