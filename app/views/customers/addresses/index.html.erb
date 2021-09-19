@@ -3,23 +3,31 @@
   <div class="main-area">
 
     <div class= "left-area">
-      <% @addresses.each do |address| %>
-        <table>
-          <tr>
-            <td>〒<%= address.postal_code %></td>
-          </tr>
-          <tr>
-            <td><%= address.address %></td>
-          </tr>
-          <tr>
-            <td><%= address.name %></td>
-          </tr>
-            <td>
-              <%= link_to "編集", edit_customers_customer_address_path(current_customer.id,address.id), class: "btn btn-secondary btn-sm" %></div>
-              <%= link_to "削除", customers_customer_address_path(current_customer.id,address.id),method: :delete, class: "btn btn-secondary btn-sm" %>
-            </td>
-          </tr>
-        </table>
+      <% if @addresses.count == 0 %>
+          <table>
+            <tr>
+              <td>登録されている配送先はありません</td>
+            </tr>
+          </table>
+      <% else %>
+        <% @addresses.each do |address| %>
+          <table>
+            <tr>
+              <td>〒<%= address.postal_code %></td>
+            </tr>
+            <tr>
+              <td><%= address.address %></td>
+            </tr>
+            <tr>
+              <td><%= address.name %></td>
+            </tr>
+              <td>
+                <%= link_to "編集", edit_customers_customer_address_path(current_customer.id,address.id), class: "btn btn-secondary btn-sm" %></div>
+                <%= link_to "削除", customers_customer_address_path(current_customer.id,address.id),method: :delete, class: "btn btn-secondary btn-sm" %>
+              </td>
+            </tr>
+          </table>
+        <% end %>
       <% end %>
     </div>
 
