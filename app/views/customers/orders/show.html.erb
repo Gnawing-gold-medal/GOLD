@@ -1,9 +1,9 @@
-<h3>注文履歴詳細</h3>
+<h3 class="order-show-title">注文履歴詳細</h3>
 <div class= "order-contents">
 
   <div class="left-side">
     <div class= "order-content">
-      <h5>注文内容</h5>
+      <h5 class=" w-75">注文内容</h5>
       <table class="order-table">
         <tr>
           <th>商品</th>
@@ -14,7 +14,7 @@
         <% @order.order_items.each do |order| %>
         <tr>
           <td><%= order.item.name %></td>
-          <td><%= (order.item.taxin_price).to_s(:delimited) %>円</td>
+          <td class="text-center"><%= (order.item.taxin_price).to_s(:delimited) %>円</td>
           <td><%= order.amount %>個</td>
           <td><%= (order.item.taxin_price * order.amount).to_s(:delimited) %>円</td>
         </tr>

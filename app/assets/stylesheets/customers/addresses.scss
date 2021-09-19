@@ -1,3 +1,78 @@
 // Place all the styles related to the customers/addresses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.address-contents h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+.main-area {
+  display: flex;
+  gap: 20px 20px;
+  justify-content: center;
+
+}
+
+.main-area table {
+  border-collapse: initial;
+}
+
+.left-area {
+  width: 500px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.left-area table{
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.left-area td {
+  padding: 2px 5px;
+}
+
+.left-area tr {
+  margin: 10px;
+}
+
+.right-area {
+  margin: 0
+}
+
+.right-area td {
+  padding: 0;
+}
+
+.submit {
+  margin-top: 3rem;
+}
+
+.right-form {
+  width: 500px;
+}
+
+
+
+.address-edit-area h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+.edit-form-area {
+  width: 400px;
+  margin: 0 auto;
+}
+
+
+.edit-form-area table {
+  margin: 0 auto;
+}
+
+.address-form {
+  width: 400px;
+}
