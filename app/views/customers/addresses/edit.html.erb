@@ -1,3 +1,24 @@
+<div class= "address-edit-area">
+  <h3>配送先編集</h3>
+    <div class= "edit-form-area">
+    <%= form_with model: @address, url: customers_customer_address_path(current_customer.id,@address.id), local: true do |f| %>
+      <table>
+        <tr>
+          <td class= "p-0"><p class= "mb-0">郵便番号(ハイフンなし)</p><%= f.text_field :postal_code,class: "bg-white" %></td>
+        </tr>
+        <tr>
+          <td class= "p-0"><p class= "mb-0">住所</p><%= f.text_field :address,class: "bg-white address-form" %></td>
+        </tr>
+        <tr>
+          <td class= "p-0"><p class= "mb-0">宛名</p><%= f.text_field :name,class: "bg-white"  %></td>
+        </tr>
+        <tr>
+          <td class= "p-0"><%= f.submit "新規登録" ,class: "btn btn-secondary submit" %></td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-10 col-lg-8 px-5 px-sm-0 mx-auto">

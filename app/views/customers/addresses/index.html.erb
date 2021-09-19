@@ -1,3 +1,48 @@
+<div class= "address-contents">
+  <h3>配送先登録/一覧</h3>
+  <div class="main-area">
+
+    <div class= "left-area">
+      <% @addresses.each do |address| %>
+        <table>
+          <tr>
+            <td>〒<%= address.postal_code %></td>
+          </tr>
+          <tr>
+            <td><%= address.address %></td>
+          </tr>
+          <tr>
+            <td><%= address.name %></td>
+          </tr>
+            <td>
+              <%= link_to "編集", edit_customers_customer_address_path(current_customer.id,address.id), class: "btn btn-secondary btn-sm" %></div>
+              <%= link_to "削除", customers_customer_address_path(current_customer.id,address.id),method: :delete, class: "btn btn-secondary btn-sm" %>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+
+    <div class="right-area">
+      <%= form_with model: @address,url: customers_customer_addresses_path(current_customer.id),method: :post,local: true do |f| %>
+        <table>
+          <tr>
+            <td><p class= "mb-0">郵便番号(ハイフンなし)</p><%= f.text_field :postal_code,class: "bg-white" %></td>
+          </tr>
+          <tr>
+            <td><p class= "mb-0">住所</p><%= f.text_field :address,class: "bg-white right-form" %></td>
+          </tr>
+          <tr>
+            <td><p class= "mb-0">宛名</p><%= f.text_field :name,class: "bg-white"  %></td>
+          </tr>
+          <tr>
+            <td><%= f.submit "新規登録" ,class: "btn btn-secondary submit" %></td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-10 col-lg-8 px-5 px-sm-0 mx-auto">
