@@ -14,6 +14,25 @@
   margin-bottom: 180px;
 }
 
+.order-index td {
+  padding: 15px;
+}
+
+.order-index th {
+  padding: 15px;
+}
+
+.send th,
+.send td {
+  padding: 30px;
+}
+
+.status th,
+.status td {
+  padding: 20px;
+}
+
+
 .index-box {
   background-color: white;
   width: 70%;
@@ -28,13 +47,13 @@
 }
 
 
-.index-box th,
-.index-box td {
-  padding: 18px;
-}
 
 .index-border  {
   border-top: 1px solid black;
+}
+
+.index-border a {
+  width: 100px;
 }
 
 
@@ -48,11 +67,15 @@
 .order-contents {
   display: flex;
   justify-content: center;
-  width: 60%;
+  width: 70%;
   margin: 0 auto;
   background-color: white;
   border-radius: 20px;
   font-weight: 600;
+}
+
+.order-contents th {
+  padding: 15px;
 }
 
 .order-contents h5 {
@@ -74,12 +97,19 @@
   margin: 50px 50px 50px 10px;
 }
 
+.right-side {
+  margin-right: 0;
+}
+
+
 .info {
   margin-top: 30px;
 }
 
 .cost-table  {
+  margin: 0 auto;
   width: 280px;
+
 }
 
 .info-table li {
@@ -191,4 +221,20 @@
 .order-table img{
   margin-right: 10px;
   border-radius: 40px;
+}
+
+.log-btn {
+  margin: 0 auto;
+}
+.log-btn input {
+  text-align: center;
+  width: 100%;
+}
+
+
+/*.   thanksページ　　　　*/
+.thanks-main {
+  height: 550px;
+  text-align: center;
+  margin-top: 100px;
 }

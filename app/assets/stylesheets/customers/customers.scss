@@ -160,13 +160,20 @@ h3 {
 .private-content{
     background-color: white;
     text-align: center;
+    width: 1000px;
     padding: 10px;
     border-radius: 10px;
 }
 
-th,td {
-  padding: 15px;
+.leftNavigation-list {
+  width: 200px;
 }
+
+
+.private-content th {
+  width: 200px;
+}
+
 
 .profile-th,.profile-td {
   text-align: left;
@@ -182,7 +189,9 @@ th,td {
 
 .order-list {
   display: block;
-  padding: 20px;
+  padding: 10px;
+  height: 60px;
+  line-height: 40px;
   text-decoration: none;
   color: white;
   transition: 0.5s ;
