@@ -81,15 +81,8 @@ body {
     font-size: 14px;
 }
 
-header > .navbar > .container > .collapse {
-    height: 50px;
-}
-
-header > .navbar > .container > .navbar-brand > h1 {
-    height: 50px;
-    vertical-align: middle;
-    margin: 0;
-    padding: 3px;
+.navbar-brand {
+  height: 50px;
 }
 
 body,

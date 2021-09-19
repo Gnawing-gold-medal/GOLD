@@ -96,7 +96,7 @@
 .item-show {
   display: flex;
   justify-content: center;
-  margin: 100px auto 100px;
+  margin: 120px auto
 }
 
 .item-image, .item-detail {
@@ -116,9 +116,68 @@
   color: #E82C31;
 }
 
+.return-index {
+  color: #BE9B65;
+}
+
+.return-index:hover {
+  text-decoration: none;
+  color: #BE9B65;
+}
+
 .pagination {
   justify-content: center;
   margin-top: 50px;
+}
+
+.page > a {
+  color: #BE9B65;
+  padding:3px;
+}
+
+.next > a {
+  color: #BE9B65;
+  padding:3px;
+}
+
+.last > a {
+  color: #BE9B65;
+  padding:3px;
+}
+
+.first > a {
+  color: #BE9B65;
+  padding:3px;
+}
+
+.prev > a {
+  color: #BE9B65;
+  padding:3px;
+}
+
+.page > a:hover {
+  color: #45381F;
+  text-decoration: none;
+}
+
+.next > a:hover {
+  color: #45381F;
+  text-decoration: none;
+}
+
+.last > a:hover {
+  color: #45381F;
+  text-decoration: none;
+}
+
+.first > a:hover {
+  color: #45381F;
+  text-decoration: none;
+}
+
+.prev > a:hover {
+  color: #45381F;
+  text-decoration: none;
 }
 
 .genre-search {
