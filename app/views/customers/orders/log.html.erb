@@ -6,6 +6,7 @@
       <h5 class=" w-75">注文内容</h5>
       <table class="order-table">
         <tr>
+          <th></th>
           <th>商品名</th>
           <th>単価（税込）</th>
           <th>数量</th>
@@ -13,7 +14,8 @@
         </tr>
         <% @cart_items.each do |cart_item| %>
           <tr>
-            <td><%= attachment_image_tag cart_item.item, :image, size: "50x50" %><%= cart_item.item.name %></td>
+            <td><%= attachment_image_tag cart_item.item, :image, size: "50x50" %></td>
+            <td><%= cart_item.item.name %></td>
             <td class="text-center"><%= cart_item.item.taxin_price.to_s(:delimited) %>円</td>
             <td class="text-center"><%= cart_item.amount %></td>
             <td class="text-center"><%= (cart_item.item.taxin_price * cart_item.amount).to_s(:delimited) %>円</td>
@@ -78,7 +80,7 @@
       <%= f.hidden_field :address,value: @order_address%>
       <%= f.hidden_field :name,value: @order_name %>
     <% end %>
-    <%=f.submit '注文を確定する',class: "btn btn-primary" %>
+    <div class="log-btn"><%=f.submit '注文を確定する',class: "btn btn-primary" %></div>
   <% end %>
     </div>
   </div>
