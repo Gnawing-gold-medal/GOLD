@@ -2,6 +2,7 @@ class Admins::CustomersController < ApplicationController
   
   def index
     @customers = Customer.all.order(params[:sort]).page(params[:page]).per(20)
+    @data = [['2019-06-01', @customers.created_6day_ago.count], ['2019-06-02', 200], ['2019-06-03', 150]]
   end
   
   def show
