@@ -1,28 +1,34 @@
 <%= render 'admins/admin_sidebar' %>
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-      <h3>商品詳細</h3>
-      <%= attachment_image_tag @item, :image, size:"300x200" %>
-      <div class="item-detail">
-        <table class="table">
-          <tbody>
-            <tr><th>商品名</th><td><%= @item.name %></td></tr>
-            <tr><th>商品説明</th><td><%= @item.introduction %></td></tr>
-            <tr><th>ジャンル</th><td><%= @item.genre.name %></td></tr>
-            <tr><th>税込価格(税抜価格)</th><td><%= @item.taxin_price.to_s(:delimited) %> (<%= @item.price.to_s(:delimited) %>) 円</td></tr>
-            <tr><th>販売ステータス</th>
-            <td>
-              <% if @item.is_active == true %>
-      					<p>販売中</p>
-      				<% elsif @item.is_active == false %>
-      					<p>販売停止中</p>
-      				<% end %>
-            </td></tr>
-          </tbody>
-        </table>
-        <%= link_to "編集する", edit_admins_item_path(@item), class: "btn btn-success" %>
-        <%= link_to "一覧に戻る", admins_items_path, class: "btn btn-primary" %>
+    <div class="col-sm-12 col-md-9 col-lg-6 px-5 px-sm-0 mx-auto">
+      <h3 class="text-center mb-3">商品詳細</h3>
+      <div class="admin-item-show">
+        <div class="text-center">
+          <%= attachment_image_tag @item, :image, size:"300x200", style:"border-radius:5%" %>
+        </div>
+        <div class="admin-item-show-detail">
+          <table class="table admin-item-show-table">
+            <tbody>
+              <tr><th>商品名</th><td><%= @item.name %></td></tr>
+              <tr><th>商品説明</th><td><%= @item.introduction %></td></tr>
+              <tr><th>ジャンル</th><td><%= @item.genre.name %></td></tr>
+              <tr><th>税込価格(税抜価格)</th><td><%= @item.taxin_price.to_s(:delimited) %> (<%= @item.price.to_s(:delimited) %>) 円</td></tr>
+              <tr><th>販売ステータス</th>
+              <td>
+                <% if @item.is_active == true %>
+        					<p>販売中</p>
+        				<% elsif @item.is_active == false %>
+        					<p>販売停止中</p>
+        				<% end %>
+              </td></tr>
+            </tbody>
+          </table>
+          <div class="text-center">
+            <%= link_to "編集する", edit_admins_item_path(@item), class: "btn btn-success" %>
+            <%= link_to "一覧に戻る", admins_items_path, class: "btn btn-primary" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

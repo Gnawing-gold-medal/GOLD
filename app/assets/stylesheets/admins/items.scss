@@ -1,3 +1,51 @@
 // Place all the styles related to the admins/items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.admin-item-link {
+  color: #B26F28;
+}
+
+.admin-item-link:hover {
+  text-decoration: none;
+  color: #BE9B65;
+}
+
+.is-active-true {
+  color: #3CB22A;
+  margin-bottom: 0;
+}
+
+.is-active-false {
+  color: #E82C31;
+  margin-bottom: 0;
+}
+
+.admin-item-image {
+  background: #DED4C0;
+  color: #45381F;
+  padding: 1px;
+}
+
+.admin-item-show-detail {
+  width: 500px;
+  margin: 20px auto;
+}
+
+.admin-item-show-table th {
+  width: 40%;
+}
+
+.admin-item-form-table {
+  width: 500px;
+}
+
+.admin-item-form-table{
+  th {
+    width: 30%;
+    padding: 10px;
+  }
+  td {
+    padding: 10px;
+  }
+}
