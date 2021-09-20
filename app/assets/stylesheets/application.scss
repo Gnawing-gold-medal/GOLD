@@ -85,15 +85,14 @@ body {
   height: 50px;
 }
 
-body,
-#wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
 }
 
-footer{
-    margin-top: auto;
+main {
+  flex: 1;
 }
 
 #sidebarMenu {
