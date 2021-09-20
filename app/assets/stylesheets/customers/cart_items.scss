@@ -29,9 +29,22 @@
   vertical-align: middle;
 }
 
-.amount-change input {
-  width: 45px;
+.amount-change {
+  width: 50px;
   margin: 0 5px;
   padding: 5px;
-  display: inline-flex；
+  background: #FFF;
+}
+
+.amount-change:focus {
+  border: #FFF;
+  outline: 0;
+}
+
+.amount-change-btn {
+    width: 45px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px;
+    margin: 0 5px;
 }

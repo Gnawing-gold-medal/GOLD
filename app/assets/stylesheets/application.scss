@@ -67,6 +67,42 @@ body {
     font-family: 'Varela Round', sans-serif;
 }
 
+.head-search {
+    width: 150px;
+    background: #FFF;
+    height: 30px;
+    font-size: 14px;
+}
+
+.head-search:focus {
+  border: #FFF;
+  outline: 0;
+}
+
+.head-search-btn {
+    width: 50px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.3rem 0;
+    margin: 0.5rem 0.3rem;
+    height: 30px;
+    font-size: 14px;
+}
+
+.navbar-brand {
+  height: 50px;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 #sidebarMenu {
     height: 100%;
     position: fixed;

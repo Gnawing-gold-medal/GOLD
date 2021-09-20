@@ -1,0 +1,6 @@
+<% if obj.errors.any? %>
+  <%= obj.errors.count %>件のエラーが発生しました
+  <% o.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>

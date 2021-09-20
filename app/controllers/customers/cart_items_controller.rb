@@ -1,4 +1,5 @@
 class Customers::CartItemsController < ApplicationController
+  before_action :authenticate_customer!
 
   def create
     if customer_signed_in?

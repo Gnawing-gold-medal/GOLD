@@ -15,10 +15,10 @@
             <%= f.submit "カートに入れる", class: "btn btn-success" %>
           <% end %>
         <% else %>
-          <p class="sold-out">sold out</p>
+          <p class="sold-out-show">sold out</p>
         <% end %>
         <br><br><br>
-        <%= link_to "一覧に戻る", customers_items_path %>
+        <%= link_to "一覧に戻る", customers_items_path, class:"return-index" %>
       </div>
     </div>
   </div>
