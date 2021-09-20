@@ -1,6 +1,8 @@
-<% if obj.errors.any? %>
-  <%= obj.errors.count %>件のエラーが発生しました
-  <% o.errors.full_messages.each do |message| %>
-    <%= message %>
+<div class= "text-center" style="color: red;" >
+  <% if obj.errors.any? %>
+    <b><%= obj.errors.count %>件のエラーが発生しました</b>
+    <% obj.errors.full_messages.each do |message| %>
+      <ul class="m-0"><li><%= message %></li></ul>
+    <% end %>
   <% end %>
-<% end %>
+</div>

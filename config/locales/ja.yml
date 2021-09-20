@@ -10,3 +10,15 @@ ja:
       payment_method:
         card: 'クレジットカード'
         transfer: '銀行振込'
+
+ja:
+  activerecord:
+    models:
+      item:
+    attributes:
+      item:
+        image: '商品画像'
+        name: '商品名'
+        introduction: '商品説明'
+        genre: 'ジャンル'
+        price: '税抜金額'

@@ -10,5 +10,4 @@ class CartItem < ApplicationRecord
     (price*1.08).round
   end
 
-
 end
