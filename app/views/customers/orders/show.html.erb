@@ -2,14 +2,14 @@
 <div class= "order-contents">
 
   <div class="left-side">
-    <div class= "order-content">
+    <div class= "order">
       <h5 class=" w-75">注文内容</h5>
-      <table class="order-table">
+      <table>
         <tr>
-          <th>商品</th>
-          <th>単価（税込）</th>
-          <th>個数</th>
-          <th>小計</th>
+          <th style="width:30%">商品名</th>
+          <th style="width:20%">単価(税込)</th>
+          <th style="width:20%">数量</th>
+          <th style="width:15%">小計</th>
         </tr>
         <% @order.order_items.each do |order| %>
         <tr>
@@ -26,7 +26,7 @@
   <div class= "right-side">
     <div class= "cost">
       <h5>請求情報</h5>
-      <table class="cost-table">
+      <table>
         <tr>
           <th>商品合計</th>
           <td><%= @total_price.to_s(:delimited) %>円</td>
@@ -45,7 +45,7 @@
 
     <div class= "info">
       <h5>注文情報</h5>
-      <table class="info-table">
+      <table>
         <tr>
           <th>注文日</th>
           <td><%= @order.created_at.strftime("%Y/%m/%d").to_s %></td>
