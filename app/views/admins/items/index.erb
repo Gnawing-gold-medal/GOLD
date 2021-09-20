@@ -5,7 +5,7 @@
       <h3>商品一覧</h3>
       <div class="text-right">
         <%= link_to new_admins_item_path, class: "admin-item-link" do %>
-          <i class="fa fa-plus"></i>
+          <i class="fa fa-plus fa-lg"></i>
         <% end %>
       </div>
       <table class="table">
@@ -45,6 +45,7 @@
         <% end %>
         </tbody>
       </table>
+      <%= paginate @items %>
     </div>
   </div>
 </div>
