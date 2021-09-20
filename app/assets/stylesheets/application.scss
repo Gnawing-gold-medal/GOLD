@@ -97,6 +97,10 @@ header {
   height: 50px;
 }
 
+.navbar-nav li {
+    padding: 3px;
+}
+
 body {
   display: flex;
   flex-flow: column;
