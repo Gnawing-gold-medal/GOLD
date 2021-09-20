@@ -237,3 +237,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   background: darken(#f9f9f9, 10%);
   color: darken(#f9f9f9, 50%);
  }
+
+.navbar-brand {
+    font-size: 35px;
+}
