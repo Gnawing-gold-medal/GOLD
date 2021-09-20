@@ -21,4 +21,4 @@ ja:
         name: '商品名'
         introduction: '商品説明'
         genre: 'ジャンル'
-        price: '税抜金額'
+        price: '税抜価格'
