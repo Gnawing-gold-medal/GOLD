@@ -16,11 +16,13 @@
         <% else %>
           <li><%= link_to ' home',root_path,class: 'fas fa-home nav-link text-light' %></li>
           <li><%= link_to ' about',about_path,class: 'fas fa-link nav-link text-light' %></li>
+          <li><%= link_to ' item',customers_items_path,class: 'fas fa-cookie-bite nav-link text-light' %></li>
           <li><%= link_to ' sign up', new_customer_registration_path,class: 'fas fa-user-plus nav-link text-light' %></li>
           <li><%= link_to ' login', new_customer_session_path ,class: 'fas fa-sign-in-alt nav-link text-light'%></li>
         <% end %>
         </ul>
         <%= render 'layouts/search' %>
+        <%= render 'layouts/guest' %>
       </div>
     </div>
   </nav>
