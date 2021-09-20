@@ -1,5 +1,7 @@
 <div class="container contents w-50">
   <div class="py-5 text-center">
+  <% if @customer.errors.any? %>
+  <% end %>
     <h3>会員情報編集</h3>
   </div>
        <%= form_with model: @customer,url: customers_customer_path(@customer), local: true do |f| %>
@@ -7,25 +9,40 @@
           <div class="col">
             <%=f.label :last_name, "姓" %>
             <%= f.text_field :last_name, autofocus: true, class: "form-control rounded-pill" %>
+            <% if @customer.errors.include?(:last_name) %>
+              <p style="color: red;"><%= @customer.errors.full_messages_for(:last_name).first %>
+            <% end %>
           </div>
           <div class="col-md-6 mb-3">
             <%=f.label :last_name, "名" %>
             <%= f.text_field :first_name, autofocus: true, class: "form-control rounded-pill" %>
+            <% if @customer.errors.include?(:first_name) %>
+              <p style="color: red;"><%= @customer.errors.full_messages_for(:first_name).first %>
+            <% end %>
           </div>
         </div>
         <div class="row">
           <div class="col">
             <%=f.label :last_name, "セイ" %>
             <%= f.text_field :last_name_kana, autofocus: true, class: "form-control rounded-pill" %>
+            <% if @customer.errors.include?(:last_name_kana) %>
+              <p style="color: red;"><%= @customer.errors.full_messages_for(:last_name_kana).first %>
+            <% end %>
           </div>
           <div class="col-md-6 mb-3">
             <%=f.label :last_name, "メイ" %>
             <%= f.text_field :first_name_kana, autofocus: true, class: "form-control rounded-pill" %>
+            <% if @customer.errors.include?(:first_name_kana) %>
+              <p style="color: red;"><%= @customer.errors.full_messages_for(:last_name_kana).first %>
+            <% end %>
           </div>
         </div>
         <div class="mb-3">
           <%= f.label :email, "メールアドレス" %>
           <%= f.text_field :email, autofocus: true, class: "form-control rounded-pill" %>
+          <% if @customer.errors.include?(:email) %>
+            <p style="color: red;"><%= @customer.errors.full_messages_for(:email).first %>
+          <% end %>
         </div>
         <div class="row">
           <div class="col mt-2">
@@ -35,15 +52,21 @@
           </div>
         </div>
         <div class="row w-50">
-          <div class="col">
+          <div class="col-md-6">
             <%= f.text_field :postal_code, autofocus: true, class: "form-control rounded-pill " %>
           </div>
-          <div class="col-md-6 mb-3">
+          <div class="col-md-9 mb-7">
+            <% if @customer.errors.include?(:postal_code) %>
+              <p style="color: red;"><%= @customer.errors.full_messages_for(:postal_code).first %>
+            <% end %>
           </div>
         </div>
         <div class="mb-3 mt-2">
           <%= f.label :addres, "住所" %>
           <%= f.text_field :address, autofocus: true, class: "form-control rounded-pill" %>
+          <% if @customer.errors.include?(:address) %>
+            <p style="color: red;"><%= @customer.errors.full_messages_for(:address).first %>
+          <% end %>
         </div>
         <div class="row">
           <div class="col mt-2">
@@ -55,6 +78,9 @@
         <div class="row w-75">
           <div class="col">
             <%= f.text_field :telephone_number, class: "form-control rounded-pill" %>
+            <% if @customer.errors.include?(:telephone_number) %>
+              <p style="color: red;"><%= @customer.errors.full_messages_for(:telephone_number).first %>
+            <% end %>
           </div>
           <div class="col-md-6 mb-3">
           </div>
