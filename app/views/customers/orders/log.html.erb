@@ -18,7 +18,7 @@
             <td><%= attachment_image_tag cart_item.item, :image, size: "50x50" %></td>
             <td><%= cart_item.item.name %></td>
             <td class="text-center"><%= cart_item.item.taxin_price.to_s(:delimited) %>円</td>
-            <td class="text-center"><%= cart_item.amount %></td>
+            <td class="text-center"><%= cart_item.amount %>個</td>
             <td class="text-center"><%= (cart_item.item.taxin_price * cart_item.amount).to_s(:delimited) %>円</td>
           </tr>
         <% end %>
@@ -32,15 +32,15 @@
       <table class="cost-table">
         <tr>
           <th>商品合計</th>
-          <td><%= @total_price.to_s(:delimited) %>円</td>
+          <td  class="text-center"><%= @total_price.to_s(:delimited) %>円</td>
         </tr>
         <tr>
           <th>送料</th>
-          <td><%= 800 %>円</td>
+          <td  class="text-center"><%= 800 %>円</td>
         </tr>
         <tr>
           <th>請求金額</th>
-          <td><%= (@total_price + 800).to_s(:delimited)  %>円</td>
+          <td  class="text-center"><%= (@total_price + 800).to_s(:delimited)  %>円</td>
         </tr>
       </table>
     </div>
@@ -81,7 +81,7 @@
       <%= f.hidden_field :address,value: @order_address%>
       <%= f.hidden_field :name,value: @order_name %>
     <% end %>
-    <div class="log-btn"><%=f.submit '注文を確定する',class: "btn btn-primary" %></div>
+    <div class="log-btn"><%=f.submit '注文を確定する',class: "btn btn-danger" %></div>
   <% end %>
     </div>
   </div>

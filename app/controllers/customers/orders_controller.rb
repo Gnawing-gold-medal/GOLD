@@ -31,8 +31,11 @@ class Customers::OrdersController < ApplicationController
        @order_postal_code= @order.postal_code
        @order_address= @order.address
        @order_name= @order.name
+       if @order_postal_code.blank? || @order_address.blank? || @order_name.blank?
+            flash[:alert] = "郵便番号,住所,宛名は全て入力してください"
+            render "new"
+       end
     end
-
   end
 
   def create

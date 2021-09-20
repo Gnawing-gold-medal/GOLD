@@ -21,7 +21,6 @@
 }
 
 .order-index {
-  width: 100%;
   font-weight: 600;
   margin-bottom: 180px;
 }
@@ -34,14 +33,14 @@
   padding: 10px 0;
 }
 
-.send{
-  width: 400px;
+.order-address th {
+  width: 500px;
 }
 
 
 .index-box {
   background-color: white;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   border-radius: 20px;
 }
@@ -49,15 +48,8 @@
 .index-box table{
   margin: 0 auto;
   padding: 30px;
-  width: 900px;
+  width: 1000px;
 }
-
-.index-box th,
-.index-box td,{
-  width: 200px;
-}
-
-
 
 
 .index-border  {
@@ -233,7 +225,7 @@
 /*.logページ     */
 .log-area {
 
-  width: 70%;
+  width: 80%;
 }
 
 .order-table img{
@@ -245,8 +237,10 @@
   margin: 0 auto;
 }
 .log-btn input {
-  text-align: center;
-  width: 100%;
+  width: 70%;
+  position: relative;
+  top: 20px;
+  left: 100px;
 }
 
 
