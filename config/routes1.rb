@@ -6,6 +6,12 @@ Rails.application.routes.draw do
    registrations: 'admins/registrations'
   }
   
+  devise_for :customers, :controllers => {
+    sessions:      'customers/sessions',
+    passwords:     'customers/passwords',
+    registrations: 'customers/registrations'
+   }
+  
   root :to => "customers/items#top"
   get "about" => "customers/items#about"
   
@@ -25,11 +31,7 @@ Rails.application.routes.draw do
     end
   end
 
-   devise_for :customers, :controllers => {
-    :sessions => 'customers/sessions',
-    :registrations => 'customers/registrations',
-    :passwords => 'customers/passwords'
-   }
+   
 
   namespace :customers do
     resources :items,only: [:index,:show]
@@ -53,8 +55,8 @@ Rails.application.routes.draw do
 
       resources :orders,only: [:new,:index,:show,:create] do
         collection do
-          post 'log'
-          get 'thanks'
+          post :log
+          get :thanks
         end
       end
 
