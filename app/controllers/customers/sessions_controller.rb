@@ -2,6 +2,22 @@
 
 class Customers::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
+  before_action :reject_user, only: [:create]
+
+  protected
+
+  def reject_user
+    @customer = Customer.find_by(email: params[:customer][:email].downcase)
+    if @customer
+      if (@customer.valid_password?(params[:customer][:password]) && (@customer.active_for_authentication? == false))
+        flash[:error] = "退会済みです"
+        redirect_to new_customer_session_path
+      end
+    else
+      flash[:error] = "登録情報が見つかりません"
+    end
+  end
+
 
   # GET /resource/sign_in
   # def new

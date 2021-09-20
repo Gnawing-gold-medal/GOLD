@@ -13,6 +13,7 @@
 
   <body>
     <%= render 'layouts/header' %>
+    <p class= "text-center" style="color: gray; font-size: 20px;"><%= flash[:notice] %></p>
     <main>
       <%= yield %>
     </main>
