@@ -3,7 +3,11 @@
     <div class='row'>
       <div class="col-12">
         <p class='mb-0'>
+          <% if admin_signed_in? %>
+          <%= link_to '管理ページ', admins_orders_path ,class: 'fas fa-sign-in-alt nav-link text-light text-right py-0'%>
+          <% else %>
           <%= link_to '管理ページ', new_admin_session_path ,class: 'fas fa-sign-in-alt nav-link text-light text-right py-0'%>
+          <% end %>
         </p>
         <p class='text-light text-center my-0'>
           CopyRight Infratop.inc
