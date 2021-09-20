@@ -4,10 +4,10 @@
     <table>
       <tr>
         <th class="text-center">注文日</th>
-        <th class="text-center send">配送先</th>
+        <th class="text-center order-address">配送先</th>
         <th class="text-center">注文商品</th>
         <th class="text-center">支払金額</th>
-        <th class="text-center status">ステータス</th>
+        <th class="text-center">ステータス</th>
         <th class="text-center">注文詳細</th>
       </tr>
       <% if @orders.count == 0 %>
@@ -22,15 +22,15 @@
       <% else %>
         <% @orders.each do |order| %>
         <tr class= "index-border">
-          <td><%= order.created_at.strftime("%Y/%m/%d").to_s %></td>
-          <td class= "send">
+          <td class="text-center"><%= order.created_at.strftime("%Y/%m/%d").to_s %></td>
+          <td>
             <ul>
               <li>〒<%= order.postal_code %></li>
               <li><%= order.address %></li>
               <li><%= order.name %></li>
             </ul>
           </td>
-          <td>
+          <td class="text-center">
             <ul>
               <% order.order_items.each do |order| %>
               <li><%= order.item.name %></li>
@@ -38,7 +38,7 @@
             </ul>
           </td>
           <td class="text-center"><%= (order.total_payment).to_s(:delimited) %>円</td>
-          <td class="text-center status"><%= order.status_i18n %></td>
+          <td class="text-center"><%= order.status_i18n %></td>
           <td class="text-center"><%= link_to "表示する", customers_customer_order_path(current_customer.id,order.id), class: "btn btn-secondary" %></td>
         </tr>
         <% end %>

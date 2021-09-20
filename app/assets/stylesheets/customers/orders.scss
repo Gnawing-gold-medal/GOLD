@@ -2,6 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.line-image {
+  text-align: center;
+  margin: 50px;
+}
+
+.order-line {
+  height: 90px;
+  width: 400px;
+  text-align: center;
+}
+
+/*. indexページ  */
 .order-index h3 {
   text-align: center;
   margin-bottom: 20px;
@@ -15,21 +27,15 @@
 }
 
 .order-index td {
-  padding: 15px;
+  padding: 10px 0;
 }
 
 .order-index th {
-  padding: 15px;
+  padding: 10px 0;
 }
 
-.send th,
-.send td {
-  padding: 30px;
-}
-
-.status th,
-.status td {
-  padding: 20px;
+.send{
+  width: 400px;
 }
 
 
@@ -42,9 +48,15 @@
 
 .index-box table{
   margin: 0 auto;
-  padding: 20px;
+  padding: 30px;
   width: 900px;
 }
+
+.index-box th,
+.index-box td,{
+  width: 200px;
+}
+
 
 
 
@@ -56,6 +68,8 @@
   width: 100px;
 }
 
+
+/*      showページ　　   */
 
 .order-show-title {
   text-align: center;
@@ -117,7 +131,11 @@
 }
 
 
-/*　注文情報入力ページ    */
+/*　newページ    */
+
+
+
+
 .frame {
   font-size: 20px;
 }

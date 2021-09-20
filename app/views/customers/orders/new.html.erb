@@ -1,5 +1,6 @@
   <div class= "frame">
-    <h3>注文情報入力</h3>
+    <div class= "line-image"><%= image_tag "order-line2.jpg" ,class: "order-line"%></div>
+    <h3>お客様情報入力</h3>
     <div class= "main-contents">
     <%= form_with(model: @order,url: log_customers_customer_orders_path(@customer.id),method: :post, local: true) do |f| %>
       <div class= "paymethod-form">
