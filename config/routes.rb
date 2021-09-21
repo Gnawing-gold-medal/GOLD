@@ -5,6 +5,12 @@ Rails.application.routes.draw do
     passwords:     'admins/passwords',
    registrations: 'admins/registrations'
   }
+
+  # adminのログアウト時にルーティングエラーになったため追加
+  devise_scope :admin do
+    get '/admins/sign_out' => 'admins/sessions#destroy'
+  end
+
   devise_for :customers, controllers: {
     sessions:      'customers/sessions',
     passwords:     'customers/passwords',
