@@ -2,7 +2,8 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-10 col-lg-8 px-5 px-sm-0 mx-auto">
-<%= link_to "登録が新しい順", admins_customers_path(sort: 'created_at DESC'), class: "btn btn-outline-secondary btn-sm" %> | <%= link_to "登録が古い順", admins_customers_path(sort: 'created_at ASC'), class: "btn btn-outline-secondary btn-sm" %>
+      <h2>会員一覧</h2>
+<div class="mt-3 mb-1 text-right"><%= link_to "登録が新しい順", admins_customers_path(sort: 'created_at DESC'), class: "btn btn-outline-secondary btn-sm" %> | <%= link_to "登録が古い順", admins_customers_path(sort: 'created_at ASC'), class: "btn btn-outline-secondary btn-sm" %></div>
 <table class='table'>
   <thead>
     <tr>
@@ -31,7 +32,7 @@
 
 <%= paginate @customers %>
 
-    <h3>登録数の前日比・前週比</h3>
+    <h2 class="mt-5">登録数の前日比・前週比</h2>
   <div class="table_width">
     <table class='table table-bordered'>
       <thead>
@@ -82,10 +83,10 @@
       </tbody>
     </table>
   </div>
-  
+
   <%= line_chart @data %>
 
-<h4>7日間分の登録者</h4>
+<h2 class="mt-5">7日間分の登録者</h2>
   <table class='table table-bordered'>
     <thead>
       <tr>
