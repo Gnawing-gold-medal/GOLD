@@ -5,4 +5,14 @@ class OrderItem < ApplicationRecord
   def taxin_price
       (price * 1.08).round
   end
+  
+    
+  def self.multi_update(order_item_params)
+    order_item_params.to_h.map do |id, order_item_param|
+      order_item = self.find(id)
+      order_item.update_attributes!(order_item_param)
+    end
+  end
+  
+
 end

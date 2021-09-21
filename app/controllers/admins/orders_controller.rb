@@ -17,15 +17,25 @@ class Admins::OrdersController < ApplicationController
 
   def update
     @order = Order.find(params[:id])
-    if @order.update(order_params)
-      redirect_to admins_order_path(@order), notice: "You have updated genre successfully."
-    else
-      render "show"
-    end
+    @order_items = @order.order_items
+    @order_item = OrderItem.find(params[:id])
+      @order.update_attributes!(order_params)
+      if @order.status == "入金確認"
+        OrderItem.multi_update(order_item_params)
+        redirect_to admins_order_path(@order), notice: "You have updated genre successfully."
+      else
+        redirect_to admins_order_path(@order), notice: "You have updated genre successfully."
+      end
+      
   end
 
   private
     def order_params
       params.require(:order).permit(:customer_id, :postal_code, :address, :name, :shipping_cost, :total_payment, :payment_method, :status)
+    end
+    private
+    
+    def order_item_params
+      params.require(:order).permit(order_items: :making_status)[:order_items]
     end
 end

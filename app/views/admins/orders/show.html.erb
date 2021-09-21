@@ -36,8 +36,13 @@
           <tr>
             <td>注文</td>
             <%= form_with model:@order, url: admins_order_path(@order), local: true  do |f| %>
-            <td> <%= f.select :status, [["入金待ち", "入金待ち"], ["入金確認", "入金確認"], ["製作中", "製作中"], ["発送準備中", "発送準備中"], ["発送済み", "発送済み"]]  %></br>
-                  <%= f.submit '更新', class: "btn btn-success"%>
+            <td> <%= f.select :status,  Order.statuses.keys %></br>
+                  <% @order_items.each do |order_item| %>
+                    <%= f.fields_for "order_items[]", order_item do |af| %>
+                  　   <%= af.hidden_field :making_status, :value => "製作中" %>
+                  　<% end %>
+                  <% end %>
+                  <%= f.submit '更新', class: "btn btn-success btn-sm"%>
                 </td>
                 <% end %>
           </tr>
@@ -64,8 +69,8 @@
               <td><%= order_items.amount %></td>
               <td><%= order_items.price*order_items.amount %></td>
               <td><%= form_with model:order_items, local: true  do |f| %>
-                    <%= f.select :making_status, [["製作不可", "製作不可"], ["製作待ち", "製作待ち"], ["製作中", "製作中"], ["製作完了", "製作完了"]]%>
-                    <%= f.submit '更新', class: "btn btn-success"%>
+                    <%= f.select :making_status, OrderItem.making_statuses.keys %>
+                    </br><%= f.submit '更新', class: "btn btn-success btn-sm"%>
                   <% end %></td>
             </tr>
           <% end %>
