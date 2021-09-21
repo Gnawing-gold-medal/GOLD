@@ -1,8 +1,9 @@
 
 
-<% all_ranks.last(4).reverse_each do |item| %>
+<% all_ranks.each.with_index(1) do |item, i| %>
     <div class="item-box mx-2 text-center">
     　<%= link_to customers_item_path(item), class: "link-style" do %>
+    　　第<%= i %>位
         <%= attachment_image_tag item, :image, size:"200x160", style:"border-radius:5%" %><br>
         <%= item.name %>
       <% end %><br>
