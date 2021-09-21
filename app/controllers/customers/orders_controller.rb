@@ -19,20 +19,26 @@ class Customers::OrdersController < ApplicationController
     @total_payment= @total_price + 800
 
     @order= Order.new(order_params)
+    cart_item_order = params[:order][:oter_address]
     if params[:order][:address_select] == "0"
        @order_postal_code= @customer.postal_code
        @order_address= @customer.address
        @order_name= @customer.last_name + @customer.first_name
     elsif params[:order][:address_select] == "1"
-       @order_postal_code = Address.find_by(id: params[:order][:oter_address], customer_id: @customer.id).postal_code
-       @order_address = Address.find_by(id: params[:order][:oter_address], customer_id: @customer.id).address
-       @order_name = Address.find_by(id: params[:order][:oter_address], customer_id: @customer.id).name
+      if cart_item_order.empty?
+            flash[:alert1] = "選択肢の中から宛先を選んでください"
+            render "new"
+      else
+         @order_postal_code = Address.find_by(id: params[:order][:oter_address], customer_id: @customer.id).postal_code
+         @order_address = Address.find_by(id: params[:order][:oter_address], customer_id: @customer.id).address
+         @order_name = Address.find_by(id: params[:order][:oter_address], customer_id: @customer.id).name
+      end
     elsif params[:order][:address_select] == "2"
        @order_postal_code= @order.postal_code
        @order_address= @order.address
        @order_name= @order.name
        if @order_postal_code.blank? || @order_address.blank? || @order_name.blank?
-            flash[:alert] = "郵便番号,住所,宛名は全て入力してください"
+            flash[:alert2] = "郵便番号,住所,宛名は全て入力してください"
             render "new"
        end
     end

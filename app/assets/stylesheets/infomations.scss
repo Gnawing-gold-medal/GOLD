@@ -1,0 +1,28 @@
+// Place all the styles related to the infomations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.index-infomation-area {
+  margin-top: 30px;
+}
+
+.index-index table {
+  margin: 0 auto;
+}
+
+.index-index {
+  margin-top: 40px;
+}
+
+.index-index tr {
+  border: 2px solid black;
+  text-align: center;
+}
+
+.index-index th,
+.index-index td {
+  padding: 8px;
+}
+
+.index-index th {
+  padding: 12px 0;
+}

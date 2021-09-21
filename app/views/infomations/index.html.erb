@@ -1,0 +1,27 @@
+<div class= "index-infomation-area">
+  <h3 class= "text-center">お問い合わせ一覧</h3>
+  <div class="index-index">
+    <table>
+      <tr>
+        <th style="width:15%"></th>
+        <th style="width:25%">問い合わせ日時</th>
+        <th style="width:20%">名前</th>
+        <th style="width:30%">問い合わせカテゴリー</th>
+        <th style="width:10%"></th>
+      </tr>
+      <% @infomations.each do |infomation| %>
+      <tr>
+        <% if infomation.status == "未回答" %>
+          <td style="color: red; font-weight: 900"><%= infomation.status %></td>
+        <% else %>
+          <td style="font-weight: 900"><%= infomation.status %></td>
+        <% end %>
+        <td><%= infomation.created_at.strftime("%Y/%m/%d %H:%M").to_s %></td>
+        <td><%= infomation.name %></td>
+        <td><%= infomation.genre_i18n %></td>
+        <td class="text-center"><%= link_to "表示する", infomation_path(infomation), class: "btn btn-secondary" %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
