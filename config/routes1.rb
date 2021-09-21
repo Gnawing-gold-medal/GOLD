@@ -1,20 +1,25 @@
 Rails.application.routes.draw do
-  
+
   devise_for :admins, controllers: {
    sessions:      'admins/sessions',
     passwords:     'admins/passwords',
    registrations: 'admins/registrations'
   }
   
+  # adminのログアウト時にルーティングエラーになったため追加
+  devise_scope :admin do
+    get '/admins/sign_out' => 'admins/sessions#destroy'
+  end
+
   devise_for :customers, :controllers => {
     sessions:      'customers/sessions',
     passwords:     'customers/passwords',
     registrations: 'customers/registrations'
    }
-  
+
   root :to => "customers/items#top"
   get "about" => "customers/items#about"
-  
+
   namespace :admin do
     resources :customers,only: [:index,:show,:edit,:update]
   	resources :items,only: [:index,:new,:create,:show,:edit,:update,]
@@ -31,7 +36,7 @@ Rails.application.routes.draw do
     end
   end
 
-   
+
 
   namespace :customers do
     resources :items,only: [:index,:show]
