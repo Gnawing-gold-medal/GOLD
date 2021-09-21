@@ -5,7 +5,7 @@ class Customers::ItemsController < ApplicationController
     @all_ranks = Item.find(OrderItem.group(:item_id).order('count(item_id) desc').limit(4).pluck(:item_id))
   end
 
-  def aboutt
+  def about
   end
 
   def index
