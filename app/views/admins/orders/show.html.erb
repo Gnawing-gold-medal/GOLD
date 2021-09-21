@@ -39,7 +39,7 @@
             <td> <%= f.select :status,  Order.statuses.keys %></br>
                   <% @order_items.each do |order_item| %>
                     <%= f.fields_for "order_items[]", order_item do |af| %>
-                  　   <%= af.hidden_field :making_status, :value => "製作中" %>
+                  　   <%= af.hidden_field :making_status, :value => "製作待ち" %>
                   　<% end %>
                   <% end %>
                   <%= f.submit '更新', class: "btn btn-success btn-sm"%>
@@ -70,6 +70,10 @@
               <td><%= order_items.price*order_items.amount %></td>
               <td><%= form_with model:order_items, local: true  do |f| %>
                     <%= f.select :making_status, OrderItem.making_statuses.keys %>
+                        <%= f.fields_for "orders[]", @order do |af| %>
+                          <%= af.hidden_field :status, :value => "発送準備中" %>
+                      　
+                      <% end %>
                     </br><%= f.submit '更新', class: "btn btn-success btn-sm"%>
                   <% end %></td>
             </tr>
