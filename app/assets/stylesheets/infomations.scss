@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /*    new      */
+.infomation-content-flame h3 {
+  margin: 40px 0;
+}
+
+.infomation-content-flame p {
+  color: red;
+  text-align: center;
+}
+
 .infomation-content table {
   margin: 0 auto;
 }
@@ -16,8 +25,19 @@
   margin: 0 auto;
 }
 
-.infomation-submit input {
+.infomation-content input,
+.infomation-content textarea {
   background-color: white;
+  width: 400px;
+  border-radius: 0;
+}
+
+.infomation-content textarea {
+  height: 200px;
+}
+
+.infomation-content input {
+  height: 30px;
 }
 
 
@@ -46,5 +66,54 @@
 
 .index-index th {
   padding: 12px 0;
+
 }
 
+
+/*.      show.     */
+.show-infomation-content-flame {
+  word-break: break-all;
+}
+
+.show-infomation-submit {
+  width: 200px;
+  margin: 30px auto;
+}
+
+
+
+.show-infomation-content-flame th,
+.show-infomation-content-flame td {
+  width: 400px;
+}
+
+.show-infomation-content table {
+  margin: 0 auto;
+  width: 500px;
+}
+
+
+.show-infomation-content {
+  margin: 30px 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+.show-infomation-content th,
+.show-infomation-content td {
+  padding: 10px;
+}
+
+
+/*.      thanks.     */
+.thanks-message-area {
+  text-align: center;
+  margin: 90px 0 40px 0;
+}
+
+
+
+.thanks-btn-area {
+  text-align: center;
+  margin: 0 auto;
+}

@@ -12,13 +12,13 @@ class InfomationsController < ApplicationController
     if @infomation.save
       redirect_to thanks_infomations_path
     else
-      flash[:infomation_notice]
+      flash[:infomation_notice] = "全ての項目を正しく入力してください"
       render "new"
     end
   end
 
   def index
-    @infomations= Infomation.all
+    @infomations= Infomation.page(params[:page]).per(6)
     @infomation_reading= Infomation.where(reading: true)
     @infomation_nread= Infomation.where(reading: false)
   end

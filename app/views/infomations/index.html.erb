@@ -22,6 +22,7 @@
         <td class="text-center"><%= link_to "表示する", infomation_path(infomation), class: "btn btn-secondary" %></td>
       </tr>
       <% end %>
+      <%= paginate @infomations %>
     </table>
   </div>
 </div>
