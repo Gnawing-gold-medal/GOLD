@@ -1,6 +1,27 @@
 // Place all the styles related to the infomations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*    new      */
+.infomation-content table {
+  margin: 0 auto;
+}
+
+.infomation-content th,
+.infomation-content td {
+  padding: 10px;
+}
+
+.infomation-submit {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.infomation-submit input {
+  background-color: white;
+}
+
+
+/*    index    */
 .index-infomation-area {
   margin-top: 30px;
 }
@@ -26,3 +47,4 @@
 .index-index th {
   padding: 12px 0;
 }
+
