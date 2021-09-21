@@ -1,24 +1,44 @@
-# README
+<h1>nagano_cake</h1>
+DMM WEBCAMPのチーム開発課題です。<br>
+架空の洋菓子店「ながのCAKE」の商品を通販するためのECサイトを作成しました。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h2>実装機能</h2>
+<h3>顧客側</h3>
 
-Things you may want to cover:
+会員登録/退会機能<br>
+ログイン/ログアウト機能<br>
+会員情報編集機能<br>
+商品一覧/詳細表示機能（非会員利用可）<br>
+カート内に商品追加, カート内商品の一覧表示/数量変更機能/カート内商品一括削除<br>
+注文機能（支払い方法や配送先の選択（自身の住所or登録配送先（プルダウン選択式）or新規配送先（入力フォーム））<br>
+配送先追加/編集・削除機能<br>
+注文履歴一覧/詳細表示機能<br>
+検索機能(商品名、ジャンル名）<br>
 
-* Ruby version
+<h3>管理側</h3>
 
-* System dependencies
+ログイン/ログアウト機能<br>
+注文履歴の一覧/詳細表示機能（注文ステータス, 製作ステータスの切り替えが可能）<br>
+会員一覧/詳細表示機能（会員ステータスを有効/退会に切り替えが可能）<br>
+商品一覧/詳細表示機能<br>
+商品情報変更機能（販売ステータスの変更が可能）<br>
+商品のジャンル設定機能<br>
+検索機能(商品名、会員名)<br>
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<h2>言語とフレームワーク</h2>
+Ruby2.6.3<br>
+Rails5.2.5<br>
+HTML5<br>
+CSS3<br>
+JQuery
+<h2>Gem</h2>
+devise<br>
+bootstrap5<br>
+refile/refile-mini_magic<br>
+jquery-rails<br>
+font-awesome-sass<br>
+kaminari
+<h2>開発メンバー</h2>
+杉野<br>
+高木<br>
+今井

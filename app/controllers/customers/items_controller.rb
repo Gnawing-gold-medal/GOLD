@@ -10,7 +10,7 @@ class Customers::ItemsController < ApplicationController
 
   def index
     @items = Item.search(params[:search]).page(params[:page]).per(8)
-    @amount = Item.count
+    @amount = @items.total_count
     @genres = Genre.all
   end
 

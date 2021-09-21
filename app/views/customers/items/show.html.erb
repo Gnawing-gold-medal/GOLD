@@ -1,27 +1,27 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
     <div class='col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto item-show'>
-
-      <%= flash[:notice] %>
-
-      <div class="item-image">
-        <%= attachment_image_tag @item, :image, size:"400x270", style:"border-radius:5%" %>
+      <div class="mx-3">
+        <%= attachment_image_tag @item, :image, size:"500x380", style:"border-radius:5%" %>
       </div>
-      <div class="item-detail">
+      <div class="item-detail mx-3">
         <p class="item-show-name"><%= @item.name %></p><br>
-        <%= @item.introduction %><br><br>
-        ￥<%= @item.taxin_price.to_s(:delimited) %>（税込）<br><br>
-        <% if @item.is_active == true %>
-          <%= form_with model: @cart_item, url: customers_cart_items_path do |f| %>
-            <%= f.hidden_field :item_id, value: @item.id %>
-            <%= f.select :amount, options_for_select((1..10).to_a), include_blank: "個数選択" %><br>
-            <%= f.submit "カートに入れる", class: "btn btn-success" %>
+        <p><%= @item.introduction %></p><br>
+        <p>￥<%= @item.taxin_price.to_s(:delimited) %>（税込）</p><br>
+        <div>
+          <% if @item.is_active == true %>
+            <%= form_with model: @cart_item, url: customers_cart_items_path do |f| %>
+              <%= f.hidden_field :item_id, value: @item.id %>
+              <div><%= flash[:order_item] %></div>
+              <%= f.select :amount, options_for_select((1..10).to_a), include_blank: "個数選択" %><br>
+              <%= f.submit "カートに入れる", class: "btn btn-success" %>
+            <% end %>
+          <% else %>
+            <p class="sold-out-show">sold out</p>
           <% end %>
-        <% else %>
-          <p class="sold-out-show">sold out</p>
-        <% end %>
-        <br><br><br>
-        <%= link_to "一覧に戻る", customers_items_path, class:"return-index" %>
+          <br><br><br>
+          <%= link_to "一覧に戻る", customers_items_path, class:"return-index" %>
+        </div>
       </div>
     </div>
   </div>

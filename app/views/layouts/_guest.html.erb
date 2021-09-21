@@ -1,0 +1,5 @@
+<% if customer_signed_in? && current_customer.is_deleted == false %>
+  <h6>ようこそ<br><%= current_customer.last_name + current_customer.first_name %>様</h6>
+<% else %>
+  <h6>ようこそ<br>ゲスト様</h6>
+<% end %>

@@ -20,7 +20,8 @@ class Item < ApplicationRecord
     validates :image
     validates :name
     validates :introduction
-    validates :price
+    validates :price, numericality: { only_integer: true, message: "は半角数字で入力してください" }
   end
+
 
 end

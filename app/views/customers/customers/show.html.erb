@@ -5,7 +5,7 @@
       <div class= "leftNavigation-list" >
         <div class="profile-content">
           <%= link_to customers_customer_orders_path(@customer),class: "a-tag" do %>
-            <div class="order-list"><i class="fas fa-shopping-cart text-left"></i>注文履歴</div>
+            <div class="order-list"><i class="fas fa-shopping-cart"></i>注文履歴</div>
           <% end %>
         </div>
         <div class="profile-content">
@@ -21,28 +21,28 @@
     <div class="private-content">
       <table>
         <tr>
-          <th><p class= "profile-th">氏名</p></th>
-          <td><p class= "profile-td"><%= @customer.last_name %><%= @customer.first_name %></p></td>
+          <th>氏名</th>
+          <td><%= @customer.last_name %><%= @customer.first_name %></p></td>
         </tr>
         <tr>
-          <th><p class= "profile-th">カナ</p></th>
-          <td><p class= "profile-td"><%= @customer.last_name_kana %><%= @customer.first_name_kana %></p></td>
+          <th>カナ</th>
+          <td><%= @customer.last_name_kana %><%= @customer.first_name_kana %></p></td>
         </tr>
          <tr>
-          <th><p class= "profile-th">メールアドレス</p></th>
-          <td><p class= "profile-td"><%= @customer.email %></p></td>
+          <th>メールアドレス</th>
+          <td><%= @customer.email %></td>
         </tr>
         <tr>
-          <th><p class= "profile-th">郵便番号</p></th>
-          <td><p class= "profile-td">〒<%= @customer.postal_code %></p></td>
+          <th>郵便番号</th>
+          <td>〒<%= @customer.postal_code %></p></td>
         </tr>
         <tr>
-          <th><p class= "profile-th">住所</p></th>
-          <td><p class= "profile-td"><%= @customer.address %></p></td>
+          <th>住所</th>
+          <td><%= @customer.address %></td>
         </tr>
         <tr>
-          <th><p class= "profile-th">電話番号</p></th>
-          <td><p class= "profile-td"><%= @customer.telephone_number %></p></td>
+          <th>電話番号</th>
+          <td><%= @customer.telephone_number %></td>
         </tr>
       </table>
     </div>

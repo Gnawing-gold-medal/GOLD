@@ -162,28 +162,23 @@ h3 {
 }
 .private-content{
     background-color: white;
-    text-align: center;
-    width: 1000px;
-    padding: 10px;
+    width: 700px;
+    padding: 25px;
     border-radius: 10px;
+    font-size: 20px;
 }
 
 .leftNavigation-list {
   width: 200px;
 }
 
+.private-content table {
+  width: 500px;
+}
 
 .private-content th {
   width: 200px;
-}
-
-
-.profile-th,.profile-td {
-  text-align: left;
-}
-
-.profile-td {
-  font-size: 20px;
+  padding: 20px;
 }
 
 .profile-title {
@@ -232,6 +227,19 @@ h3 {
 .a-tag:hover {
   text-decoration: none!important;
 }
+
+.fa-shopping-cart {
+  position: relative;
+  right: 15px;
+}
+
+.tarck-i {
+  position: relative;
+  right: 10px;
+}
+
+
+/*.     leaveページ　　　*/
 
 .leave-area {
   margin-top: 60px;

@@ -64,7 +64,8 @@ body {
     color: #45381F;
     padding: 0;
     margin: 0;
-    font-family: 'Varela Round', sans-serif;
+    font-family: serif;
+
 }
 
 header {
@@ -95,6 +96,10 @@ header {
 
 .navbar-brand {
   height: 50px;
+}
+
+.navbar-nav li {
+    padding: 2px;
 }
 
 body {

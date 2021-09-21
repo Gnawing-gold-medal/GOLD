@@ -1,17 +1,17 @@
 <div class= "line-image"><%= image_tag "order-line3.jpg" ,class: "order-line"%></div>
 <h3 class="order-show-title">注文情報確認</h3>
-<div class= "order-contents log-area">
+<div class= "order-contents">
 
   <div class="left-side">
-    <div class= "order-content">
+    <div class= "order">
       <h5 class=" w-75">注文内容</h5>
-      <table class="order-table">
+      <table>
         <tr>
           <th></th>
-          <th>商品名</th>
-          <th>単価（税込）</th>
-          <th>数量</th>
-          <th>小計</th>
+          <th style="width:35%">商品名</th>
+          <th style="width:18%">単価(税込)</th>
+          <th style="width:15%">数量</th>
+          <th style="width:17%">小計</th>
         </tr>
         <% @cart_items.each do |cart_item| %>
           <tr>
@@ -29,18 +29,18 @@
   <div class= "right-side">
     <div class= "cost">
       <h5>請求情報</h5>
-      <table class="cost-table">
+      <table>
         <tr>
           <th>商品合計</th>
-          <td  class="text-center"><%= @total_price.to_s(:delimited) %>円</td>
+          <td><%= @total_price.to_s(:delimited) %>円</td>
         </tr>
         <tr>
           <th>送料</th>
-          <td  class="text-center"><%= 800 %>円</td>
+          <td><%= 800 %>円</td>
         </tr>
         <tr>
           <th>請求金額</th>
-          <td  class="text-center"><%= (@total_price + 800).to_s(:delimited)  %>円</td>
+          <td><%= (@total_price + 800).to_s(:delimited)  %>円</td>
         </tr>
       </table>
     </div>
