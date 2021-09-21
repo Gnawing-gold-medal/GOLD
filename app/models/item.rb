@@ -22,7 +22,6 @@ class Item < ApplicationRecord
     validates :introduction
     validates :price, numericality: { only_integer: true, message: "は半角数字で入力してください" }
   end
-  
-  
+
 
 end

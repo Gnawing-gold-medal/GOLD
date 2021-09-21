@@ -82,13 +82,23 @@
   color: #BE9B65;
 }
 
+.link-style2 {
+  color: #BE9B65;
+}
+
+.link-style2:hover {
+  text-decoration: none;
+  color: #BE9B65;
+}
+
 .item-index-name {
   font-size: 18px;
   font-weight: 500;
 }
 
 .item-show-name {
-  font-size: 20px;
+  margin-top: 20px;
+  font-size: 26px;
   font-weight: 500;
   width: 400px;
 }
@@ -96,11 +106,7 @@
 .item-show {
   display: flex;
   justify-content: center;
-  margin: 120px auto
-}
-
-.item-image, .item-detail {
-  margin: 0 20px;
+  margin: 90px auto
 }
 
 .item-detail form {
@@ -180,12 +186,3 @@
   text-decoration: none;
 }
 
-.genre-search {
-  margin: 0 20px;
-  color: #BE9B65;
-}
-
-.genre-search:hover {
-  text-decoration: none;
-  color: #BE9B65;
-}
