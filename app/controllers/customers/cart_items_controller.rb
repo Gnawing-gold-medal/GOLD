@@ -6,9 +6,9 @@ class Customers::CartItemsController < ApplicationController
       @cart_item = CartItem.new(cart_item_params)
       @cart_item.customer_id = current_customer.id
       order_item_amount = params[:cart_item][:amount]
-      if current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id]).present? && order_item_amount.empty?
-         flash[:order_item] = "数量を選択してください"
-         redirect_to customers_item_path(@cart_item.item_id)
+      if order_item_amount.empty?
+        flash[:order_item] = "数量を選択してください"
+        redirect_to customers_item_path(@cart_item.item_id)
       elsif current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id]).present?
         cart_item = current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
         cart_item.amount += params[:cart_item][:amount].to_i
