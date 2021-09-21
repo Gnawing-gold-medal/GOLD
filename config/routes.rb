@@ -14,6 +14,12 @@ Rails.application.routes.draw do
   root :to => "customers/items#top"
   get "about" => "customers/items#about"
 
+  resources :infomations do
+     collection do
+       get :thanks
+     end
+  end
+
   resources :order_items do
     resources :items
   end
@@ -46,8 +52,8 @@ Rails.application.routes.draw do
         end
       end
     end
-
-
   end
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

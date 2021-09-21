@@ -1,0 +1,34 @@
+<div class= "infomation-area">
+  <div class= "infomation-content">
+  <h3>お問い合わせ</h3>
+  <div class= "infomation-form">
+    <%= form_with model: @infomation,url: infomations_path, method: :post ,local: true do |f| %>
+      <tabel>
+        <tr></tr>
+          <th><%= f.label :name,"お名前" %></th>
+          <td><%= f.text_field :name %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :telephone_number,"電話番号" %></th>
+          <td><%= f.text_field :telephone_number %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :email,"メールアドレス" %></th>
+          <td><%= f.text_field :email %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :content,"お問い合わせのカテゴリー" %></th>
+          <td><%= f.select :genre,options_for_select(Infomation.genres.keys), include_blank: "選択して下さい" %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :content,"お問い合わせ内容" %></th>
+          <td><%= f.text_area :content %></td>
+        </tr>
+      </tabel>
+    </div>
+    <div class= "infomation-submit">
+      <%= f.submit "送信" %>
+    </div>
+  <% end %>
+  </div>
+</div>
