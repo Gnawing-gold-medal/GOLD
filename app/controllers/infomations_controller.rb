@@ -1,4 +1,5 @@
 class InfomationsController < ApplicationController
+  before_action :authenticate_admin!,except: [:new,:thanks,:create]
 
   def new
     @infomation= Infomation.new
@@ -19,8 +20,6 @@ class InfomationsController < ApplicationController
 
   def index
     @infomations= Infomation.page(params[:page]).per(6)
-    @infomation_reading= Infomation.where(reading: true)
-    @infomation_nread= Infomation.where(reading: false)
   end
 
   def show
