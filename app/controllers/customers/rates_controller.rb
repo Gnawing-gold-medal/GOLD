@@ -19,7 +19,7 @@ class Customers::RatesController < ApplicationController
   
   private
     def rate_params
-     params.require(:rate).permit(:rate)
+     params.require(:rate).permit(:star,:customer_id,:item_id)
     end
 
 
