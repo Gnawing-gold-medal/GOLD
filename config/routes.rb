@@ -25,6 +25,10 @@ Rails.application.routes.draw do
        get :thanks
      end
   end
+  
+  resources :order_items do
+    resources :items
+  end
 
   namespace :admins do
     resources :customers,only: [:index,:show,:edit,:update]
