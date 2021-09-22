@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <%= image_tag 'kawamura.jpg' ,class: "kawamura"%>
-      <a class="navbar-brand" href="/">ながのCAKE</a>
+      <a class="navbar-brand" href="/"><%= image_tag 'logo (8).png', size:"190x32" %></a>
       <% if admin_signed_in? %>
         <div class="navbar-collapse">
           <%= render 'admins/admin_sidebar' %>
