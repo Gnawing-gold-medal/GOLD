@@ -19,7 +19,7 @@ class InfomationsController < ApplicationController
   end
 
   def index
-    @infomations= Infomation.page(params[:page]).per(6)
+    @infomations= Infomation.order(status: "ASC").page(params[:page]).per(6)
   end
 
   def show
