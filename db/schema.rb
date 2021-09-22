@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(version: 2021_09_22_070748) do
   end
 
   create_table "rates", force: :cascade do |t|
-    t.float "rate"
+    t.float "star"
     t.integer "customer_id"
     t.integer "item_id"
     t.datetime "created_at", null: false
