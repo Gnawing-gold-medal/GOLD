@@ -15,7 +15,7 @@
         <p class="item-show-name"><%= @item.name %></p><br>
         <p><%= @item.introduction %></p><br>
         <p>￥<%= @item.taxin_price.to_s(:delimited) %>（税込）</p><br>
-        <p>
+        <p><%= link_to "レビュー", customers_rate_path %>
             <div id="rate_<%= @item.id %>"></div>
             <script>
               $('#rate_<%= @item.id %>').raty({
@@ -25,7 +25,7 @@
                 starHalf: '<%= asset_path('star-half.png') %>',
                 half: true,
                 readOnly: true,
-                score: <%= @item.rate %>,
+                score: <%= 1 %>,
               });
             </script>
           </p>

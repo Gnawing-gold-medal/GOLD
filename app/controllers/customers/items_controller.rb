@@ -13,6 +13,9 @@ class Customers::ItemsController < ApplicationController
     @amount = @items.total_count
     @genres = Genre.all
   end
+  
+  def rate
+  end
 
   def show
     @item = Item.find(params[:id])
@@ -24,7 +27,6 @@ class Customers::ItemsController < ApplicationController
       end
     else
     end
-    
   end
 
 end
