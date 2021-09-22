@@ -33,16 +33,18 @@
           
           <tr>
             <td>注文</td>
-            <%= form_with model:@order, url: admins_order_path(@order), local: true  do |f| %>
-            <td> <%= f.select :status,  Order.statuses.keys %></br>
+            
+            <td><%= form_with model:@order, url: admins_order_path(@order), local: true  do |f| %>
+              <%= f.select :status,  Order.statuses.keys %></br>
                   <% @order_items.each do |order_item| %>
                     <%= f.fields_for "order_items[]", order_item do |af| %>
-                  　   <%= af.hidden_field :making_status, :value => "製作待ち" %>
+                    <%= af.hidden_field :making_status, :value => '製作待ち' %>
                   　<% end %>
                   <% end %>
                   <%= f.submit '更新', class: "btn btn-success btn-sm"%>
-                </td>
-                <% end %>
+              <% end %>
+            </td>
+                
           </tr>
           
         </tbody>
