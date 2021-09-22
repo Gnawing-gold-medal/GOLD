@@ -41,6 +41,7 @@ Rails.application.routes.draw do
 
 
   namespace :customers do
+    resources :rates
     resources :items,only: [:index,:show]
     resources :cart_items do
       collection do
