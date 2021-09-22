@@ -14,6 +14,7 @@
             <th colspan="2">商品名</th>
             <th>税抜価格</th>
             <th>ジャンル</th>
+            <th>閲覧数</th>
             <th>ステータス</th>
           </tr>
         </thead>
@@ -33,6 +34,7 @@
             </td>
             <td class="align-middle"><%= item.price.to_s(:delimited) %></td>
             <td class="align-middle"><%= item.genre.name %></td>
+            <td class="view-count"><%= item.counts.count %></td>
             <td class="align-middle">
               <% if item.is_active == true %>
       					<p class="is-active-true">販売中</p>
