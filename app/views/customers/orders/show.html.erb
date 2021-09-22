@@ -13,31 +13,7 @@
         </tr>
         <% @order.order_items.each do |order| %>
         <tr>
-          <td><%= order.item.name %>
-            <%= form_with model:@rate, url: customers_customer_orders_path(@order),local:true do |f| %>
-
-              <div class="form-group" id="star">
-                <%= f.label :rate %>
-                <%= f.hidden_field :rate, id: :review_star, class:'form-control' %>
-                
-              </div>
-            
-              <script>
-              $('#star').raty({
-                size     : 36,
-                starOff:  '<%= asset_path('star-off.png') %>',
-                starOn : '<%= asset_path('star-on.png') %>',
-                starHalf: '<%= asset_path('star-half.png') %>',
-                scoreName: 'book[rate]',
-                half: true,
-              });
-              </script>
-            
-              <div class="form-group">
-                <%= f.submit class: 'btn btn-success' %>
-              </div>
-            <% end %>
-          </td>
+          <td><%= order.item.name %></td>
           <td class="text-center"><%= (order.item.taxin_price).to_s(:delimited) %>円</td>
           <td class="text-center"><%= order.amount %>個</td>
           <td class="text-center"><%= (order.item.taxin_price * order.amount).to_s(:delimited) %>円</td>
