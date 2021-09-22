@@ -73,7 +73,7 @@ header {
 }
 
 .head-search {
-    width: 150px;
+    width: 130px;
     background: #FFF;
     height: 30px;
     font-size: 14px;
@@ -85,7 +85,7 @@ header {
 }
 
 .head-search-btn {
-    width: 50px;
+    width: 40px;
     text-align: center;
     vertical-align: middle;
     padding: 0.3rem 0;
@@ -95,7 +95,12 @@ header {
 }
 
 .navbar-brand {
-  height: 50px;
+    height: 50px;
+    font-size: 45px;
+    position: relative;
+    bottom: 10px;
+    left: 5px;
+    font-weight: lighter;
 }
 
 .navbar-nav li {
@@ -116,10 +121,10 @@ main {
 #sidebarMenu {
     height: 100%;
     position: fixed;
-    left: 0;
+    right: 0;
     width: 250px;
-    margin-top: 0px;
-    transform: translateX(-250px);
+    bottom: 0;
+    transform: translateX(250px);
     transition: transform 250ms ease-in-out;
     background: linear-gradient(180deg, #8B4513 0%, #FFFACD 100%);
 }
@@ -133,7 +138,7 @@ main {
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 20px;
+    padding: 20px 30px;
     cursor: pointer;
     border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 }
@@ -166,8 +171,8 @@ input[type=checkbox] {
     z-index: 99;
     height: 100%;
     width: 100%;
-    top: 22px;
-    left: 15px;
+    top: 26px;
+    right: 50px;
     height: 22px;
     width: 22px;
 }
@@ -248,12 +253,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   color: darken(#f9f9f9, 50%);
  }
 
-.navbar-brand {
-    font-size: 45px;
-    position: relative;
-    bottom: 10px;
-}
-
 h2 {
     text-align: center;
 }
+

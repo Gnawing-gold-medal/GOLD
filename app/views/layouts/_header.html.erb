@@ -3,30 +3,39 @@
     <div class="container">
       <%= image_tag 'kawamura.jpg' ,class: "kawamura"%>
       <a class="navbar-brand" href="/">ながのCAKE</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-        <% if admin_signed_in? %>
-
-        <% elsif customer_signed_in? && current_customer.is_deleted == false %>
-          <li><%= link_to ' my page', customers_customer_path(current_customer.id),class: 'fas fa-home nav-link text-light' %></li>
-          <li><%= link_to ' item',customers_items_path,class: 'fas fa-cookie-bite nav-link text-light' %></li>
-          <li><%= link_to ' cart', customers_cart_items_path,class: 'fas fa-shopping-cart nav-link text-light'%></li>
-          <li><%= link_to ' logout', destroy_customer_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %></li>
-          <li><%= link_to ' info',new_infomation_path,class: 'fas fa-question-circle nav-link text-light' %></li>
-        <% else %>
-          <li><%= link_to ' about',about_path,class: 'fas fa-store-alt nav-link text-light' %></li>
-          <li><%= link_to ' item',customers_items_path,class: 'fas fa-cookie-bite nav-link text-light' %></li>
-          <li><%= link_to ' sign up', new_customer_registration_path,class: 'fas fa-user-plus nav-link text-light' %></li>
-          <li><%= link_to ' login', new_customer_session_path ,class: 'fas fa-sign-in-alt nav-link text-light'%></li>
-          <li><%= link_to ' info',new_infomation_path,class: 'fas fa-question-circle nav-link text-light' %></li>
-        <% end %>
-        </ul>
-        <%= render 'layouts/search' %>
-        <%= render 'layouts/guest' %>
-      </div>
+      <% if admin_signed_in? %>
+        <div class="navbar-collapse">
+          <%= render 'admins/admin_sidebar' %>
+        </div>
+      <% elsif customer_signed_in? && current_customer.is_deleted == false %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li><%= link_to ' my page', customers_customer_path(current_customer.id),class: 'fas fa-home nav-link text-light' %></li>
+            <li><%= link_to ' item',customers_items_path,class: 'fas fa-cookie-bite nav-link text-light' %></li>
+            <li><%= link_to ' cart', customers_cart_items_path,class: 'fas fa-shopping-cart nav-link text-light'%></li>
+            <li><%= link_to ' logout', destroy_customer_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %></li>
+            <li><%= link_to ' info',new_infomation_path,class: 'fas fa-question-circle nav-link text-light' %></li>
+          </ul>
+        </div>
+      <% else %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li><%= link_to ' about',about_path,class: 'fas fa-store-alt nav-link text-light' %></li>
+            <li><%= link_to ' item',customers_items_path,class: 'fas fa-cookie-bite nav-link text-light' %></li>
+            <li><%= link_to ' sign up', new_customer_registration_path,class: 'fas fa-user-plus nav-link text-light' %></li>
+            <li><%= link_to ' login', new_customer_session_path ,class: 'fas fa-sign-in-alt nav-link text-light'%></li>
+            <li><%= link_to ' info',new_infomation_path,class: 'fas fa-question-circle nav-link text-light' %></li>
+          </ul>
+        </div>
+      <% end %>
+      <%= render 'layouts/search' %>
+      <%= render 'layouts/guest' %>
     </div>
   </nav>
 </header>
