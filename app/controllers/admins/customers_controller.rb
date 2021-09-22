@@ -9,6 +9,7 @@ class Admins::CustomersController < ApplicationController
     [Date.today.ago(2.days), @customers.created_2day_ago.count],
     [Date.yesterday, @customers.created_yesterday.count],
     [Date.today, @customers.created_today.count]]
+    
   end
 
   def show
