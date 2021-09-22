@@ -2,7 +2,7 @@
   <div class='row'>
     <div class='col-md-12 mx-auto'>
       <div class="about-image">
-        <h2 class="text-center">About</h2><br><br>
+        <h2 class="text-center">いらっしゃいませ</h2><br><br>
         <p>ながのCAKEは全国発送可能なケーキ屋さんです。<br><br>
         お子様からお年寄りの方までお召し上がりいただけるよう、<br><br>
         様々なバリエーションをご用意しております。<br><br>
@@ -11,5 +11,64 @@
         </p>
       </div>
     </div>
+  </div>
+</div>
+<div class="chef">
+  <div class="chef-img">
+    <%= image_tag "chef.jpg", size: "400x400" %>
+  </div>
+  <div class="chef-introduction">
+    <h5>OWNER CHEF</h5>
+    <h2 class= "text-left">KEKIO NAGANO</h2>
+    <h3 class= "mt-4">「とりあえずやってみる」</h3>
+    <p>
+      今更やったって....　　追いつけるわけがない.....<br>
+      そんな考えで夢を諦めていませんか？<br>
+      一流シェフと呼ばれる人たちも、最初は初心者です。<br>
+      私も最近クックパッド見ながらようやくクッキーが作れるようになりました。<br>
+      皆さんもプログラミングを始めたばかりだと思いますが、<br>
+      初心者同士、一緒に頑張りましょう。
+    </p>
+    <p>
+      【プロフィール】<br>
+    　１９７７年生まれ。<br>
+      大学卒業後、合同会社DMM.comに入社。<br>
+      2020年に脱サラし、長野県阿智村に「ながのCAKE」をOPENする。
+    </p>
+  </div>
+</div>
+<h3 class="text-center">ACCESS</h3>
+<div class= "accsess">
+  <div class="accsess-text">
+    <table>
+      <tr>
+        <th>店舗名</th>
+        <td>ながのCAKE</td>
+      </tr>
+      <tr>
+        <th>住所</th>
+        <td>長野県○-×-△</td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td><%= link_to do %>0120-117-117<% end %></td>
+      </tr>
+      <tr>
+        <th>営業時間</th>
+        <td>２４時間年中無休</td>
+      </tr>
+      <tr>
+        <th>アクセス</th>
+        <td>都心から車で約５時間</td>
+      </tr>
+      <tr>
+        <th>駐車場</th>
+        <td>１０台駐車可能</td>
+      </tr>
+    </table>
+    　<div class="sns">
+        <%= link_to do %><%= image_tag "insta.jpg", size: "30x30" %><% end %>&nbsp;
+        <%= link_to do %><%= image_tag "face.jpg", size: "30x30" %><% end %>
+      </div>
   </div>
 </div>
