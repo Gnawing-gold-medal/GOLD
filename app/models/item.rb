@@ -5,6 +5,15 @@ class Item < ApplicationRecord
   has_many :counts, dependent: :destroy
   has_many :rates, dependent: :destroy
   attachment :image
+  
+  
+  def avg_score
+    unless self.rates.empty?
+      rates.average(:star).round(1)
+    else
+      0.0
+    end
+  end
 
   def taxin_price
     (price*1.08).round

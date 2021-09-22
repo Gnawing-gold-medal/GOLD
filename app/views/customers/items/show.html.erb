@@ -25,10 +25,10 @@
                 starHalf: '<%= asset_path('star-half.png') %>',
                 half: true,
                 readOnly: true,
-                score: <%= 1 %>,
+                score: <%= @item.avg_score %>,
               });
             </script>
-          </p>
+          </p><%= @item.avg_score %>
         <div>
           <% if @item.is_active == true %>
             <%= form_with model: @cart_item, url: customers_cart_items_path do |f| %>
