@@ -1,14 +1,19 @@
 class Customers::RatesController < ApplicationController
+  before_action :authenticate_customer!
   
   def show
     @item = Item.find(params[:id])
     @rate = Rate.new
+    @current_user = current_customer.id
   end
   
   def create
     @rate = Rate.new(rate_params)
-    @rate.save
-      render 'show'
+    if @rate.save
+      redirect_to customers_items_path, notice: "ありがとうございました。"
+    else
+      redirect_to customers_items_path, notice: "すでに投稿済みです。"
+    end
 
   end
   
