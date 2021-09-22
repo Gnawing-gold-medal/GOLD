@@ -43,8 +43,8 @@ Rails.application.routes.draw do
         delete :cart_destroy
       end
     end
-
-  	resource :customers,only: [:show] do
+    
+  	resources :customers,only: [:show] do
   		member do
         get :leave_page
         patch :leave
