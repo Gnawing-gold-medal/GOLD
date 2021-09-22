@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container"  id="no_cart">
   <% if @cart_items.present? %>
     <div class= "line-image"><%= image_tag "order-line1.jpg" ,class: "order-line"%></div>
   <% end %>
@@ -21,30 +21,19 @@
           </thead>
           <tbody>
               <% @cart_items.each do |cart_item| %>
-                <tr>
-                  <td class="cart-td"><%= attachment_image_tag cart_item.item, :image, size:"100x70", style:"border-radius:5%" %><br><%= cart_item.item.name %></td>
-                  <td class="cart-td"><%= cart_item.item.taxin_price.to_s(:delimited) %>円</td>
-                  <td class="cart-td">
-                    <%= form_with model: cart_item, url: customers_cart_item_path(cart_item) do |f| %>
-                      <%= f.hidden_field :item_id, value: cart_item.item.id %>
-                      <%= f.number_field :amount, min: 1, class: "amount-change" %>
-                      <%= f.submit "変更", class: "amount-change-btn" %>
-                    <% end %>
-                  </td>
-                  <td class="cart-td"><%= (cart_item.item.taxin_price*cart_item.amount).to_s(:delimited) %>円</td>
-                  <td class="cart-td"><%= link_to "削除", customers_cart_item_path(cart_item), method: :delete, class: "destroy-btn" %></td>
+                <tr id="cart_<%= cart_item.id %>">
+                  <%= render 'cart', cart_item: cart_item %>
                 </tr>
               <% end %>
           </tbody>
         </table>
         <div class="text-center">
-          <p class="total-price">合計 <%= @total.round.to_s(:delimited) %>円</p>
+          <p id="total_price">合計 <%= @total.round.to_s(:delimited) %>円</p>
           <%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
           <%= link_to "情報入力に進む", new_customers_customer_order_path(current_customer), class: "btn btn-success" %>
         </div>
       <% else %>
-        <p>カートは空です</p>
-        <%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
+        <%= render 'no_cart' %>
       <% end %>
     </div>
   </div>

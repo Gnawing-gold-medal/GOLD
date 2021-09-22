@@ -35,15 +35,17 @@ class Customers::CartItemsController < ApplicationController
     @cart_item = CartItem.find(params[:id])
     if @cart_item.update(cart_item_params)
       flash[:notice] = "#{@cart_item.item.name}の数量を変更しました"
-      redirect_to customers_cart_items_path(@cart_item)
+      @cart_items = current_customer.cart_items.all
+      @total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price }
     end
   end
 
   def destroy
     @cart_item = CartItem.find(params[:id])
+    @cart_items = current_customer.cart_items.all
     if @cart_item.destroy
-      flash[:notice] = "#{@cart_item.item.name}をカートから削除しました"
-      redirect_to customers_cart_items_path
+      flash.now[:notice] = "#{@cart_item.item.name}をカートから削除しました"
+      @total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price }
     end
   end
 

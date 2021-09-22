@@ -1,0 +1,7 @@
+<% if @cart_items.present? %>
+　$('#cart_<%= @cart_item.id %>').remove();
+　$('#total_price').html("合計 <%= @total.round.to_s(:delimited) %>円");
+<% else %>
+  $('#no_cart').html("<%= j(render 'customers/cart_items/no_cart') %>");
+<% end %>
+$('#flash').html("<%= j(render 'layouts/flash') %>");
