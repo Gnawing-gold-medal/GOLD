@@ -1,19 +1,19 @@
 <footer>
   <div class='container'>
     <div class='row'>
-      <div class="col-12 mx-auto my-3">
-        <div class="d-flex justify-content-around bd-highlight">
-          <div class="text-light">
-            <%= link_to "企業情報", about_path, class:"text-light" %> ｜ <%= link_to "お問い合わせ", new_infomation_path, class:"text-light" %>
+      <div class="col-12 my-3">
+        <div class="d-flex justify-content-between bd-highlight">
+          <div class="text-center link3">
+            <%= link_to "企業情報", about_path, class:"link3" %> ｜ <%= link_to "お問い合わせ", new_infomation_path, class:"link3" %>
           </div>
-          <div class="text-light">
+          <div class="text-center link3">
             © 2021 ながのCAKE
           </div>
-          <div>
+          <div class="text-center">
             <% if admin_signed_in? %>
-              <%= link_to '管理者ページ', admins_orders_path, class: 'text-light'%>
+              <%= link_to '管理者の方はこちら', admins_orders_path, class: 'link3 ml-5' %>
             <% else %>
-              <%= link_to '管理者ページ', new_admin_session_path, class: 'text-light'%>
+              <%= link_to '管理者の方はこちら', new_admin_session_path, class: 'link3 ml-5' %>
             <% end %>
           </div>
         </div>
