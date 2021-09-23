@@ -22,9 +22,9 @@ class Admins::OrdersController < ApplicationController
       @order.update_attributes!(order_params)
       if @order.status == "入金確認"
         OrderItem.multi_update(order_item_params)
-        redirect_to admins_order_path(@order), notice: "You have updated genre successfully."
+        redirect_to admins_order_path(@order), notice: "You have updated status successfully."
       else
-        redirect_to admins_order_path(@order), notice: "You have updated genre successfully."
+        redirect_to admins_order_path(@order), notice: "You have updated status successfully."
       end
       
   end

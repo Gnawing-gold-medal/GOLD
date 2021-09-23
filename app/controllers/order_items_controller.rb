@@ -6,13 +6,13 @@ class OrderItemsController < ApplicationController
       @order_item.update_attributes!(order_item_params)
       if @order_items.where.not(making_status: 3 ) == []
         Order.multi_update(order_params)
-        redirect_to admins_order_path(@order), notice: "You have updated genre successfully."
+        redirect_to admins_order_path(@order), notice: "You have updated status successfully."
       else
         if @order_item.making_status  == "製作中"
           Order.multi_update(order_params)
-          redirect_to admins_order_path(@order), notice: "You have updated genre successfully."
+          redirect_to admins_order_path(@order), notice: "You have updated status successfully."
         else
-          redirect_to admins_order_path(@order), notice: "You have updated genre successfully."
+          redirect_to admins_order_path(@order), notice: "You have updated  successfully."
         end
       end
 
