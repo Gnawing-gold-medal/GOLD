@@ -34,6 +34,22 @@
             <td><%= f.text_field :telephone_number%></td>
           </tr>
           <tr>
+            <td>会員ステータス</td>
+            <td>
+              <label class="btn btn-outline-light" style="display: inline-block;">
+                <%= f.radio_button :is_deleted, :false %>
+                <%= f.label :is_deleted, "有効", {value: :false, style: "display: inline-block;"} %>
+              </label>
+            </td>
+
+            <td>
+              <label class="btn btn-outline-light" style="display: inline-block;">
+                <%= f.radio_button :is_deleted, :true %></br>
+                <%= f.label :is_deleted, "無効", {value: :true, style: "display: inline-block;"} %>
+              </label>
+            </td>
+          </tr>
+          <tr>
             <td></td>
             <td><%= f.submit "更新する",class: "btn btn-success" %></td>
 
