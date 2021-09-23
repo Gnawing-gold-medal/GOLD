@@ -97,7 +97,7 @@
 }
 
 .item-show-name {
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 26px;
   font-weight: 500;
   width: 400px;
@@ -106,7 +106,13 @@
 .item-show {
   display: flex;
   justify-content: center;
-  margin: 30px auto
+  margin: 30px auto;
+}
+
+.item-rate-show {
+  display: flex;
+  justify-content: center;
+  margin: 100px auto;
 }
 
 .item-detail form {

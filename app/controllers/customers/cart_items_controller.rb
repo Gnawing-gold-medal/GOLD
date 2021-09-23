@@ -34,7 +34,7 @@ class Customers::CartItemsController < ApplicationController
   def update
     @cart_item = CartItem.find(params[:id])
     if @cart_item.update(cart_item_params)
-      flash[:notice] = "#{@cart_item.item.name}の数量を変更しました"
+      flash.now[:notice] = "#{@cart_item.item.name}の数量を変更しました"
       @cart_items = current_customer.cart_items.all
       @total = @cart_items.inject(0) { |sum, item| sum + item.sum_of_price }
     end
