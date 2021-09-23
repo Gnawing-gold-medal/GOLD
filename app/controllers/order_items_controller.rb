@@ -8,7 +8,12 @@ class OrderItemsController < ApplicationController
         Order.multi_update(order_params)
         redirect_to admins_order_path(@order), notice: "You have updated genre successfully."
       else
-        redirect_to admins_order_path(@order), notice: "You have updated genre successfully."
+        if @order_item.making_status  == "製作中"
+          Order.multi_update(order_params)
+          redirect_to admins_order_path(@order), notice: "You have updated genre successfully."
+        else
+          redirect_to admins_order_path(@order), notice: "You have updated genre successfully."
+        end
       end
 
   end
