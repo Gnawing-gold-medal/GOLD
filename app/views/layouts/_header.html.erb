@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <%= image_tag 'kawamura.jpg' ,class: "kawamura"%>
-      <a class="navbar-brand" href="/"><%= image_tag 'logo (8).png', size:"190x32" %></a>
+      <a class="navbar-title" href="/">ながのCAKE</a>
       <% if admin_signed_in? %>
         <div class="navbar-collapse">
           <%= render 'admins/admin_sidebar' %>
@@ -13,11 +13,31 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
-            <li><%= link_to ' my page', customers_customer_path(current_customer.id),class: 'fas fa-home nav-link text-light' %></li>
-            <li><%= link_to ' item',customers_items_path,class: 'fas fa-cookie-bite nav-link text-light' %></li>
-            <li><%= link_to ' cart', customers_cart_items_path,class: 'fas fa-shopping-cart nav-link text-light'%></li>
-            <li><%= link_to ' logout', destroy_customer_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %></li>
-            <li><%= link_to ' info',new_infomation_path,class: 'fas fa-question-circle nav-link text-light' %></li>
+            <li>
+              <%= link_to customers_customer_path(current_customer.id),class: 'nav-link text-light' do %>
+                <i class="fas fa-home"></i> my page
+              <% end %>
+            </li>
+            <li>
+              <%= link_to customers_items_path,class: 'nav-link text-light' do %>
+                <i class="fas fa-cookie-bite"></i> item
+              <% end %>
+            </li>
+            <li>
+              <%= link_to customers_cart_items_path,class: 'nav-link text-light' do %>
+                <i class="fas fa-shopping-cart"></i> cart
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_customer_session_path, method: :delete,class: 'nav-link text-light' do %>
+                <i class="fas fa-sign-out-alt"></i> logout
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_infomation_path,class: 'nav-link text-light' do %>
+                <i class="fas fa-question-circle"></i> info
+              <% end %>
+            </li>
           </ul>
         </div>
       <% else %>
@@ -26,11 +46,31 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
-            <li><%= link_to ' about',about_path,class: 'fas fa-store-alt nav-link text-light' %></li>
-            <li><%= link_to ' item',customers_items_path,class: 'fas fa-cookie-bite nav-link text-light' %></li>
-            <li><%= link_to ' sign up', new_customer_registration_path,class: 'fas fa-user-plus nav-link text-light' %></li>
-            <li><%= link_to ' login', new_customer_session_path ,class: 'fas fa-sign-in-alt nav-link text-light'%></li>
-            <li><%= link_to ' info',new_infomation_path,class: 'fas fa-question-circle nav-link text-light' %></li>
+            <li>
+              <%= link_to about_path,class: 'nav-link text-light' do %>
+                <i class="fas fa-store-alt"></i> about
+              <% end %>
+            </li>
+            <li>
+              <%= link_to customers_items_path,class: 'nav-link text-light' do %>
+                <i class="fas fa-cookie-bite"></i> item
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_customer_registration_path,class: 'nav-link text-light' do %>
+                <i class="fas fa-user-plus"></i> sign up
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_customer_session_path ,class: 'nav-link text-light' do %>
+                <i class="fas fa-sign-in-alt"></i> login
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_infomation_path,class: 'nav-link text-light' do %>
+                <i class="fas fa-question-circle"></i> info
+              <% end %>
+            </li>
           </ul>
         </div>
       <% end %>

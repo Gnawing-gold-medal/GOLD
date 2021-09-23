@@ -21,9 +21,8 @@
   margin-bottom: 0;
 }
 
-.admin-item-image {
-  background-image: url("main_back1.jpg");
-  padding: 1px;
+.admin-item-img input:not(form-control-file) {
+  background:rgba(0,0,0,0);
 }
 
 .admin-item-show-detail {
