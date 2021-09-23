@@ -1,5 +1,7 @@
 <%= form_tag admins_orders_path, :method => 'get' do %>
-    <%= select_tag :method, options_for_select({ "全て" => "全て", "入金待ち" => "入金待ち", "入金確認" => "入金確認", "製作中" => "製作中", "発送準備中" => "発送準備中", "発送済み" => "発送済み" }) %>
-    </br>
-    <%= submit_tag "絞り込み", class: "btn btn-success" %>
+    <div class="d-flex justify-content-center">
+        <div class="d-flex align-items-center"><%= select_tag :method, options_for_select({ "全て" => "全て", "入金待ち" => "入金待ち", "入金確認" => "入金確認", "製作中" => "製作中", "発送準備中" => "発送準備中", "発送済み" => "発送済み" }) %></div>
+        <div class="col-3"><%= submit_tag "絞り込み", class: "btn btn-success" %></div>
+    </div>
 <% end %>
+

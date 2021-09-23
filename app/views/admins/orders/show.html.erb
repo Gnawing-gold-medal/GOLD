@@ -1,119 +1,107 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-10 col-lg-8 px-5 px-sm-0 mx-auto">
-
-
-      <table style="border:none;">
-        <thead>
-          <tr>
-            <th>注文履歴</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>購入者</td>
-          　<td><%= @order.name %></td>
-          </tr>
-          
-          <tr>
-            <td>注文日</td>
-            <td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
-          </tr>
-          
-          <tr>
-            <td>配送先</td>
-            <td><%= @order.address %> <%= @order.name %></td>
-          </tr>
-          
-          <tr>
-            <td>支払い方法</td>
-            <td><%= @order.payment_method %></td>
-          </tr>
-          
-          <tr>
-            <td>注文</td>
-            
-            <td><%= form_with model:@order, url: admins_order_path(@order), local: true  do |f| %>
-              <%= f.select :status,  Order.statuses.keys %></br>
-                  <% @order_items.each do |order_item| %>
-                    <%= f.fields_for "order_items[]", order_item do |af| %>
-                    <%= af.hidden_field :making_status, :value => '製作待ち' %>
-                  　<% end %>
-                  <% end %>
-                  <%= f.submit '更新', class: "btn btn-success btn-sm"%>
-              <% end %>
-            </td>
-                
-          </tr>
-          
-        </tbody>
-      </table>
-      
-      <table border="1">
-        <thead>
-          <tr>
-            <th>商品名</th>
-            <th>単価（税込）</th>
-            <th>数量</th>
-            <th>小計</th>
-            <th>製作ステータス</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-          <% @order_items.each do |order_items| %>
+      <h2>注文履歴</h2>
+      <div class="mx-auto" style="width:340px">
+        <table class="table table-borderless order-table">
+          <tbody>
             <tr>
-              <td><%= order_items.item.name %></td>
-              <td><%= order_items.price %></td>
-              <td><%= order_items.amount %></td>
-              <td><%= order_items.price*order_items.amount %></td>
-              <td><%= form_with model:order_items, local: true  do |f| %>
-                    <%= f.select :making_status, OrderItem.making_statuses.keys %>
-                        <%= f.fields_for "orders[]", @order do |af| %>
-                          <% if @order.status == "製作中" %>
-                            <%= af.hidden_field :status, :value => "発送準備中" %>
-                          <% else %>
-                            <%= af.hidden_field :status, :value => "製作中" %>
-                          <% end %>
-                      <% end %>
-                    </br><%= f.submit '更新', class: "btn btn-success btn-sm"%>
-                  <% end %></td>
+              <th class="text-right">購入者</th>
+            　<td><%= @order.name %></td>
             </tr>
-          <% end %>
-          
-        </tbody>
-      </table>
-      
-      <table style= "border:none;" >
-        <thead>
-          <tr>
-            <th><u>商品合計</u></th>
-            <th>
-              <% @sum = 0 %>
-              <% @order_items.each do |order_items| %>
-                <% order_items.price*order_items.amount %>
-                <% @sum += order_items.price*order_items.amount %>
-              <% end %>
-              <u><%= @sum %>円</u>
-            </th>
-          </tr>
-          <tr>
-            <th><u>送料</u></th>
-            <th><u><%= @order.shipping_cost %>円</u></th>
-          </tr>
-          <tr>
-            <th><u>合計金額</u></th>
-            <th><u><%= @sum += @order.shipping_cost %>円</u></th>
-          </tr>
-          
-        </thead>
-        <tbody>
-          
-        </tbody>
-      </table>
-      
-    
+            <tr>
+              <th class="text-right">注文日</th>
+              <td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
+            </tr>
+            <tr>
+              <th class="text-right">配送先</th>
+              <td><%= @order.address %> <%= @order.name %></td>
+            </tr>
+            <tr>
+              <th class="text-right">支払い方法</th>
+              <td><%= @order.payment_method %></td>
+            </tr>
+            <tr>
+              <th class="text-right">注文</th>
+              <td>
+                <%= form_with model:@order, url: admins_order_path(@order), class: "p-0", local: true  do |f| %>
+                  <div class="d-flex">
+                    <p><%= f.select :status,  Order.statuses.keys %></p>
+                    <% @order_items.each do |order_item| %>
+                      <%= f.fields_for "order_items[]", order_item do |af| %>
+                        <%= af.hidden_field :making_status, :value => '製作待ち' %>
+                      <% end %>
+                    <% end %>
+                    <%= f.submit '更新', class: "btn btn-success btn-sm col-6 ml-3 mt-0" %>
+                  </div>
+                <% end %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mx-auto">
+        <table class="table order-table" border="1">
+          <thead>
+            <tr>
+              <th class="align-middle">商品名</th>
+              <th class="align-middle">単価（税込）</th>
+              <th class="align-middle">数量</th>
+              <th class="align-middle">小計</th>
+              <th class="align-middle">製作ステータス</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @order_items.each do |order_items| %>
+              <tr>
+                <td class="align-middle"><%= order_items.item.name %></td>
+                <td class="align-middle"><%= order_items.price.to_s(:delimited) %></td>
+                <td class="align-middle"><%= order_items.amount %></td>
+                <td class="align-middle"><%= (order_items.price*order_items.amount).to_s(:delimited) %></td>
+                <td class="align-middle"><%= form_with model:order_items, local: true  do |f| %>
+                    <div class="d-flex">
+                      <div class="pt-2"><%= f.select :making_status, OrderItem.making_statuses.keys %></div>
+                          <%= f.fields_for "orders[]", @order do |af| %>
+                            <% if @order.status == "製作中" %>
+                              <%= af.hidden_field :status, :value => "発送準備中" %>
+                            <% else %>
+                              <%= af.hidden_field :status, :value => "製作中" %>
+                            <% end %>
+                      <% end %>
+                      <%= f.submit '更新', class: "btn btn-success btn-sm col-6 ml-3" %>
+                      </div>
+                    <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="mx-auto" style="width:300px">
+        <table class="table table-borderless" >
+          <tbody>
+            <tr>
+              <th class="text-right">商品合計</th>
+              <th>
+                <% @sum = 0 %>
+                <% @order_items.each do |order_items| %>
+                  <% order_items.price*order_items.amount %>
+                  <% @sum += order_items.price*order_items.amount %>
+                <% end %>
+                <%= @sum.to_s(:delimited) %>円
+              </th>
+            </tr>
+            <tr>
+              <th class="text-right">送料</th>
+              <th><%= @order.shipping_cost %>円</th>
+            </tr>
+            <tr>
+              <th class="text-right"><h4>合計金額</h4></th>
+              <th><h4><%= (@sum += @order.shipping_cost).to_s(:delimited) %>円</h4></th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
