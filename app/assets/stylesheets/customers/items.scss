@@ -79,16 +79,16 @@
 
 .link-style:hover {
   text-decoration: none;
-  color: #BE9B65;
+  color: #9B7744;
 }
 
 .link-style2 {
-  color: #BE9B65;
+  color: #9B7744;
 }
 
 .link-style2:hover {
   text-decoration: none;
-  color: #BE9B65;
+  color: #9B7744;
 }
 
 .item-index-name {
@@ -123,12 +123,12 @@
 }
 
 .return-index {
-  color: #BE9B65;
+  color: #9B7744;
 }
 
 .return-index:hover {
   text-decoration: none;
-  color: #BE9B65;
+  color: #9B7744;
 }
 
 .pagination {
@@ -137,27 +137,27 @@
 }
 
 .page > a {
-  color: #BE9B65;
+  color: #9B7744;
   padding:3px;
 }
 
 .next > a {
-  color: #BE9B65;
+  color: #9B7744;
   padding:3px;
 }
 
 .last > a {
-  color: #BE9B65;
+  color: #9B7744;
   padding:3px;
 }
 
 .first > a {
-  color: #BE9B65;
+  color: #9B7744;
   padding:3px;
 }
 
 .prev > a {
-  color: #BE9B65;
+  color: #9B7744;
   padding:3px;
 }
 
@@ -209,4 +209,46 @@
 .sns {
   width: 100%;
   text-align: center;
+}
+
+.item-img-box {
+  width: 250px;
+  height: 190px;
+  position: relative;
+}
+
+.item-img-box::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: background-color 0.5s;
+}
+
+.item-img-box:hover::before {
+ background-color: rgba(0, 0, 0, 0.4);
+}
+
+.item-img-box2 {
+  width: 230px;
+  height: 170px;
+  position: relative;
+}
+
+.item-img-box2::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: background-color 0.5s;
+}
+
+.item-img-box2:hover::before {
+ background-color: rgba(0, 0, 0, 0.4);
 }
