@@ -71,8 +71,11 @@
               <td><%= form_with model:order_items, local: true  do |f| %>
                     <%= f.select :making_status, OrderItem.making_statuses.keys %>
                         <%= f.fields_for "orders[]", @order do |af| %>
-                          <%= af.hidden_field :status, :value => "発送準備中" %>
-                      　
+                          <% if @order.status == "製作中" %>
+                            <%= af.hidden_field :status, :value => "発送準備中" %>
+                          <% else %>
+                            <%= af.hidden_field :status, :value => "製作中" %>
+                          <% end %>
                       <% end %>
                     </br><%= f.submit '更新', class: "btn btn-success btn-sm"%>
                   <% end %></td>
