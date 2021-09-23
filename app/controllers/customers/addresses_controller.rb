@@ -12,7 +12,7 @@ class Customers::AddressesController < ApplicationController
       redirect_to request.referer
       flash[:notice] = "新しい配送先を登録しました。"
     else
-      render "index"
+      redirect_to request.referer
       flash[:notice] = "全ての項目を正しく入力してください。"
     end
   end

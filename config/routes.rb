@@ -49,7 +49,7 @@ Rails.application.routes.draw do
       end
     end
 
-  	resources :customers,only: [:show,:edit] do
+  	resources :customers,only: [:show,:edit,:update] do
   		member do
         get :leave_page
         patch :leave

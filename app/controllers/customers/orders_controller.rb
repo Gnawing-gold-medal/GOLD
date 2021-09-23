@@ -26,7 +26,7 @@ class Customers::OrdersController < ApplicationController
        @order_name= @customer.last_name + @customer.first_name
     elsif params[:order][:address_select] == "1"
       if cart_item_order.empty?
-            flash[:alert1] = "選択肢の中から宛先を選んでください"
+            flash.now[:alert1] = "選択肢の中から宛先を選んでください"
             render "new"
       else
          @order_postal_code = Address.find_by(id: params[:order][:oter_address], customer_id: @customer.id).postal_code
@@ -38,7 +38,7 @@ class Customers::OrdersController < ApplicationController
        @order_address= @order.address
        @order_name= @order.name
        if @order_postal_code.blank? || @order_address.blank? || @order_name.blank?
-            flash[:alert2] = "郵便番号,住所,宛名は全て入力してください"
+            flash.now[:alert2] = "郵便番号,住所,宛名は全て入力してください"
             render "new"
        end
     end
