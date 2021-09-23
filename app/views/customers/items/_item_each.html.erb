@@ -1,5 +1,5 @@
 <% items.each do |item| %>
-  <div class="item-box mx-4 mt-3 w-20">
+  <div class="mx-4 mt-3 w-20">
     <%= link_to customers_item_path(item), class: "link-style" do %>
       <div class="item-img-box2"><%= attachment_image_tag item, :image, size:"230x170" %></div>
       <p class="item-index-name mt-1"><%= item.name %></p>

@@ -1,16 +1,22 @@
-<div class= "index-infomation-area">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-10 col-lg-9 px-5 px-sm-0 mx-auto">
   <h3 class= "text-center">お問い合わせ一覧</h3>
   <div class="index-index">
-    <table>
+    <table class="table">
       <tr>
         <th style="width:15%"></th>
         <th style="width:25%">問い合わせ日時</th>
-        <th style="width:20%">名前</th>
+        <th style="width:15%">名前</th>
         <th style="width:30%">問い合わせカテゴリー</th>
-        <th style="width:10%"></th>
+        <th style="width:15%"></th>
       </tr>
       <%= render "infomations/index",infomations: @infomations %>
       <%= paginate @infomations %>
     </table>
   </div>
+</div>
+
+ </div>
+</div>
 </div>

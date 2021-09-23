@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*.      top.       */
 .main_imgBox {
   height: 600px;
   overflow: hidden;
@@ -63,6 +64,52 @@
   100% { opacity: 0 }
 }
 
+.item-img-box {
+  width: 250px;
+  height: 190px;
+  position: relative;
+}
+
+.item-img-box::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: background-color 0.5s;
+}
+
+.item-img-box:hover::before {
+ background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*.      about.       */
+.chef {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  gap: 20px 20px;
+}
+
+.accsess table {
+ margin: 0 auto;
+}
+
+.accsess th{
+  padding: 5px 40px;
+}
+
+.accsess img {
+  border-radius: 5px;
+}
+
+.sns {
+  width: 100%;
+  text-align: center;
+}
+
 .about-image {
   height: 500px;
   padding-top: 80px;
@@ -74,70 +121,15 @@
   background-position: center;
 }
 
-.link-style {
-  color: #45381F;
-}
-
-.link-style:hover {
-  text-decoration: none;
-  color: #9B7744;
-}
-
-.link-style2 {
-  color: #895A06;
-}
-
-.link-style2:hover {
-  text-decoration: none;
-  color: #9B7744;
-}
-
+/*.      index.       */
 .item-index-name {
   font-size: 18px;
   font-weight: 500;
 }
 
-.item-show-name {
-  margin-top: 10px;
-  font-size: 26px;
-  font-weight: 500;
-  width: 400px;
-}
-
-.item-show {
-  display: flex;
-  justify-content: center;
-  margin: 30px auto;
-}
-
-.item-rate-show {
-  display: flex;
-  justify-content: center;
-  margin: 100px auto;
-}
-
-.item-detail form {
-  padding: 0;
-}
-
-.sold-out-show {
-  width: 400px;
-  color: #E82C31;
-}
-
 .sold-out {
   color: #E82C31;
 }
-
-.return-index {
-  color: #9B7744;
-}
-
-.return-index:hover {
-  text-decoration: none;
-  color: #9B7744;
-}
-
 .pagination {
   justify-content: center;
   margin-top: 50px;
@@ -193,52 +185,6 @@
   text-decoration: none;
 }
 
-/*.      about.       */
-.chef {
-  display: flex;
-  justify-content: center;
-  margin: 30px 0;
-  gap: 20px 20px;
-}
-
-.accsess table {
- margin: 0 auto;
-}
-
-.accsess th{
-  padding: 5px 40px;
-}
-
-.accsess img {
-  border-radius: 5px;
-}
-
-.sns {
-  width: 100%;
-  text-align: center;
-}
-
-.item-img-box {
-  width: 250px;
-  height: 190px;
-  position: relative;
-}
-
-.item-img-box::before{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  transition: background-color 0.5s;
-}
-
-.item-img-box:hover::before {
- background-color: rgba(0, 0, 0, 0.4);
-}
-
 .item-img-box2 {
   width: 230px;
   height: 170px;
@@ -258,4 +204,61 @@
 
 .item-img-box2:hover::before {
  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*.      show.       */
+.item-show-name {
+  margin-top: 10px;
+  font-size: 26px;
+  font-weight: 500;
+  width: 400px;
+}
+
+.item-show {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+}
+
+.item-rate-show {
+  display: flex;
+  justify-content: center;
+  margin: 100px auto;
+}
+
+.item-detail form {
+  padding: 0;
+}
+
+.sold-out-show {
+  width: 400px;
+  color: #E82C31;
+}
+
+.return-index {
+  color: #9B7744;
+}
+
+.return-index:hover {
+  text-decoration: none;
+  color: #9B7744;
+}
+
+/*.      various.       */
+.link-style {
+  color: #45381F;
+}
+
+.link-style:hover {
+  text-decoration: none;
+  color: #9B7744;
+}
+
+.link-style2 {
+  color: #895A06;
+}
+
+.link-style2:hover {
+  text-decoration: none;
+  color: #9B7744;
 }
