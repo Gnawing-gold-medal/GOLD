@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-10 col-lg-8 col-lg-5 px-5 px-sm-0 mx-auto">
-
+<h2>注文履歴一覧</h2>
 <%= render 'search' %>
 
 <table class='table'>
@@ -36,7 +36,7 @@
 
 <%= paginate @orders %>
 
-<h3>オーダー数の前日比・前週比</h3>
+<h2 class="mt-5 mb-3">オーダー数の前日比・前週比</h2>
   <div class="table_width">
     <table class='table table-bordered'>
       <thead>
@@ -63,7 +63,7 @@
     </table>
   </div>
   <div class="table_width">
-    <table class='table table-bordered'>
+    <table class='table table-bordered mb-5'>
       <thead>
         <tr>
           <th>今週のオーダー数</th>
@@ -90,8 +90,8 @@
 
   <%= line_chart @data %>
 
-<h4>7日間分のオーダー数</h4>
-  <table class='table table-bordered'>
+<h2 class="mt-5 mb-3">7日間分のオーダー数</h2>
+  <table class='table table-bordered mb-5'>
     <thead>
       <tr>
         <th>６日前</th>
