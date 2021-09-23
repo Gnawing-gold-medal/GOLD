@@ -2,8 +2,8 @@
   <div class="mx-auto text-center">
     <%= link_to customers_item_path(item), class: "link-style" do %>
     　第<%= i %>位<br>
-      <%= attachment_image_tag item, :image, size:"250x190", style:"border-radius:5%" %><br>
-      <p class="item-index-name mt-2"><%= item.name %></p>
+      <div class="item-img-box"><%= attachment_image_tag item, :image, size:"250x190" %></div>
+      <div class="item-index-name mt-2"><%= item.name %></div>
     <% end %>
     ￥<%= item.taxin_price.to_s(:delimited) %>
   </div>

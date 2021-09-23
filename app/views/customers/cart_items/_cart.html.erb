@@ -1,5 +1,10 @@
-<td class="cart-td"><%= attachment_image_tag cart_item.item, :image, size:"100x70", style:"border-radius:5%" %><br><%= cart_item.item.name %></td>
-<td class="cart-td"><%= cart_item.item.taxin_price.to_s(:delimited) %>円</td>
+<td class="cart-td">
+  <%= attachment_image_tag cart_item.item, :image, size:"100x70" %><br>
+  <%= cart_item.item.name %>
+</td>
+<td class="cart-td">
+  <%= cart_item.item.taxin_price.to_s(:delimited) %>円
+</td>
 <td class="cart-td">
   <%= form_with model: cart_item, url: customers_cart_item_path(cart_item), remote: true do |f| %>
     <%= f.hidden_field :item_id, value: cart_item.item.id %>
@@ -7,6 +12,10 @@
     <%= f.submit "変更", class: "amount-change-btn" %>
   <% end %>
 </td>
-<td class="cart-td" id='sub_price_<%= cart_item.id %>'><%= (cart_item.item.taxin_price*cart_item.amount).to_s(:delimited) %>円</td>
-<td class="cart-td"><%= link_to "削除", customers_cart_item_path(cart_item), method: :delete, class: "destroy-btn", remote: true %></td>
+<td class="cart-td" id='sub_price_<%= cart_item.id %>'>
+  <%= (cart_item.item.taxin_price*cart_item.amount).to_s(:delimited) %>円
+</td>
+<td class="cart-td">
+  <%= link_to "削除", customers_cart_item_path(cart_item), method: :delete, class: "destroy-btn", remote: true %>
+</td>
 
