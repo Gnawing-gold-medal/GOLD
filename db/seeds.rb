@@ -56,11 +56,17 @@ CartItem.create!(item_id: 5, customer_id: 2, amount: 5)
 
 Order.create!(customer_id: 1, name: "大村秀章",postal_code: "1234567",address: "愛知",shipping_cost: 800,total_payment: 7840,payment_method: 0,status: 0)
 Order.create!(customer_id: 2, name: "今村たかし",postal_code: "1234567",address: "愛知",shipping_cost: 800,total_payment: 1200,payment_method: 1,status: 1)
+Order.create!(customer_id: 3, name: "今井たかし",postal_code: "1234567",address: "愛知",shipping_cost: 800,total_payment: 7840,payment_method: 0,status: 2)
+Order.create!(customer_id: 4, name: "たかしたかし",postal_code: "1234567",address: "愛知",shipping_cost: 800,total_payment: 1200,payment_method: 1,status: 3)
 
 OrderItem.create!(order_id: 1, item_id: 1,price: 440,amount: 1,making_status: 0)
 OrderItem.create!(order_id: 1, item_id: 2,price: 550,amount: 2,making_status: 0)
 OrderItem.create!(order_id: 1, item_id: 3,price: 660,amount: 3,making_status: 0)
 OrderItem.create!(order_id: 1, item_id: 4,price: 880,amount: 4,making_status: 0)
+OrderItem.create!(order_id: 2, item_id: 1,price: 440,amount: 1,making_status: 0)
+OrderItem.create!(order_id: 2, item_id: 2,price: 550,amount: 2,making_status: 0)
+OrderItem.create!(order_id: 2, item_id: 3,price: 660,amount: 3,making_status: 0)
+OrderItem.create!(order_id: 2, item_id: 4,price: 880,amount: 4,making_status: 0)
 
 Infomation.create!(name: "後藤", telephone_number: "0120117117" ,email: "goto@example.jp" ,genre: 3, content: "もっと安くして欲しい" , status: 0)
 Infomation.create!(name: "田中", telephone_number: "0120444444" ,email: "tanakao@example.jp" ,genre: 0, content: "髪の毛が入っていた。変品したい。" , status: 1)
