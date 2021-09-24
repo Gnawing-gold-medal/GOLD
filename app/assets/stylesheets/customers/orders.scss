@@ -209,7 +209,7 @@
   width: 300px;
   position: relative;
   top: 20px;
-  left: 100px;
+  left: 10px;
 }
 
  .order table {
@@ -226,7 +226,7 @@
 }
 
 .info table {
-  width: 400px;
+  margin: 0 auto;
 }
 
 .info th{
@@ -236,6 +236,10 @@
 .info th,
 .info td {
   padding: 7px;
+}
+
+.info td {
+  width: 150px;
 }
 
 .cost {
