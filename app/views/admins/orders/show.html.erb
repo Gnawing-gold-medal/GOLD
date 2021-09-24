@@ -7,7 +7,7 @@
           <tbody>
             <tr>
               <th class="text-right">購入者</th>
-            　<td><%= @order.name %></td>
+            　<td><%= link_to "#{@order.customer.last_name} #{@order.customer.first_name}", admins_customer_path(@order.customer), class:"link-style" %></td>
             </tr>
             <tr>
               <th class="text-right">注文日</th>
@@ -77,30 +77,18 @@
           </tbody>
         </table>
       </div>
-      <div class="mx-auto" style="width:300px">
-        <table class="table table-borderless" >
-          <tbody>
-            <tr>
-              <td class="text-right">商品合計</td>
-              <td>
-                <% @sum = 0 %>
-                <% @order_items.each do |order_items| %>
-                  <% order_items.price*order_items.amount %>
-                  <% @sum += order_items.price*order_items.amount %>
-                <% end %>
-                <%= @sum.to_s(:delimited) %>円
-              </td>
-            </tr>
-            <tr>
-              <td class="text-right">送料</td>
-              <td><%= @order.shipping_cost %>円</td>
-            </tr>
-            <tr>
-              <th class="text-right"><h4>合計金額</h4></th>
-              <th><h4><%= (@sum += @order.shipping_cost).to_s(:delimited) %>円</h4></th>
-            </tr>
-          </tbody>
-        </table>
+      <div class="d-flex justify-content-center mt-4">
+        <div class="mx- align-self-center">
+          商品合計
+          <% @sum = 0 %>
+          <% @order_items.each do |order_items| %>
+            <% order_items.price*order_items.amount %>
+            <% @sum += order_items.price*order_items.amount %>
+          <% end %>
+          <%= @sum.to_s(:delimited) %>円
+        </div>
+        <div class="mx-3 align-self-center">送料<%= @order.shipping_cost %>円</div>
+        <div class="mx-2"><h4>合計金額<%= (@sum += @order.shipping_cost).to_s(:delimited) %>円</h4></div>
       </div>
     </div>
   </div>

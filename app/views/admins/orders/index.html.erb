@@ -18,7 +18,7 @@
     <% @orders.each do |orders| %>
       <tr>
         <td><%= orders.created_at.strftime('%Y/%m/%d') %></td>
-        <td><%= orders.name %></td>
+        <td><%= "#{orders.customer.last_name} #{orders.customer.first_name}" %></td>
         <td>
             <% @sum = 0 %>
             <% orders.order_items.each do |order_items| %>
